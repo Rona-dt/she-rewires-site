@@ -1,130 +1,181 @@
 ---
 title: "活动回顾｜澳门BEYOND EXPO：SHETECH女性科技峰会与社群力量"
-title_en: "Event Review | Macau BEYOND EXPO: SHETECH Women's Technology Summit and Community Power"
-date: "2025-06-02"
+author: SheRewires她原力
+date: "2025年06月02日"
 location_zh: "澳门"
 location_en: "Macau"
-cover_image: "/placeholder.svg?height=400&width=600&text=BEYOND+EXPO+SHETECH+Summit"
+cover_image: "/assets/img/activity/活动回顾｜澳门BEYOND EXPO：SHETECH女性科技峰会与社群力量-0.png"
 tags: ["summit", "community", "technology", "women-in-tech"]
 type: "past"
+head:
+  - - meta
+    - name: 活动
 ---
 
 # 活动回顾｜澳门BEYOND EXPO：SHETECH女性科技峰会与社群力量
-# Event Review | Macau BEYOND EXPO: SHETECH Women's Technology Summit and Community Power
+
+![](/assets/img/activity/活动回顾｜澳门BEYOND EXPO：SHETECH女性科技峰会与社群力量-0.jpg)
 
 2025年5月21日至24日，She Rewires她原力在澳门2025BEYOND Expo期间，成功联合举办了备受瞩目的BEYOND SHETECH SUMMIT女性科技峰会，并同步发起了一系列"她·原力场"社群行动。本次系列活动集结了强大的女性科技影响力，共同探索前沿科技，共塑未来社会的美好想象。
 
-From May 21-24, 2025, She Rewires successfully co-hosted the highly anticipated BEYOND SHETECH SUMMIT during the 2025 BEYOND Expo in Macau, while simultaneously launching a series of "Her Power Field" community actions. This series of events brought together powerful female technology influence to explore cutting-edge technology and shape a beautiful vision for future society.
-
 ## Part 1 BEYOND SHETECH SUMMIT 高光时刻
-## Part 1 BEYOND SHETECH SUMMIT Highlights
+
+![](/assets/img/activity/活动回顾｜澳门BEYOND EXPO：SHETECH女性科技峰会与社群力量-1.jpg)
 
 作为本届BEYOND Expo的核心论坛之一，5月22日的BEYOND SHETECH SUMMIT女性科技峰会汇聚了来自全球的女性科技领袖、创业者、科学家与跨界创新者，围绕科技、商业、文化与女性领导力等前沿议题展开深度对话。各场圆桌均碰撞出精彩火花，生动呈现了女性如何在科技变革的浪潮中打破边界、引领未来。
 
-As one of the core forums of this year's BEYOND Expo, the BEYOND SHETECH SUMMIT on May 22 brought together female technology leaders, entrepreneurs, scientists, and cross-industry innovators from around the world for in-depth dialogue on cutting-edge topics including technology, business, culture, and female leadership. Each panel sparked brilliant discussions, vividly demonstrating how women break boundaries and lead the future in the wave of technological transformation.
-
 在充满了激情四射的开场之后，She Rewires她原力创始人和共建者Jill Tang论坛开幕的时候感谢BEYOND团队不仅使这次峰会成为可能，而且将女性在STEM领域置于亚洲最具未来面向的平台Beyond Expo的前沿。
 
-After an energetic opening, She Rewires founder and co-builder Jill Tang thanked the BEYOND team at the forum's opening for not only making this summit possible but also placing women in STEM at the forefront of Asia's most future-oriented platform, Beyond Expo.
+![](/assets/img/activity/活动回顾｜澳门BEYOND EXPO：SHETECH女性科技峰会与社群力量-2.jpg)
 
-而这一时刻至关重要。
-
-And this moment is crucial.
-
-因为当女性登台时，叙事发生了变化。当年轻女性带头时—整个系统都在演变。因为能见度引发可能性。当女性在科技领域被看见、被听到并被赞美时，它创造了涟漪效应— 解锁了信念、资金、合作和创新，这些可能性可能不会发生。
-
-Because when women take the stage, the narrative changes. When young women lead—the entire system evolves. Because visibility triggers possibility. When women in technology are seen, heard, and celebrated, it creates a ripple effect—unlocking belief, funding, collaboration, and innovation that might not otherwise happen.
+She Rewires她原力创始人和共建者Jill Tang
 
 ### Panel 1 以使命驱动创新：女性视角重塑科技领导力
-### Panel 1 Mission-Driven Innovation: Female Perspectives Reshaping Tech Leadership
+
+![](/assets/img/activity/活动回顾｜澳门BEYOND EXPO：SHETECH女性科技峰会与社群力量-3.jpg)
 
 圆桌嘉宾（左起）：桑璐璐Lulu Sang (微软大中华区开发者社群负责人)、罗甘霖Grace Luo (埃森哲大中华区通信媒体高科技事业部董事总经理)、于盈Carol Yu (深圳科创学院创始合伙人、副院长)、Prof. Carrie Ling (香港科技大学创业中心主任、综合系统与设计系客座助理教授)
 
-Panel guests (from left): Lulu Sang (Microsoft Greater China Developer Community Lead), Grace Luo (Managing Director, Communications Media & Technology, Accenture Greater China), Carol Yu (Founding Partner & Vice President, Shenzhen Institute of Science and Technology Innovation), Prof. Carrie Ling (Director of Entrepreneurship Center & Visiting Assistant Professor of Integrated Systems and Design, HKUST)
-
 Panel 1围绕"以使命驱动创新"展开深度对话，四位嘉宾探讨了女性领导者如何在AI转型、创新教育、硬科技孵化等领域，以其独特的"以人为本"的视角、共情力与韧性，平衡商业追求与社会价值，重塑科技领导力。
 
-Panel 1 engaged in deep dialogue around "Mission-Driven Innovation," with four guests exploring how female leaders reshape tech leadership in areas such as AI transformation, innovation education, and hard tech incubation through their unique "people-first" perspective, empathy, and resilience, balancing commercial pursuits with social value.
+埃森哲大中华区通信媒体高科技事业部董事总经理Grace Luo 强调在企业变革中融入使命感，并以"温柔而坚定"的方式赋能团队与客户；深圳科创学院创始合伙人、副院长Carol Yu 分享了其以"赋能他人"为使命的跨界历程，并点出女性视角对产品创新的关键作用；香港科技大学创业中心主任Prof. Carrie Ling 则从高校创新与工程教育出发，阐述了培养下一代创业精神与支持女性科技人才的重要性。嘉宾们认为，在AI时代，理解业务、人的判断力及持续学习是不可替代的价值，并鼓励女性保持热爱与好奇，勇于突破，找到自己的节奏与力量。
 
 ### Panel 2 从亚洲到全球：利用区域专长推动全球影响力
-### Panel 2 From Asia to Global: Leveraging Regional Expertise for Global Impact
+
+![](/assets/img/activity/活动回顾｜澳门BEYOND EXPO：SHETECH女性科技峰会与社群力量-4.jpg)
+
+圆桌嘉宾（左起）：Xinmei Shen (《南华早报》科技新闻部记者)、江琳 Elaine Jiang (Humansa创始合伙人)、Olivia Plotnick (Wai Social创始人)、Sarah Tong (教育科技公司Big Bang Academy联合创始人)
 
 Panel 2以"从亚洲到全球：区域专长赋能全球变革"为主题，汇聚健康科技、数字营销与教育创新领域的女性领袖。
 
-Panel 2, themed "From Asia to Global: Regional Expertise Empowering Global Change," brought together female leaders from health tech, digital marketing, and education innovation.
+Humansa创始合伙人Elaine Jiang强调"主动健康管理"的全球趋势，通过科技及个性化方案重塑长寿产业；Wai Social创始人Olivia Plotnick剖析中国数字生态对全球品牌的启示，指出深入理解亚洲营销理念是很意思的；Big Bang Academy联合创始人Sarah Tong则聚焦STEM教育如何培养下一代"AI原住民"，呼吁以好奇心驱动学习，弥合技术鸿沟。从她们的分享中我们看到，亚洲不仅是技术试验场，更是全球问题解决的灵感引擎。
 
 ### Panel 3 开创未来：女性引领硬科技革命
-### Panel 3 Creating the Future: Women Leading the Hard Tech Revolution
 
-Panel 3以"开创未来：女性引领硬科技革命"为主题，汇聚了人工智能、机器人、生物科技及航空航天等前沿领域的女性科学家、创业者与战略专家。
+![](/assets/img/activity/活动回顾｜澳门BEYOND EXPO：SHETECH女性科技峰会与社群力量-5.jpg)
 
-Panel 3, themed "Creating the Future: Women Leading the Hard Tech Revolution," brought together female scientists, entrepreneurs, and strategic experts from cutting-edge fields including artificial intelligence, robotics, biotechnology, and aerospace.
+圆桌嘉宾（左起）：赵育颖Rita Chao (Hong Kong X 前海基金总经理、旭柔计划联合发起人)、白惠源博士Dr. Isabella Bai (ELU.AI 中能坤域创始人、董事长兼CEO)、杨疆博士Dr. Jiang Yang (自由量级联合创始人，Pi (AI-Native内容创作共享平台) 创始人)、Prof. Lishuai Li (香港城市大学协理副校长（策略研究），数据科学系副教授)、梁欢欢Huanhuan Liang (中山大学药学院（深圳）教授，广州恩迈生物有限公司创始人)
+
+Panel 3以"开创未来：女性引领硬科技革命"为主题，汇聚了人工智能、机器人、生物科技及航空航天等前沿领域的女性科学家、创业者与战略专家。她们共同探讨了具身智能发展、技术从理论到产业应用的转化、以及女性科技领导力等话题，强调了女性以跨学科创新能力和坚韧特质在硬科技创业中的独特价值，并鼓励更多女性参与技术创新和产业变革。
+
+嘉宾们一致认为，未来的科技变革不仅依赖技术突破，更需深刻的社会需求洞察与系统思维整合。在具身智能、生成式AI与生命科学等关键赛道，女性正以"硬核科研+柔性领导力"推动深科技向善向实，引领"科学走出象牙塔，技术走进真实世界"。
 
 ### Panel 4 资本赋能新势力：女性投资人如何推动下一代创业浪潮
-### Panel 4 Capital Empowering New Forces: How Female Investors Drive the Next Generation of Entrepreneurship
 
-Panel 4以"资本赋能新势力：女性投资人如何推动下一代创业浪潮"为主题，汇聚了三位投资界优秀女性领袖。
+![](/assets/img/activity/活动回顾｜澳门BEYOND EXPO：SHETECH女性科技峰会与社群力量-6.jpg)
 
-Panel 4, themed "Capital Empowering New Forces: How Female Investors Drive the Next Generation of Entrepreneurship," brought together three outstanding female leaders from the investment world.
+圆桌嘉宾（左起）：郑菊然Kelsey Cheng (财新国际公司新闻主管)、潘俐文Renee Pan (戈壁创投常务董事/董事总经理)、张倩Cynthia ZHANG (天际资本创始人)、陳幗貞Jayne Chan (香港投资推广署初创企业主管)
+
+Panel 4以"资本赋能新势力：女性投资人如何推动下一代创业浪潮"为主题，汇聚了三位投资界优秀女性领袖。她们分享了如何通过资本与经验支持创业者，并探讨了女性投资人在科技和创业领域的独特优势。
+
+戈壁创投常务董事/董事总经理Renee谈到了关注女性科技创业的个人动力，天际资本创始人Cynthia分享了选择支持创始人的原则，香港投资推广署初创企业主管Jayne则从公共部门角度分析了成功初创生态系统的要素。尽管女性主导的初创公司仍然面临融资挑战，Panel中嘉宾们强调了推动这一变化的紧迫性，并鼓励更多女性在投资和创业领域发挥领导力。
 
 ### Panel 5 打破既定系统：她创始人如何重写创业剧本
-### Panel 5 Breaking Established Systems: How Female Founders Rewrite the Entrepreneurship Playbook
+
+![](/assets/img/activity/活动回顾｜澳门BEYOND EXPO：SHETECH女性科技峰会与社群力量-7.jpg)
+
+圆桌嘉宾（左起）：Jill Tang (她原力创始人&社群共建者)、孟思君(芨影科技有限公司联合创始人、副总裁)、Yutong Li (COO of Sonic SVM)、Lorraine Sin, LMHC (Research Director, Lirvana Labs, Inc., Maker of Yeti Confetti Kids)、金李娜Lina Jin (FungiFuture 创始人CEO，分布式垂直农业品牌 "超级菇菇"合伙人)
 
 Panel 5聚焦四位"不按常规出牌"的女性创始人如何用"反向思维"打破行业天花板。
 
-Panel 5 focused on how four "unconventional" female founders use "reverse thinking" to break industry ceilings.
+FungiFuture创始人CEO金李娜从市场需求出发反推材料技术，实现菌丝皮革的规模化生产，引领生物材料商业落地；芨影科技联合创始人＆副总裁盂思君则从临床经验切入，用AI为基层医疗构建真正可负担、可部署的系统，强调"需求先行"的技术逻辑；SONIC SVM首席运营官李语桐以"注意力资本"重构用户激励机制，打破Web3的炒作定式，探索数字经济的新范式；Yeti Confetti Kids研究主管Lorraine Sin以科研思维投身教育科技，将AI教育产品送入最需要帮助的黎巴嫩难民营，以实际行动回应"商业价值从善而生"。她们的故事共同证明：当女性创业者以用户为原点、以使命为驱动，创新不再是对规则的挑战，而是对未来的重塑。
 
 ## Part 2 She Rewires 社群行动日志
-## Part 2 She Rewires Community Action Log
 
 围绕峰会主场，She Rewires她原力亦策划了形式多元的"她·原力场"社群共创与亮点互动，致力于将峰会的思想火花延伸至更广泛的连接与实践，让每一位女性的探索都值得被看见，每一段链接都可能点亮未来。
 
-Around the main summit venue, She Rewires also planned diverse "Her Power Field" community co-creation and highlight interactions, committed to extending the summit's intellectual sparks to broader connections and practices, ensuring every woman's exploration is worth being seen and every connection might illuminate the future.
-
 ### 🏙 城市探索 × 展会热身
-### 🏙 City Exploration × Exhibition Warm-up
 
 5月21日早上，我们走进澳门街头，以Citywalk的形式连接城市脉搏与科技灵感，拉近彼此距离，在轻松漫步与交流中开启属于"她们"的探索之旅。
 
-On the morning of May 21, we walked into the streets of Macau, connecting urban pulse with tech inspiration through a Citywalk format, bringing each other closer and starting an exploration journey belonging to "them" through relaxed strolling and communication.
+![](/assets/img/activity/活动回顾｜澳门BEYOND EXPO：SHETECH女性科技峰会与社群力量-8.jpg)
+
+拍摄于澳门地标大三巴前
 
 ### 🎤 开幕式高光：Z世代对话王坚院士
-### 🎤 Opening Ceremony Highlight: Gen Z Dialogue with Academician Wang Jian
+
+![](/assets/img/activity/活动回顾｜澳门BEYOND EXPO：SHETECH女性科技峰会与社群力量-9.jpg)
+
+社群成员Skylar（左）提问王坚院士（右）
 
 在5月21日BEYOND Expo的开幕式环节，她原力港澳社群共建者和SHETECH论坛GenZ Host，即将赴纽约大学深造人机交互的港澳社群成员Skylar，向王坚院士就"三体计算星座"研究提出了关于"目标与过程"的深刻提问。
 
-During the opening ceremony of BEYOND Expo on May 21, Skylar, a Hong Kong-Macau community co-builder of She Rewires and GenZ Host of the SHETECH forum, who is about to pursue human-computer interaction studies at New York University, posed profound questions about "goals and processes" to Academician Wang Jian regarding the "Three-Body Computing Constellation" research.
+王坚院士认真回应，并强调"未来属于拥有使命感、文理兼修的复合型人才"。这一跨代对话，不仅展现了年轻科技女性的思考深度，也预示着领导力从此刻启航的无限可能。年轻科技女性正在用发声与行动，点亮属于自己的舞台。
+
+### 👥 Mentor Walkie Talkie & 社群力量闪耀
+
+展会期间（5月23日至24日），She Rewires特别推出的Mentor Walkie Talkie活动，为社群成员和活动参与者们创造了与行业导师一同深度逛展的宝贵机会。在轻松的漫步与交流中，大家不仅获取了前沿的行业见解，更建立了真实而有温度的职业链接。同期的"BEYOND探索"小任务，也鼓励着更多科技女性主动发现BEYOND Expo的多元亮点，积极思考与表达。
+
+![](/assets/img/activity/活动回顾｜澳门BEYOND EXPO：SHETECH女性科技峰会与社群力量-10.jpg)
+
+Mentor Walkie Talkie活动现场当天掠影
+
+![](/assets/img/activity/活动回顾｜澳门BEYOND EXPO：SHETECH女性科技峰会与社群力量-11.jpg)
+
+社群成员与前NBA运动员，Tru Skye Ventures管理合伙人Metta Sandiford-Artest交流合影
+
+在AI峰会上，社群的科技观察者Lemon就"AI安全边界与伦理风险"向OpenAI前全球商业化负责人Zack Kass提出了关键问题，并获得了其富有洞察的回应。
+
+![](/assets/img/activity/活动回顾｜澳门BEYOND EXPO：SHETECH女性科技峰会与社群力量-12.jpg)
+
+社群成员Lemon与OpenAI前全球商业化负责人Zack Kass在AI峰会上交流
+
+这些互动不仅体现了社群成员的专业素养，也彰显了科技女性在关键议题上的积极参与和影响力。此外，众多社群成员也活跃于各个科技展位，与创始人及团队深入交流，探索合作可能，充分展现了科技女性探索未知、链接资源的热情与活力。
 
 ## Part 3 来自 Next Gen 的科技现场札记
-## Part 3 Tech Field Notes from Next Gen
 
 💫她们不只是未来，更是现在的主角
 
-💫They are not just the future, but the protagonists of the present
-
 在今年BEYOND SHETECH女性科技峰会的活动上，我们邀请来自澳门科技大学的五位科技女生（涵盖校友及在校学生）登台，为五场圆桌对话揭幕。作为She Rewires社群成员及特邀的Next Gen代表，她们不仅是热情洋溢的参与者，更是敏锐深刻的记录者与未来科技的积极引领者。
 
-At this year's BEYOND SHETECH Women's Technology Summit, we invited five tech women from Macau University of Science and Technology (including alumni and current students) to take the stage and unveil five panel discussions. As She Rewires community members and specially invited Next Gen representatives, they are not only enthusiastic participants but also keen and insightful recorders and active leaders of future technology.
+![](/assets/img/activity/活动回顾｜澳门BEYOND EXPO：SHETECH女性科技峰会与社群力量-13.jpg)
+
+5场圆桌Next Gen host: Rona、Lemon、Cynthia、Skylar、Julie
+
+### Rona：跨界程序员 & LLM 探界泳者
+
+"这次回到澳门参与共建She Rewires在Beyond Expo的活动，我内心充满了沉淀后的新感动。从学生时代在澳门点燃Women in Tech的星火，到如今它已汇入She Rewires的江海，这次协助筹办SheTech论坛，连接了这么多优秀的科技女性，看到社群不断壮大，我由衷地感到骄傲与鼓舞。
+
+从圆桌的热烈讨论到EXPO Walk的深度交流，我深深为一线科技女性们所展现的真实温度、磅礴能量以及她们以韧性与热爱驱动'科技向善'的实践而触动。在AI浪潮中，我们反复听到'以人为本'的声音——以技术回应真实世界的挑战，以使命感驱动改变。这也让我更坚信，唯有源于个体、凝聚共识、彼此支持的社群力量，才能让更多女性在科技之路上走得更远、更坚定，共同塑造一个更加包容和有温度的未来。"
+
+### Lemon：硅诗旅人 • AI 探界者
+
+"作为Gen Z主持人，我深刻感受到亚洲之于全球的独特作用和位置，特别是女性蕴含于其中的无限可能性。我印象最为深刻的是女性领导力的温情与多元包容的力量。女性领导力正通过跨代协作、本土洞察与伦理坚守，重新定义科技与人文的边界。同时，人文主义这个话题不曾被科技界所重视。我认为年轻一代应当担负起这个责任去将人文情怀与可持续发展融入AI科技中，并且让更多元化的声音被听到和接收，共同开创一个更加开放温暖的世界。"
+
+### Cynthia：医疗 AI 跨界萌新
+
+"我是Cynthia，很荣幸担任Panel3的Next Generation Host，也非常感谢她原力平台让我有机会聆听来自硬科技领域的杰出女性嘉宾们分享她们的宝贵经验与前瞻洞察。
+
+这次盛会让我收获颇丰，也让我内心的迷茫逐渐被点亮。校园生活让我积累了学业知识，但是我之前还不太清楚我们应该在科技行业具体做什么、怎么做，这次论坛就让我真正的化解了疑惑。原来，在科技与创新的舞台上，女性的力量是如此耀眼而坚定。看到前辈们发光发热的样子，让我对自己的人生目标有了更清晰的认知，我希望能够成为她们，完成从学生到科技女性的蜕变。与几位嘉宾以及社团姐妹们的深入交流，也让我收获了许多关于科技行业的实践经验和前沿见解。这不仅让我受益匪浅，更让我深刻感受到，技术不仅是冰冷的创新，更是有温度的连接和成长。
+
+非常荣幸能与大家一同参加这场精彩纷呈的盛会。未来，我也将怀抱热爱与梦想，在硬科技领域坚定前行，不断学习和积累，为推动科技进步贡献属于自己的一份力量。"
+
+### Skylar: 跨学科破界玩家
+
+"在此次Beyond Expo中，我深刻感受到科技与使命的巨大力量。正如王坚博士在开幕式中所言：'Computing is a traveling companion for humankind on our way to Mars。'科技不仅是我们探索未知世界的工具，更是推动人类社会进步与变革的重要伙伴。
+
+Girls Power所倡导的，从来不是单一性别的未来，而是一个从现在起共同建设的未来，它源自每一位为使命而奋斗的个体。这让我由衷地崇敬那些使命驱动的人们，无论性别、背景如何，大家都在携手书写未来的篇章。正是这种跨越性别与文化的力量，才能真正推动科技与社会的共同进步。"
+
+### Julie: 游戏探索者—多重世界漫游者
+
+"科技的日新月异，正在通过不同的产品和技术走进千家万户。通过这次女性科技峰会，让我了解到了不同行业的女性在科技上的贡献，给予我关于职业道路和未来发展的启发。
+
+女性的力量不断地涌现，做到了在科技行业不可忽视的力量，这让我更加坚定了自己在科技道路上前行的信心。她们不仅仅是在跟随技术发展的潮流，更是在用自己的方式参与定义技术的方向——从现实需求出发，从社会痛点切入，用技术回应人性、连接世界。"
 
 ## 科技重构未来，女性引领想象力
-## Technology Reconstructs the Future, Women Lead Imagination
 
-在2025年的BEYOND Expo上，She Rewires用一次次真实的对话与深度的连接，展现出"她力量"如何在科技浪潮中站稳脚步、打破边界、引领未来。
+![](/assets/img/activity/活动回顾｜澳门BEYOND EXPO：SHETECH女性科技峰会与社群力量-14.jpg)
 
-At the 2025 BEYOND Expo, She Rewires demonstrated through authentic dialogues and deep connections how "Her Power" stands firm, breaks boundaries, and leads the future in the wave of technology.
+在2025年的BEYOND Expo上，She Rewires用一次次真实的对话与深度的连接，展现出"她力量"如何在科技浪潮中站稳脚步、打破边界、引领未来。就如创始人JILL在SHETECH SUMMIT女性科技论坛闭幕时候提到：
+
+"SheTech不仅仅是一个时刻 —— 它是一种思维方式。She Rewires不仅是一个社群 —— 它是一个不断成长的社区，由行动派、建设者、提问者和规则的打破者组成的共建平台。无论你是开发者、设计师、创业者，还是只是充满好奇 —— 这张桌子上都有你的一席之地。"
 
 因为未来不是一个人建造的 —— 它是我们一起共建的。
 
-Because the future is not built by one person—it is co-built by all of us together.
-
 感谢BEYOND Expo, 感谢每一位讲者、每一位NEXT GEN主持人，以及每一位带着热情而来的社群伙伴。
-
-Thank you BEYOND Expo, thank you to every speaker, every NEXT GEN host, and every community partner who came with passion.
 
 科技需要多元的声音，未来需要真实的共创。
 
-Technology needs diverse voices, and the future needs authentic co-creation.
-
 SheTech不是一个终点，而是一场持续的链接与发声行动。她们，正用行动书写答案！
 
-SheTech is not an endpoint, but an ongoing action of connection and voice. They are writing answers with action!
+![](/assets/img/activity/活动回顾｜澳门BEYOND EXPO：SHETECH女性科技峰会与社群力量-15.png)

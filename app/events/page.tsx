@@ -14,44 +14,52 @@ export default function EventsPage() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // In a real app, this would be a server-side fetch
-    // For demo purposes, we'll simulate the data
+    // 模拟从服务器获取事件数据
+    // 在实际应用中，这里会调用 getAllEvents()
     const mockEvents: Event[] = [
       {
         slug: "beyond-expo-shetech-summit-2025",
         title: "活动回顾｜澳门BEYOND EXPO：SHETECH女性科技峰会与社群力量",
-        title_en: "Event Review | Macau BEYOND EXPO: SHETECH Women's Technology Summit and Community Power",
-        date: "2025-06-02",
-        location_zh: "澳门",
-        location_en: "Macau",
-        cover_image: "/placeholder.svg?height=400&width=600&text=BEYOND+EXPO+SHETECH+Summit",
-        tags: ["summit", "community", "technology", "women-in-tech"],
-        type: "past",
+        author: "SheRewires她原力",
+        date: "2025年06月02日",
+        cover: "/assets/img/activity/活动回顾｜澳门BEYOND EXPO：SHETECH女性科技峰会与社群力量-0.png",
         content: "",
+        displayTitle: "活动回顾｜澳门BEYOND EXPO：SHETECH女性科技峰会与社群力量",
+        displayTitleEn: "Event Review | Macau BEYOND EXPO: SHETECH Women's Technology Summit and Community Power",
+        displayDate: "2025-06-02",
+        displayCover: "/placeholder.svg?height=400&width=600&text=BEYOND+EXPO+SHETECH+Summit",
+        displayLocation: "澳门",
+        displayLocationEn: "Macau",
+        displayTags: ["summit", "community", "technology", "women-in-tech"],
+        displayType: "past",
       },
       {
         slug: "steam-summit-2024",
         title: "STEAM 领导力峰会 2024",
-        title_en: "STEAM Leadership Summit 2024",
         date: "2024-09-15",
-        location_zh: "上海，中国",
-        location_en: "Shanghai, China",
-        cover_image: "/placeholder.svg?height=400&width=600&text=STEAM+Leadership+Summit",
-        tags: ["summit", "leadership", "steam"],
-        type: "upcoming",
         content: "",
+        displayTitle: "STEAM 领导力峰会 2024",
+        displayTitleEn: "STEAM Leadership Summit 2024",
+        displayDate: "2024-09-15",
+        displayCover: "/placeholder.svg?height=400&width=600&text=STEAM+Leadership+Summit",
+        displayLocation: "上海",
+        displayLocationEn: "Shanghai, China",
+        displayTags: ["summit", "leadership", "steam"],
+        displayType: "upcoming",
       },
       {
         slug: "ai-ethics-workshop",
         title: "AI 伦理与女性视角",
-        title_en: "AI Ethics & Women's Perspectives",
         date: "2024-10-20",
-        location_zh: "深圳，中国",
-        location_en: "Shenzhen, China",
-        cover_image: "/placeholder.svg?height=400&width=600&text=AI+Ethics+Workshop",
-        tags: ["workshop", "ai", "ethics"],
-        type: "upcoming",
         content: "",
+        displayTitle: "AI 伦理与女性视角",
+        displayTitleEn: "AI Ethics & Women's Perspectives",
+        displayDate: "2024-10-20",
+        displayCover: "/placeholder.svg?height=400&width=600&text=AI+Ethics+Workshop",
+        displayLocation: "深圳",
+        displayLocationEn: "Shenzhen, China",
+        displayTags: ["workshop", "ai", "ethics"],
+        displayType: "upcoming",
       },
     ]
 
@@ -59,8 +67,8 @@ export default function EventsPage() {
     setLoading(false)
   }, [])
 
-  const upcomingEvents = events.filter((e) => e.type === "upcoming")
-  const pastEvents = events.filter((e) => e.type === "past")
+  const upcomingEvents = events.filter((e) => e.displayType === "upcoming")
+  const pastEvents = events.filter((e) => e.displayType === "past")
 
   if (loading) {
     return (
@@ -94,25 +102,27 @@ export default function EventsPage() {
                 <Card key={event.slug} className="border-purple-200 hover:shadow-lg transition-shadow">
                   <div className="aspect-video bg-gradient-to-br from-purple-100 to-purple-200 rounded-t-lg">
                     <img
-                      src={event.cover_image || "/placeholder.svg"}
-                      alt={language === "en" ? event.title_en : event.title}
+                      src={event.displayCover || "/placeholder.svg"}
+                      alt={language === "en" ? event.displayTitleEn : event.displayTitle}
                       className="w-full h-full object-cover rounded-t-lg"
                     />
                   </div>
                   <CardContent className="p-6">
                     <h3 className="text-xl font-semibold text-gray-900 mb-3 line-clamp-2">
-                      {language === "en" ? event.title_en : event.title}
+                      {language === "en" ? event.displayTitleEn : event.displayTitle}
                     </h3>
                     <div className="flex items-center text-gray-600 mb-2">
                       <Calendar className="w-4 h-4 mr-2" />
-                      <span className="text-sm">{event.date}</span>
+                      <span className="text-sm">{event.displayDate}</span>
                     </div>
                     <div className="flex items-center text-gray-600 mb-4">
                       <MapPin className="w-4 h-4 mr-2" />
-                      <span className="text-sm">{language === "en" ? event.location_en : event.location_zh}</span>
+                      <span className="text-sm">
+                        {language === "en" ? event.displayLocationEn : event.displayLocation}
+                      </span>
                     </div>
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {event.tags.slice(0, 3).map((tag) => (
+                      {event.displayTags.slice(0, 3).map((tag) => (
                         <span key={tag} className="bg-purple-100 text-purple-600 px-2 py-1 rounded-full text-xs">
                           {tag}
                         </span>
@@ -141,25 +151,27 @@ export default function EventsPage() {
                 <Card key={event.slug} className="border-purple-200 hover:shadow-lg transition-shadow">
                   <div className="aspect-video bg-gradient-to-br from-purple-100 to-purple-200 rounded-t-lg">
                     <img
-                      src={event.cover_image || "/placeholder.svg"}
-                      alt={language === "en" ? event.title_en : event.title}
+                      src={event.displayCover || "/placeholder.svg"}
+                      alt={language === "en" ? event.displayTitleEn : event.displayTitle}
                       className="w-full h-full object-cover rounded-t-lg"
                     />
                   </div>
                   <CardContent className="p-6">
                     <h3 className="text-xl font-semibold text-gray-900 mb-3 line-clamp-2">
-                      {language === "en" ? event.title_en : event.title}
+                      {language === "en" ? event.displayTitleEn : event.displayTitle}
                     </h3>
                     <div className="flex items-center text-gray-600 mb-2">
                       <Calendar className="w-4 h-4 mr-2" />
-                      <span className="text-sm">{event.date}</span>
+                      <span className="text-sm">{event.displayDate}</span>
                     </div>
                     <div className="flex items-center text-gray-600 mb-4">
                       <MapPin className="w-4 h-4 mr-2" />
-                      <span className="text-sm">{language === "en" ? event.location_en : event.location_zh}</span>
+                      <span className="text-sm">
+                        {language === "en" ? event.displayLocationEn : event.displayLocation}
+                      </span>
                     </div>
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {event.tags.slice(0, 3).map((tag) => (
+                      {event.displayTags.slice(0, 3).map((tag) => (
                         <span key={tag} className="bg-purple-100 text-purple-600 px-2 py-1 rounded-full text-xs">
                           {tag}
                         </span>
