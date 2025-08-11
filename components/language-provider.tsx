@@ -52,7 +52,7 @@ const translations = {
 
     // Footer
     "footer.description": "Empowering women in STEAM across China and beyond.",
-    "footer.rights": "© 2024 SHE REWIRES 她原力. All rights reserved.",
+    "footer.rights": "© 2025 SHE REWIRES 她原力. All rights reserved.",
 
     // Events
     "events.title": "Events",

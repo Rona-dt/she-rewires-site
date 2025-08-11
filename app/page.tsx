@@ -17,12 +17,12 @@ export default function HomePage() {
           <h1 className="text-5xl md:text-7xl font-bold mb-4">{t("hero.title")}</h1>
           <p className="text-2xl md:text-3xl mb-6 opacity-90">{t("hero.subtitle")}</p>
           <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">{t("hero.description")}</p>
-          <Button
+          {/* <Button
             size="lg"
             className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-full"
           >
             {t("hero.cta")}
-          </Button>
+          </Button> */}
         </div>
       </section>
 
