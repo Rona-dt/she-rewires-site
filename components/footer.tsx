@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Twitter, Instagram, Linkedin, MessageCircle } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
@@ -21,7 +20,7 @@ export function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
             <h3 className="font-bold text-xl mb-4">SHE REWIRES 她原力</h3>
@@ -54,7 +53,7 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Language */}
+          {/* Language & Contact */}
           <div>
             <h4 className="font-semibold mb-4">Language</h4>
             <Button
@@ -65,20 +64,6 @@ export function Footer() {
             >
               {language === "en" ? "中文" : "EN"}
             </Button>
-          </div>
-
-          {/* WeChat QR Code */}
-          <div>
-            <h4 className="font-semibold mb-4">Follow Us on WeChat</h4>
-            <div className="bg-white p-2 rounded-md w-32 h-32">
-              <Image
-                src="/wechat-qrcode.jpg"
-                alt="WeChat QR Code"
-                width={128}
-                height={128}
-                className="w-full h-full object-cover"
-              />
-            </div>
           </div>
         </div>
 
