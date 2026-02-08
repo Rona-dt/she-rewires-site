@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Users, MapPin, Heart, ArrowRight } from "lucide-react"
+import { Users, MapPin, Heart, ArrowRight, Globe } from "lucide-react"
 import Link from "next/link"
 import { useLanguage } from "@/components/language-provider"
 
@@ -12,17 +12,23 @@ export default function HomePage() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-purple-600 to-purple-800 text-white py-20">
+      <section className="bg-[#E6E6E6] py-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-4">{t("hero.title")}</h1>
-          <p className="text-2xl md:text-3xl mb-6 opacity-90">{t("hero.subtitle")}</p>
-          <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">{t("hero.description")}</p>
-          <Button
-            size="lg"
-            className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-full"
-          >
-            {t("hero.cta")}
-          </Button>
+          <div className="mb-4">
+            <span className="text-lg text-[#303030]/70">{language === "en" ? "她原力" : "She Rewires"}</span>
+          </div>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-[#303030]">
+            {language === "en" ? "She Rewires" : "她原力"}
+          </h1>
+          <p className="text-xl mb-8 max-w-3xl mx-auto text-[#303030]/80 leading-relaxed">{t("hero.description")}</p>
+          <Link href="/get-involved">
+            <Button
+              size="lg"
+              className="bg-[#BFFE01] text-[#303030] hover:bg-[#BFFE01]/80 px-8 py-4 text-lg font-semibold rounded-full"
+            >
+              {t("hero.cta")}
+            </Button>
+          </Link>
         </div>
       </section>
 
@@ -30,21 +36,17 @@ export default function HomePage() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#303030] mb-8">
               {language === "en" ? "About Us" : "关于我们"}
             </h2>
             <div className="space-y-6">
-              <p className="text-lg text-gray-700 leading-relaxed">
-                {language === "en"
-                  ? "SHE REWIRES focuses on the development of women in science, technology, engineering, art, and mathematics (STEAM). We're committed to igniting and reshaping women's passion and development for STEAM. As the most active women-in-STEAM community in China, we represent a new and vibrant image of Chinese women in technology."
-                  : "SHE REWIRES 她原力聚焦于女性在科学、技术、工程、艺术和数学（STEAM）领域的发展。我们致力于点燃和重塑女性对于 STEAM 的热爱和发展，展现一种全新而充满活力的中国科技女性新形象。"}
-              </p>
+              <p className="text-lg text-[#303030]/70 leading-relaxed">{t("about.preview")}</p>
             </div>
             <div className="mt-8">
               <Link href="/about">
                 <Button
                   variant="outline"
-                  className="border-purple-600 text-purple-600 hover:bg-purple-50 bg-transparent"
+                  className="border-[#8A55ED] text-[#8A55ED] hover:bg-[#8A55ED] hover:text-white bg-transparent"
                 >
                   {language === "en" ? "Learn More" : "了解更多"} <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -54,30 +56,69 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Impact Statistics */}
-      <section className="py-16 bg-gradient-to-r from-purple-600 to-purple-700">
+      {/* Team Portrait CTA */}
+      <section className="py-12 bg-[#E6E6E6]">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">{t("impact.title")}</h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <Card className="bg-white/10 backdrop-blur-md border-white/20 text-center">
-              <CardContent className="p-8">
-                <Users className="w-12 h-12 text-white mx-auto mb-4" />
-                <div className="text-4xl font-bold text-white mb-2">70,000+</div>
-                <div className="text-purple-100">{t("impact.members")}</div>
+          <Card className="max-w-4xl mx-auto bg-gradient-to-r from-[#DEC4FF]/50 to-[#8A55ED]/20 border-[#8A55ED]/20 overflow-hidden">
+            <CardContent className="p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="text-center md:text-left">
+                <span className="text-xs tracking-[0.15em] uppercase text-[#8A55ED] font-medium">
+                  {language === "en" ? "Singapore 2026" : "新加坡 2026"}
+                </span>
+                <h3 className="text-2xl md:text-3xl font-bold text-[#303030] mt-2 mb-3">
+                  {language === "en" ? "Meet Our Force Nodes" : "认识我们的力量节点"}
+                </h3>
+                <p className="text-[#303030]/70 max-w-md">
+                  {language === "en" 
+                    ? "14 co-builders united by value resonance. Explore the living map of connection."
+                    : "14位因价值共鸣而汇聚的共建者。探索这幅仍在生长的连接地图。"
+                  }
+                </p>
+              </div>
+              <Link href="/team-portrait">
+                <Button 
+                  size="lg"
+                  className="bg-[#8A55ED] hover:bg-[#8A55ED]/90 text-white px-6 py-3 rounded-full font-medium whitespace-nowrap"
+                >
+                  {language === "en" ? "Team Portrait" : "团队画像"} <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Impact Statistics */}
+      <section className="py-16 bg-[#DEC4FF]">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#303030] text-center mb-12">{t("impact.title")}</h2>
+          <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            <Card className="bg-white/80 backdrop-blur-md border-[#8A55ED]/20 text-center">
+              <CardContent className="p-6">
+                <Users className="w-10 h-10 text-[#8A55ED] mx-auto mb-3" />
+                <div className="text-3xl font-bold text-[#303030] mb-1">70,000+</div>
+                <div className="text-[#303030]/70 text-sm">{t("impact.members")}</div>
               </CardContent>
             </Card>
-            <Card className="bg-white/10 backdrop-blur-md border-white/20 text-center">
-              <CardContent className="p-8">
-                <Heart className="w-12 h-12 text-white mx-auto mb-4" />
-                <div className="text-4xl font-bold text-white mb-2">130+</div>
-                <div className="text-purple-100">{t("impact.builders")}</div>
+            <Card className="bg-white/80 backdrop-blur-md border-[#8A55ED]/20 text-center">
+              <CardContent className="p-6">
+                <Heart className="w-10 h-10 text-[#BFFE01] mx-auto mb-3" />
+                <div className="text-3xl font-bold text-[#303030] mb-1">130+</div>
+                <div className="text-[#303030]/70 text-sm">{t("impact.builders")}</div>
               </CardContent>
             </Card>
-            <Card className="bg-white/10 backdrop-blur-md border-white/20 text-center">
-              <CardContent className="p-8">
-                <MapPin className="w-12 h-12 text-white mx-auto mb-4" />
-                <div className="text-4xl font-bold text-white mb-2">16+</div>
-                <div className="text-purple-100">{t("impact.cities")}</div>
+            <Card className="bg-white/80 backdrop-blur-md border-[#8A55ED]/20 text-center">
+              <CardContent className="p-6">
+                <MapPin className="w-10 h-10 text-[#8A55ED] mx-auto mb-3" />
+                <div className="text-3xl font-bold text-[#303030] mb-1">16+</div>
+                <div className="text-[#303030]/70 text-sm">{t("impact.cities")}</div>
+              </CardContent>
+            </Card>
+            <Card className="bg-white/80 backdrop-blur-md border-[#8A55ED]/20 text-center">
+              <CardContent className="p-6">
+                <Globe className="w-10 h-10 text-[#BFFE01] mx-auto mb-3" />
+                <div className="text-3xl font-bold text-[#303030] mb-1">3+</div>
+                <div className="text-[#303030]/70 text-sm">{t("impact.regions")}</div>
               </CardContent>
             </Card>
           </div>
@@ -85,29 +126,17 @@ export default function HomePage() {
       </section>
 
       {/* Get Involved Preview */}
-      <section className="py-16 bg-purple-50">
+      <section className="py-16 bg-[#E6E6E6]">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{t("getInvolved.title")}</h2>
-          <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">{t("getInvolved.description")}</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#303030] mb-6">{t("getInvolved.title")}</h2>
+          <p className="text-lg text-[#303030]/70 mb-8 max-w-2xl mx-auto">{t("getInvolved.description")}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-4 rounded-full font-semibold"
-            >
-              {t("getInvolved.member")}
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white px-8 py-4 rounded-full font-semibold bg-transparent"
-            >
-              {t("getInvolved.volunteer")}
-            </Button>
-          </div>
-          <div className="mt-8">
             <Link href="/get-involved">
-              <Button variant="ghost" className="text-purple-600 hover:text-purple-700">
-                Learn More <ArrowRight className="ml-2 h-4 w-4" />
+              <Button
+                size="lg"
+                className="bg-[#8A55ED] hover:bg-[#8A55ED]/90 text-white px-8 py-4 rounded-full font-semibold"
+              >
+                {t("getInvolved.member")}
               </Button>
             </Link>
           </div>

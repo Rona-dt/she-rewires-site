@@ -1,104 +1,91 @@
 "use client"
 
+import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { UserPlus, Heart, Calendar, MessageCircle } from "lucide-react"
+import { Input } from "@/components/ui/input"
+import { UserPlus, Lightbulb, MapPin, Handshake, Upload } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 
 export default function GetInvolvedPage() {
   const { t, language } = useLanguage()
+  const [selectedRoles, setSelectedRoles] = useState<string[]>([])
 
-  const opportunities = [
+  const roles = [
     {
-      icon: <UserPlus className="w-8 h-8 text-purple-600" />,
-      title: language === "en" ? "Become a Member" : "成为会员",
-      description:
-        language === "en"
-          ? "Join our global community of women in STEAM and access exclusive resources, networking opportunities, and career development programs."
-          : "加入我们的全球 STEAM 女性社区，获得独家资源、网络机会和职业发展项目。",
-      benefits:
-        language === "en"
-          ? ["Access to exclusive events", "Networking opportunities", "Career mentorship", "Resource library"]
-          : ["参与独家活动", "网络交流机会", "职业导师指导", "资源库访问"],
-      cta: language === "en" ? "Join Now" : "立即加入",
+      id: "cobuilder",
+      icon: <UserPlus className="w-8 h-8 text-[#8A55ED]" />,
+      title: t("role.cobuilder"),
+      scope: t("role.cobuilder.scope"),
+      benefits: t("role.cobuilder.benefits"),
     },
     {
-      icon: <Heart className="w-8 h-8 text-purple-600" />,
-      title: language === "en" ? "Volunteer" : "志愿者",
-      description:
-        language === "en"
-          ? "Contribute your skills and passion to help other women succeed in STEAM fields. Various volunteer opportunities available."
-          : "贡献您的技能和热情，帮助其他女性在 STEAM 领域取得成功。提供多种志愿者机会。",
-      benefits:
-        language === "en"
-          ? ["Event organization", "Mentorship programs", "Content creation", "Community outreach"]
-          : ["活动组织", "导师项目", "内容创作", "社区推广"],
-      cta: language === "en" ? "Apply to Volunteer" : "申请志愿者",
+      id: "incubator",
+      icon: <Lightbulb className="w-8 h-8 text-[#BFFE01]" />,
+      title: t("role.incubator"),
+      scope: t("role.incubator.scope"),
+      benefits: t("role.incubator.benefits"),
     },
     {
-      icon: <Calendar className="w-8 h-8 text-purple-600" />,
-      title: language === "en" ? "Attend Events" : "参加活动",
-      description:
-        language === "en"
-          ? "Join our workshops, conferences, and networking events to learn, connect, and grow with like-minded women."
-          : "参加我们的工作坊、会议和网络活动，与志同道合的女性一起学习、连接和成长。",
-      benefits:
-        language === "en"
-          ? ["Skill development workshops", "Industry conferences", "Networking sessions", "Panel discussions"]
-          : ["技能发展工作坊", "行业会议", "网络交流会", "小组讨论"],
-      cta: language === "en" ? "View Events" : "查看活动",
+      id: "catalyst",
+      icon: <MapPin className="w-8 h-8 text-[#8A55ED]" />,
+      title: t("role.catalyst"),
+      scope: t("role.catalyst.scope"),
+      benefits: t("role.catalyst.benefits"),
     },
     {
-      icon: <MessageCircle className="w-8 h-8 text-purple-600" />,
-      title: language === "en" ? "Partner with Us" : "与我们合作",
-      description:
-        language === "en"
-          ? "Organizations and companies can partner with us to support women in STEAM through sponsorships and collaborations."
-          : "组织和公司可以通过赞助和合作与我们合作，支持 STEAM 领域的女性。",
-      benefits:
-        language === "en"
-          ? ["Brand visibility", "CSR impact", "Talent pipeline", "Community engagement"]
-          : ["品牌曝光", "企业社会责任影响", "人才渠道", "社区参与"],
-      cta: language === "en" ? "Contact Us" : "联系我们",
+      id: "partner",
+      icon: <Handshake className="w-8 h-8 text-[#BFFE01]" />,
+      title: t("role.partner"),
+      scope: t("role.partner.scope"),
+      benefits: t("role.partner.benefits"),
     },
   ]
+
+  const toggleRole = (roleId: string) => {
+    setSelectedRoles((prev) =>
+      prev.includes(roleId) ? prev.filter((r) => r !== roleId) : [...prev, roleId]
+    )
+  }
 
   return (
     <div className="pt-20">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-purple-600 to-purple-800 text-white py-16">
+      <section className="bg-[#E6E6E6] py-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">{t("getInvolved.title")}</h1>
-          <p className="text-xl max-w-3xl mx-auto opacity-90">{t("getInvolved.description")}</p>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-[#303030]">{t("getInvolved.title")}</h1>
+          <p className="text-xl max-w-3xl mx-auto text-[#303030]/80 leading-relaxed">
+            {t("getInvolved.description")}
+          </p>
         </div>
       </section>
 
-      {/* Opportunities */}
+      {/* Roles */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {opportunities.map((opportunity, index) => (
-              <Card key={index} className="border-purple-200 hover:shadow-lg transition-shadow">
+          <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+            {roles.map((role, index) => (
+              <Card
+                key={index}
+                className="border-[#8A55ED]/20 hover:shadow-lg transition-shadow bg-white"
+              >
                 <CardContent className="p-8">
-                  <div className="flex items-center mb-6">
-                    {opportunity.icon}
-                    <h3 className="text-2xl font-bold text-gray-900 ml-3">{opportunity.title}</h3>
+                  <div className="flex items-center mb-4">
+                    {role.icon}
+                    <h3 className="text-2xl font-bold text-[#303030] ml-3">{role.title}</h3>
                   </div>
-                  <p className="text-gray-700 text-lg mb-6 leading-relaxed">{opportunity.description}</p>
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-gray-900 mb-3">
-                      {language === "en" ? "What you'll get:" : "您将获得："}
+                  <div className="mb-4">
+                    <h4 className="font-semibold text-[#8A55ED] mb-2">
+                      {language === "en" ? "Scope" : "范围"}
                     </h4>
-                    <ul className="space-y-2">
-                      {opportunity.benefits.map((benefit, idx) => (
-                        <li key={idx} className="flex items-center text-gray-700">
-                          <div className="w-2 h-2 bg-purple-600 rounded-full mr-3"></div>
-                          {benefit}
-                        </li>
-                      ))}
-                    </ul>
+                    <p className="text-[#303030]/70 leading-relaxed">{role.scope}</p>
                   </div>
-                  <Button className="w-full bg-purple-600 hover:bg-purple-700">{opportunity.cta}</Button>
+                  <div>
+                    <h4 className="font-semibold text-[#8A55ED] mb-2">
+                      {language === "en" ? "What You Get" : "您将获得"}
+                    </h4>
+                    <p className="text-[#303030]/70 leading-relaxed">{role.benefits}</p>
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -106,32 +93,112 @@ export default function GetInvolvedPage() {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-16 bg-purple-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            {language === "en" ? "Ready to Make a Difference?" : "准备好改变世界了吗？"}
-          </h2>
-          <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            {language === "en"
-              ? "Join thousands of women who are already part of our community and making an impact in STEAM fields."
-              : "加入已经成为我们社区一部分并在 STEAM 领域产生影响的数千名女性。"}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-4 rounded-full font-semibold"
-            >
-              {t("getInvolved.member")}
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white px-8 py-4 rounded-full font-semibold bg-transparent"
-            >
-              {t("getInvolved.volunteer")}
-            </Button>
+      {/* CTA & Form */}
+      <section className="py-16 bg-[#DEC4FF]/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#303030] mb-4">
+              {t("getInvolved.cta.title")}
+            </h2>
+            <p className="text-lg text-[#303030]/70">{t("getInvolved.cta.desc")}</p>
           </div>
+
+          {/* Form */}
+          <Card className="max-w-2xl mx-auto border-[#8A55ED]/20 bg-white">
+            <CardContent className="p-8">
+              <form className="space-y-6">
+                <div>
+                  <label className="block text-sm font-medium text-[#303030] mb-2">
+                    {t("form.name")} *
+                  </label>
+                  <Input
+                    type="text"
+                    placeholder={language === "en" ? "Your name" : "您的姓名"}
+                    className="border-[#E6E6E6] focus:border-[#8A55ED] focus:ring-[#8A55ED]"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-[#303030] mb-2">
+                    {t("form.city")} *
+                  </label>
+                  <Input
+                    type="text"
+                    placeholder={language === "en" ? "Your city" : "您的城市"}
+                    className="border-[#E6E6E6] focus:border-[#8A55ED] focus:ring-[#8A55ED]"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-[#303030] mb-2">
+                    {t("form.email")} *
+                  </label>
+                  <Input
+                    type="email"
+                    placeholder={language === "en" ? "your@email.com" : "您的邮箱"}
+                    className="border-[#E6E6E6] focus:border-[#8A55ED] focus:ring-[#8A55ED]"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-[#303030] mb-2">
+                    {t("form.roles")} *
+                  </label>
+                  <div className="grid grid-cols-2 gap-3">
+                    {roles.map((role) => (
+                      <button
+                        key={role.id}
+                        type="button"
+                        onClick={() => toggleRole(role.id)}
+                        className={`p-3 rounded-lg border text-left transition-all ${
+                          selectedRoles.includes(role.id)
+                            ? "border-[#8A55ED] bg-[#DEC4FF]/30 text-[#303030]"
+                            : "border-[#E6E6E6] bg-white text-[#303030]/70 hover:border-[#8A55ED]/50"
+                        }`}
+                      >
+                        <span className="text-sm font-medium">{role.title}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-[#303030] mb-2">
+                    {t("form.linkedin")}
+                  </label>
+                  <Input
+                    type="url"
+                    placeholder="https://linkedin.com/in/..."
+                    className="border-[#E6E6E6] focus:border-[#8A55ED] focus:ring-[#8A55ED]"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-[#303030] mb-2">
+                    {t("form.upload")}
+                  </label>
+                  <div className="border-2 border-dashed border-[#E6E6E6] rounded-lg p-6 text-center hover:border-[#8A55ED]/50 transition-colors cursor-pointer">
+                    <Upload className="w-8 h-8 text-[#8A55ED] mx-auto mb-2" />
+                    <p className="text-sm text-[#303030]/70">
+                      {language === "en"
+                        ? "Click to upload or drag and drop"
+                        : "点击上传或拖放文件"}
+                    </p>
+                    <p className="text-xs text-[#303030]/50 mt-1">
+                      PDF, DOC, DOCX (max 10MB)
+                    </p>
+                  </div>
+                </div>
+
+                <Button
+                  type="submit"
+                  className="w-full bg-[#8A55ED] hover:bg-[#8A55ED]/90 text-white py-4 rounded-full font-semibold text-lg"
+                >
+                  {t("form.submit")}
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
         </div>
       </section>
     </div>
