@@ -1,44 +1,53 @@
 "use client"
 
 import { Card, CardContent } from "@/components/ui/card"
-import { Users, Globe, Heart } from "lucide-react"
+import { Lightbulb, Target, Users, Globe } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 
 export default function AboutPage() {
-  const { language } = useLanguage()
+  const { t, language } = useLanguage()
 
-  const content = {
-    en: {
-      title: "Who We Are",
-      content: `We began in 2017, originally launched under the name Ladies Who Tech, dedicated to inspiring more women and girls to pursue their dreams in technology and innovation, igniting their passion for STEAM fields, and building a vibrant community to support their growth, leadership, and lasting impact.
-
-In 2023, we evolved into She Rewires, transforming into a women-led open innovation ecosystem focused on co-creating impact. As China's most influential community of women in technology, She Rewires centers on the development of women in science, technology, engineering, arts, and mathematics (STEAM). Starting from China and connecting globally, we are committed to shaping a sustainable STEAM future, embracing change, and jointly building a diverse, innovative, and inclusive world with a female perspective and ally support, where everyone becomes a super individual in their own field.
-
-Today, we empower super individuals and collaborate with mission-driven organizations to creatively co-build and empower sustainable business and the new talent, connecting the world and creating the future together.`,
+  const pillars = [
+    {
+      icon: <Users className="w-10 h-10 text-[#8A55ED]" />,
+      title: t("about.pillar1.title"),
+      description: t("about.pillar1.desc"),
+      number: "01",
     },
-    zh: {
-      title: "我们是谁",
-      content: `我们始于2017年，最初以Ladies Who Tech 名义发起，致力于激励更多女性和女孩勇敢追寻科技与创新的梦想，点燃她们对STEAM领域的热爱，打造一个充满活力的社群，助力她们茁壮成长、引领未来，创造持久影响力。
-
-2023年，我们升级为她原力（She Rewires），转型为女性主导的开源创新生态，专注于共创影响力。作为中国最具影响力的科技女性社群，她原力聚焦女性在科学、技术、工程、艺术和数学（STEAM）领域的发展。我们从中国出发，链接全球，致力于塑造一个可持续的STEAM未来，拥抱时代变化，同时共同构建一个有女性视角和盟友支持的多元、创新与包容的世界，让每个人都成为自己领域的超级个体。
-
-如今，我们赋能超级个体，与使命驱动的组织携手，通过影响力创意共建推动可持续商业发展和新型人才的培养，联结全球，共同开创未来。`,
+    {
+      icon: <Target className="w-10 h-10 text-[#BFFE01]" />,
+      title: t("about.pillar2.title"),
+      description: t("about.pillar2.desc"),
+      number: "02",
     },
-  }
+    {
+      icon: <Lightbulb className="w-10 h-10 text-[#8A55ED]" />,
+      title: t("about.pillar3.title"),
+      description: t("about.pillar3.desc"),
+      number: "03",
+    },
+    {
+      icon: <Globe className="w-10 h-10 text-[#BFFE01]" />,
+      title: t("about.pillar4.title"),
+      description: t("about.pillar4.desc"),
+      number: "04",
+    },
+  ]
 
-  const t = content[language]
+  const regions = [
+    { name: language === "en" ? "China" : "中国", region: language === "en" ? "East Asia" : "东亚" },
+    { name: language === "en" ? "Singapore" : "新加坡", region: language === "en" ? "South-East Asia" : "东南亚" },
+    { name: language === "en" ? "Germany" : "德国", region: language === "en" ? "Europe" : "欧洲" },
+    { name: language === "en" ? "UK" : "英国", region: language === "en" ? "Europe" : "欧洲" },
+  ]
 
   return (
     <div className="pt-20">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-purple-600 to-purple-800 text-white py-16">
+      <section className="bg-[#E6E6E6] py-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">{t.title}</h1>
-          <p className="text-xl max-w-3xl mx-auto opacity-90">
-            {language === "en"
-              ? "From Ladies Who Tech to She Rewires - Our Journey of Empowerment"
-              : "从 Ladies Who Tech 到她原力 - 我们的赋能之旅"}
-          </p>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-[#303030]">{t("about.title")}</h1>
+          <p className="text-xl max-w-3xl mx-auto text-[#303030]/80 leading-relaxed">{t("about.one.sentence")}</p>
         </div>
       </section>
 
@@ -47,54 +56,60 @@ Today, we empower super individuals and collaborate with mission-driven organiza
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="prose prose-lg max-w-none">
-              <div className="text-gray-700 text-lg leading-relaxed whitespace-pre-line">{t.content}</div>
+              <p className="text-[#303030]/80 text-lg leading-relaxed">{t("about.full.content")}</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-16 bg-purple-50">
+      {/* Four Pillars */}
+      <section className="py-16 bg-[#DEC4FF]/30">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-            {language === "en" ? "Our Values" : "我们的价值观"}
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <p className="text-lg text-[#303030]/80 leading-relaxed">{t("about.pillars.intro")}</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {pillars.map((pillar, index) => (
+              <Card
+                key={index}
+                className="border-[#8A55ED]/20 bg-white hover:shadow-lg transition-shadow"
+              >
+                <CardContent className="p-8">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0">
+                      <span className="text-4xl font-bold text-[#DEC4FF]">{pillar.number}</span>
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-3 mb-3">
+                        {pillar.icon}
+                        <h3 className="text-xl font-semibold text-[#303030]">{pillar.title}</h3>
+                      </div>
+                      <p className="text-[#303030]/70 leading-relaxed">{pillar.description}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Global Impact */}
+      <section className="py-16 bg-[#E6E6E6]">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-[#303030] mb-4">
+            {t("about.global.impact")}
           </h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card className="text-center border-purple-200">
-              <CardContent className="p-8">
-                <Users className="w-12 h-12 text-purple-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-4">{language === "en" ? "Inclusivity" : "包容性"}</h3>
-                <p className="text-gray-700">
-                  {language === "en"
-                    ? "Creating spaces where all women feel welcome and valued in STEAM fields."
-                    : "创造让所有女性在 STEAM 领域都感到受欢迎和被重视的空间。"}
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center border-purple-200">
-              <CardContent className="p-8">
-                <Globe className="w-12 h-12 text-purple-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-4">{language === "en" ? "Innovation" : "创新"}</h3>
-                <p className="text-gray-700">
-                  {language === "en"
-                    ? "Fostering creative thinking and breakthrough solutions in technology."
-                    : "培养创造性思维和技术突破性解决方案。"}
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center border-purple-200">
-              <CardContent className="p-8">
-                <Heart className="w-12 h-12 text-purple-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-4">{language === "en" ? "Community" : "社区"}</h3>
-                <p className="text-gray-700">
-                  {language === "en"
-                    ? "Building strong networks of support and collaboration among women."
-                    : "在女性之间建立强大的支持和协作网络。"}
-                </p>
-              </CardContent>
-            </Card>
+          <p className="text-center text-[#303030]/70 mb-12">{t("about.regions.desc")}</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            {regions.map((item, index) => (
+              <Card key={index} className="text-center border-[#8A55ED]/20 bg-white">
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-semibold text-[#303030] mb-1">{item.name}</h3>
+                  <p className="text-sm text-[#8A55ED]">{item.region}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

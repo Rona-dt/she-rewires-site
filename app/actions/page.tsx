@@ -9,7 +9,7 @@ export default function ActionsPage() {
 
   const actions = [
     {
-      icon: <Lightbulb className="w-8 h-8 text-purple-600" />,
+      icon: <Lightbulb className="w-8 h-8 text-lime" />,
       title: language === "en" ? "Innovation Labs" : "创新实验室",
       description:
         language === "en"
@@ -18,7 +18,7 @@ export default function ActionsPage() {
       image: "/placeholder.svg?height=200&width=400",
     },
     {
-      icon: <Users className="w-8 h-8 text-purple-600" />,
+      icon: <Users className="w-8 h-8 text-purple-500" />,
       title: language === "en" ? "Mentorship Programs" : "导师计划",
       description:
         language === "en"
@@ -27,7 +27,7 @@ export default function ActionsPage() {
       image: "/placeholder.svg?height=200&width=400",
     },
     {
-      icon: <Globe className="w-8 h-8 text-purple-600" />,
+      icon: <Globe className="w-8 h-8 text-purple-100" />,
       title: language === "en" ? "Global Partnerships" : "全球合作",
       description:
         language === "en"
@@ -36,7 +36,7 @@ export default function ActionsPage() {
       image: "/placeholder.svg?height=200&width=400",
     },
     {
-      icon: <BookOpen className="w-8 h-8 text-purple-600" />,
+      icon: <BookOpen className="w-8 h-8 text-gray-800" />,
       title: language === "en" ? "Education Initiatives" : "教育倡议",
       description:
         language === "en"
@@ -49,10 +49,10 @@ export default function ActionsPage() {
   return (
     <div className="pt-20">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-purple-600 to-purple-800 text-white py-16">
+      <section className="bg-gray-800 text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">{t("nav.actions")}</h1>
-          <p className="text-xl max-w-3xl mx-auto opacity-90">
+          <p className="text-xl max-w-3xl mx-auto text-gray-300">
             {language === "en"
               ? "Driving change through innovative programs and community initiatives"
               : "通过创新项目和社区倡议推动变革"}
@@ -65,8 +65,8 @@ export default function ActionsPage() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {actions.map((action, index) => (
-              <Card key={index} className="border-purple-200 hover:shadow-lg transition-shadow">
-                <div className="aspect-video bg-gradient-to-br from-purple-100 to-purple-200 rounded-t-lg">
+              <Card key={index} className="border-gray-200 hover:shadow-lg transition-shadow bg-white">
+                <div className="aspect-video bg-gray-100 rounded-t-lg">
                   <img
                     src={action.image || "/placeholder.svg"}
                     alt={action.title}
@@ -76,9 +76,9 @@ export default function ActionsPage() {
                 <CardContent className="p-8">
                   <div className="flex items-center mb-4">
                     {action.icon}
-                    <h3 className="text-2xl font-bold text-gray-900 ml-3">{action.title}</h3>
+                    <h3 className="text-2xl font-bold text-gray-800 ml-3">{action.title}</h3>
                   </div>
-                  <p className="text-gray-700 text-lg leading-relaxed">{action.description}</p>
+                  <p className="text-gray-600 text-lg leading-relaxed">{action.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -87,24 +87,24 @@ export default function ActionsPage() {
       </section>
 
       {/* Impact Section */}
-      <section className="py-16 bg-purple-50">
+      <section className="py-16 bg-gray-100">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8">
               {language === "en" ? "Our Impact" : "我们的影响"}
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="text-4xl font-bold text-purple-600 mb-2">500+</div>
-                <p className="text-gray-700">{language === "en" ? "Projects Supported" : "支持的项目"}</p>
+                <div className="text-4xl font-bold text-lime mb-2">500+</div>
+                <p className="text-gray-600">{language === "en" ? "Projects Supported" : "支持的项目"}</p>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-purple-600 mb-2">1000+</div>
-                <p className="text-gray-700">{language === "en" ? "Women Mentored" : "指导的女性"}</p>
+                <div className="text-4xl font-bold text-purple-500 mb-2">1000+</div>
+                <p className="text-gray-600">{language === "en" ? "Women Mentored" : "指导的女性"}</p>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-purple-600 mb-2">50+</div>
-                <p className="text-gray-700">{language === "en" ? "Partner Organizations" : "合作组织"}</p>
+                <div className="text-4xl font-bold text-gray-800 mb-2">50+</div>
+                <p className="text-gray-600">{language === "en" ? "Partner Organizations" : "合作组织"}</p>
               </div>
             </div>
           </div>

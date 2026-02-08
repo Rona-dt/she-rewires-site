@@ -12,11 +12,11 @@ export default async function EventsPage() {
   return (
     <div className="pt-20">
       {/* Hero - Can be a server component part */}
-      <section className="bg-gradient-to-br from-purple-600 to-purple-800 text-white py-16">
+      <section className="bg-gray-800 text-white py-16">
         <div className="container mx-auto px-4 text-center">
           {/* For static text in Server Components, we can hardcode or use a server-side translation utility */}
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Events</h1>
-          <p className="text-xl max-w-3xl mx-auto opacity-90">
+          <p className="text-xl max-w-3xl mx-auto text-gray-300">
             Join our community events and connect with women in STEAM
           </p>
         </div>
