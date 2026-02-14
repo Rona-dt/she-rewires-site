@@ -322,6 +322,40 @@ SheTech不是一个终点，而是一场持续的链接与发声行动。她们�
     displayType: "past",
   },
   {
+    slug: "wechat-z5hcszby1ec82jesubztua",
+    title: "公众号活动文章同步（待补图）",
+    title_en: "WeChat Event Article Sync (images pending)",
+    date: "2025-06-03",
+    location_zh: "线上",
+    location_en: "Online",
+    cover_image: "/placeholder.svg?height=400&width=600&text=WeChat+Event+Article",
+    tags: ["wechat", "event", "community"],
+    type: "past",
+    content: `
+# 公众号活动文章同步（待补图）
+
+来源链接：
+https://mp.weixin.qq.com/s/z5hCsZbY1EC82JEsuBztuA
+
+> 说明：当前运行环境对微信页面抓取受限（返回微信公众平台壳页 / 图片防盗链限制），
+> 已先把该文章入口同步到 Events，后续可通过“图片镜像到自有存储”流程补齐正文与图片。
+
+## 建议补齐流程
+
+1. 将原文正文导出为 Markdown；
+2. 把文章图片镜像到自有存储（Vercel Blob/S3）；
+3. 替换正文内图片 URL 后再发布到站点。
+`,
+    displayTitle: "公众号活动文章同步（待补图）",
+    displayTitleEn: "WeChat Event Article Sync (images pending)",
+    displayDate: "2025-06-03",
+    displayCover: "/placeholder.svg?height=400&width=600&text=WeChat+Event+Article",
+    displayLocation: "线上",
+    displayLocationEn: "Online",
+    displayTags: ["wechat", "event", "community"],
+    displayType: "past",
+  },
+  {
     slug: "steam-summit-2024",
     title: "STEAM 领导力峰会 2024",
     date: "2024-09-15",
