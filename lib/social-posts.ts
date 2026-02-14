@@ -63,7 +63,6 @@ export const socialPosts: SocialPost[] = [
     url: "https://x.com/sherewires",
     image: "https://pbs.twimg.com/media/G9ANZyNXcAAO41s?format=jpg&name=small",
   },
-
   {
     id: "ig-2026-02-03",
     channel: "instagram",
@@ -75,7 +74,8 @@ export const socialPosts: SocialPost[] = [
       "Instagram post highlights women using technology to create impact and redefine STEM leadership.",
     summaryZh: "Instagram 内容聚焦女性如何以科技创造影响力、重塑 STEM 领导力。",
     url: "https://www.instagram.com/p/DUR3DI2EZIW/",
-    image: "/placeholder.svg?height=720&width=1280&text=Instagram+Post",
+    image:
+      "https://scontent-iad3-1.cdninstagram.com/v/t51.2885-15/627162165_17945643978101884_8109413137457293083_n.jpg",
   },
   {
     id: "ig-2026-01-27",
@@ -88,7 +88,8 @@ export const socialPosts: SocialPost[] = [
       "Instagram post focuses on practical medical AI solutions and She Rewires collaboration context.",
     summaryZh: "Instagram 内容强调医疗 AI 的落地实践与 She Rewires 的合作场景。",
     url: "https://www.instagram.com/p/DUAFWTSFTqE/",
-    image: "/placeholder.svg?height=720&width=1280&text=Instagram+Post",
+    image:
+      "https://scontent-iad3-1.cdninstagram.com/v/t51.2885-15/622965479_17944400448101884_6879472260977762328_n.jpg",
   },
   {
     id: "ig-2025-12-25",
@@ -100,9 +101,9 @@ export const socialPosts: SocialPost[] = [
     summaryEn: "Community gathering recap focused on women leading the digital future.",
     summaryZh: "社群活动回顾，聚焦女性引领数字未来。",
     url: "https://www.instagram.com/reel/DSrjH82ggbQ/",
-    image: "/placeholder.svg?height=720&width=1280&text=Instagram+Reel",
+    image:
+      "https://scontent-iad3-1.cdninstagram.com/v/t51.2885-15/606984097_17939884461101884_6679849880418186304_n.jpg",
   },
-
   {
     id: "li-2025-06-01",
     channel: "linkedin",
@@ -113,31 +114,6 @@ export const socialPosts: SocialPost[] = [
     summaryEn: "Community recap and key moments from She Rewires activities at BEYOND Expo.",
     summaryZh: "She Rewires 在 BEYOND Expo 的社群活动回顾与关键时刻。",
     url: "https://www.linkedin.com/company/sherewires/posts/?feedView=all",
-    image: "/placeholder.svg?height=720&width=1280&text=LinkedIn+Post",
-  },
-  {
-    id: "li-2024-11-15",
-    channel: "linkedin",
-    type: "event",
-    date: "2024-11-15",
-    titleEn: "Cross-border community co-building update",
-    titleZh: "跨区域社群共建进展",
-    summaryEn: "Community update on cross-border initiatives and co-builder actions.",
-    summaryZh: "关于跨区域项目与共建者行动的社群更新。",
-    url: "https://www.linkedin.com/company/sherewires/posts/?feedView=all",
-    image: "/placeholder.svg?height=720&width=1280&text=LinkedIn+Post",
-  },
-  {
-    id: "li-2024-08-28",
-    channel: "linkedin",
-    type: "event",
-    date: "2024-08-28",
-    titleEn: "Women in STEAM network session",
-    titleZh: "Women in STEAM 社群链接场",
-    summaryEn: "Highlights from community networking and mentoring exchange session.",
-    summaryZh: "社群连接与导师交流活动回顾。",
-    url: "https://www.linkedin.com/company/sherewires/posts/?feedView=all",
-    image: "/placeholder.svg?height=720&width=1280&text=LinkedIn+Post",
   },
 
   {
@@ -153,18 +129,6 @@ export const socialPosts: SocialPost[] = [
     image: "https://technode.com/wp-content/uploads/2025/05/shetech.jpg",
   },
   {
-    id: "media-beyondexpo-2025-03-19",
-    channel: "web",
-    type: "media",
-    date: "2025-03-19",
-    titleEn: "BEYOND Expo: She Rewires co-hosts BEYOND SHETECH SUMMIT",
-    titleZh: "BEYOND Expo 报道：She Rewires 联合主办 SHETECH 峰会",
-    summaryEn: "Official event announcement and contextual media coverage from BEYOND Expo.",
-    summaryZh: "来自 BEYOND Expo 官方的活动发布与背景报道。",
-    url: "https://www.beyondexpo.com/2025/03/19/she-beyond-breaking-boundaries-creating-the-future-beyond-expo-and-she-rewires-co-host-beyond-shetech-summit/",
-    image: "https://www.beyondexpo.com/wp-content/uploads/2025/03/SheTech-Forum-2025-English-Introduction-1024x576.png",
-  },
-  {
     id: "media-logitech-2025-01-01",
     channel: "web",
     type: "media",
@@ -174,7 +138,20 @@ export const socialPosts: SocialPost[] = [
     summaryEn: "Feature profile introducing Jill Tang and She Rewires collaboration in WomenWhoMaster.",
     summaryZh: "人物报道介绍 Jill Tang 及 She Rewires 在 WomenWhoMaster 中的合作。",
     url: "https://www.logitech.com/en-us/discover/women-who-master/meet/jill-tang",
-    image: "/placeholder.svg?height=720&width=1280&text=Logitech+Feature",
+    image:
+      "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/mx/women-who-master/articles/jill-tang/logi-women-who-master-article-jill-tang-",
+  },
+  {
+    id: "media-beyondexpo-2025-03-19",
+    channel: "web",
+    type: "media",
+    date: "2025-03-19",
+    titleEn: "BEYOND Expo: She Rewires co-hosts BEYOND SHETECH SUMMIT",
+    titleZh: "BEYOND Expo 报道：She Rewires 联合主办 SHETECH 峰会",
+    summaryEn: "Official event announcement and contextual media coverage from BEYOND Expo.",
+    summaryZh: "来自 BEYOND Expo 官方的活动发布与背景报道。",
+    url: "https://www.beyondexpo.com/2025/03/19/she-beyond-breaking-boundaries-creating-the-future-beyond-expo-and-she-rewires-co-host-beyond-shetech-summit/",
+    image: "http://www.beyondexpo.com/wp-content/uploads/2025/03/SheTech-Forum-2025-English-Introduction-1024x576.png",
   },
   {
     id: "media-sina-2024-03-08",
