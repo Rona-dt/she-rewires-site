@@ -80,48 +80,25 @@ export default function AboutPage() {
           </div>
 
           <Card className="mx-auto max-w-5xl overflow-hidden bg-gradient-to-r from-accent/70 to-md-surface">
-            <CardContent className="grid gap-8 p-8 md:grid-cols-[1.1fr_1fr] md:p-10">
-              <div>
-                <span className="text-xs uppercase tracking-[0.15em] text-md-primary">{language === "en" ? "Singapore 2026" : "新加坡 2026"}</span>
-                <h3 className="mt-2 text-3xl font-medium text-md-onSurface">{language === "en" ? "Meet Our Force Nodes" : "认识我们的力量节点"}</h3>
-                <p className="mt-3 max-w-md text-md-onSurfaceVariant">
-                  {language === "en"
-                    ? "14 co-builders united by value resonance. Explore the living map of connection."
-                    : "14位因价值共鸣而汇聚的共建者。探索这幅仍在生长的连接地图。"}
-                </p>
-                <p className="mt-3 max-w-md text-sm text-md-onSurfaceVariant">
-                  {language === "en"
-                    ? "A constellation-style people network with dynamic node stories and cross-border links."
-                    : "以星座式节点连接呈现人物关系与跨区域协作脉络。"}
-                </p>
-                <div className="mt-6">
-                  <Link href="/team-portrait">
-                    <Button size="lg">
-                      {language === "en" ? "Team Portrait" : "团队画像"} <ArrowRight className="h-4 w-4" />
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-              <div className="relative min-h-[220px] rounded-[28px] bg-md-background/70 p-6">
-                {[{top:'15%',left:'50%'},{top:'35%',left:'25%'},{top:'35%',left:'75%'},{top:'60%',left:'18%'},{top:'60%',left:'50%'},{top:'60%',left:'82%'},{top:'82%',left:'35%'},{top:'82%',left:'65%'}].map((node, idx) => (
-                  <span
-                    key={idx}
-                    className="absolute flex h-9 w-9 items-center justify-center rounded-full bg-md-primary/15 text-sm font-medium text-md-primary shadow-sm"
-                    style={{ top: node.top, left: node.left, transform: 'translate(-50%, -50%)' }}
-                  >
-                    {idx + 1}
-                  </span>
-                ))}
-                <svg className="absolute inset-0 h-full w-full" aria-hidden="true">
-                  <line x1="50%" y1="15%" x2="25%" y2="35%" stroke="#8A55ED" strokeOpacity="0.25" />
-                  <line x1="50%" y1="15%" x2="75%" y2="35%" stroke="#8A55ED" strokeOpacity="0.25" />
-                  <line x1="25%" y1="35%" x2="18%" y2="60%" stroke="#8A55ED" strokeOpacity="0.25" />
-                  <line x1="75%" y1="35%" x2="82%" y2="60%" stroke="#8A55ED" strokeOpacity="0.25" />
-                  <line x1="18%" y1="60%" x2="35%" y2="82%" stroke="#8A55ED" strokeOpacity="0.25" />
-                  <line x1="82%" y1="60%" x2="65%" y2="82%" stroke="#8A55ED" strokeOpacity="0.25" />
-                  <line x1="50%" y1="60%" x2="35%" y2="82%" stroke="#8A55ED" strokeOpacity="0.25" />
-                  <line x1="50%" y1="60%" x2="65%" y2="82%" stroke="#8A55ED" strokeOpacity="0.25" />
-                </svg>
+            <CardContent className="p-8 md:p-10">
+              <span className="text-xs uppercase tracking-[0.15em] text-md-primary">{language === "en" ? "Singapore 2026" : "新加坡 2026"}</span>
+              <h3 className="mt-2 text-3xl font-medium text-md-onSurface">{language === "en" ? "Meet Our Force Nodes" : "认识我们的力量节点"}</h3>
+              <p className="mt-3 max-w-3xl text-md-onSurfaceVariant">
+                {language === "en"
+                  ? "14 co-builders united by value resonance. Explore the living map of connection."
+                  : "14位因价值共鸣而汇聚的共建者。探索这幅仍在生长的连接地图。"}
+              </p>
+              <p className="mt-3 max-w-3xl text-sm text-md-onSurfaceVariant">
+                {language === "en"
+                  ? "This section remains a portal to the full interactive constellation and complete narrative structure."
+                  : "此处作为入口，完整互动星图与完整内容结构请进入 Team Portrait 页面查看。"}
+              </p>
+              <div className="mt-6">
+                <Link href="/team-portrait">
+                  <Button size="lg">
+                    {language === "en" ? "Team Portrait" : "团队画像"} <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </Link>
               </div>
             </CardContent>
           </Card>

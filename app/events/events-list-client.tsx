@@ -11,7 +11,7 @@ import type { SocialPost } from "@/lib/social-posts"
 interface EventsListClientProps {
   upcomingEvents: Event[]
   pastEvents: Event[]
-  linkedInEventPosts: SocialPost[]
+  socialEventPosts: SocialPost[]
 }
 
 function EventCard({ event, language }: { event: Event; language: "en" | "zh" }) {
@@ -51,7 +51,7 @@ function EventCard({ event, language }: { event: Event; language: "en" | "zh" })
   )
 }
 
-export function EventsListClient({ upcomingEvents, pastEvents, linkedInEventPosts }: EventsListClientProps) {
+export function EventsListClient({ upcomingEvents, pastEvents, socialEventPosts }: EventsListClientProps) {
   const { t, language } = useLanguage()
 
   return (
@@ -60,15 +60,19 @@ export function EventsListClient({ upcomingEvents, pastEvents, linkedInEventPost
         <div className="container">
           <Card>
             <CardContent className="p-6">
-              <h2 className="text-xl font-medium text-md-onSurface">{language === "en" ? "LinkedIn event feed (latest year)" : "LinkedIn 活动内容（近一年）"}</h2>
+              <h2 className="text-xl font-medium text-md-onSurface">{language === "en" ? "Social event highlights (latest year)" : "社交平台活动精选（近一年）"}</h2>
               <div className="mt-4 grid gap-4 md:grid-cols-2">
-                {linkedInEventPosts.map((post) => (
+                {socialEventPosts.map((post) => (
                   <a key={post.id} href={post.url} target="_blank" rel="noreferrer" className="rounded-2xl bg-md-background p-4 transition-colors hover:bg-md-primary/5">
                     <p className="text-xs text-md-onSurfaceVariant">{post.date}</p>
+                    <div className="mb-2 mt-1 inline-flex rounded-full bg-md-primary/10 px-2.5 py-1 text-xs text-md-primary">
+                      {post.channel.toUpperCase()}
+                    </div>
                     <h3 className="mt-1 font-medium text-md-onSurface">{language === "en" ? post.titleEn : post.titleZh}</h3>
                     <p className="mt-1 text-sm text-md-onSurfaceVariant">{language === "en" ? post.summaryEn : post.summaryZh}</p>
+                    {post.image && <img src={post.image} alt={post.titleEn} className="mt-3 h-36 w-full rounded-xl object-cover" />}
                     <span className="mt-2 inline-flex items-center text-sm text-md-primary">
-                      LinkedIn <ExternalLink className="ml-1 h-3 w-3" />
+                      {post.channel.toUpperCase()} <ExternalLink className="ml-1 h-3 w-3" />
                     </span>
                   </a>
                 ))}

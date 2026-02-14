@@ -88,6 +88,20 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <section className="py-14">
+        <div className="container">
+          <div className="mx-auto max-w-4xl rounded-[32px] bg-md-surface p-8 text-center">
+            <h2 className="text-3xl font-medium text-md-onSurface md:text-4xl">{t("getInvolved.title")}</h2>
+            <p className="mx-auto mt-4 max-w-3xl text-md leading-relaxed text-md-onSurfaceVariant">{t("getInvolved.description")}</p>
+            <div className="mt-6">
+              <Link href="/get-involved">
+                <Button size="lg">{t("getInvolved.member")} <ArrowRight className="h-4 w-4" /></Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }

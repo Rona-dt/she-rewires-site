@@ -1,15 +1,22 @@
-# Content Sync Playbook (LinkedIn + WeChat)
+# Content Sync Playbook (LinkedIn + X + Instagram + WeChat)
 
-## A. LinkedIn (quarterly / monthly)
+## A. LinkedIn / X / Instagram (monthly)
 
 ### Current practical approach
-1. Open posts page: `https://www.linkedin.com/company/sherewires/posts/?feedView=all`
+1. Open official channels:
+   - LinkedIn: `https://www.linkedin.com/company/sherewires/posts/?feedView=all`
+   - X: `https://x.com/sherewires`
+   - Instagram: `https://www.instagram.com/sherewires/`
 2. Pick the latest posts (Events vs Media).
-3. Update `lib/social-posts.ts` with title/date/summary/link.
+3. Update `lib/social-posts.ts` with title/date/summary/link/image.
+
+### Environment notes
+- X is often readable through text-proxy fetch and can provide post text + image URLs.
+- Instagram frequently requires login or blocks bot traffic in CI/headless environments.
 
 ### Why not direct crawler by default
-- Public LinkedIn pages often require login and anti-bot checks.
-- DOM structure changes frequently, making scraper brittle.
+- Platform anti-bot/login walls and rate limits.
+- DOM structure changes frequently.
 
 ### Recommended automation path
 - Use an approved connector/API provider and run a scheduled sync job.
