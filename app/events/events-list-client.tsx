@@ -3,13 +3,15 @@
 import { useLanguage } from "@/components/language-provider"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Calendar, MapPin, ArrowRight } from "lucide-react"
+import { Calendar, MapPin, ArrowRight, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import type { Event } from "@/lib/events"
+import type { SocialPost } from "@/lib/social-posts"
 
 interface EventsListClientProps {
   upcomingEvents: Event[]
   pastEvents: Event[]
+  linkedInEventPosts: SocialPost[]
 }
 
 function EventCard({ event, language }: { event: Event; language: "en" | "zh" }) {
@@ -23,9 +25,7 @@ function EventCard({ event, language }: { event: Event; language: "en" | "zh" })
         />
       </div>
       <CardContent className="p-6">
-        <h3 className="mb-3 line-clamp-2 text-xl font-medium text-md-onSurface">
-          {language === "en" ? event.displayTitleEn : event.displayTitle}
-        </h3>
+        <h3 className="mb-3 line-clamp-2 text-xl font-medium text-md-onSurface">{language === "en" ? event.displayTitleEn : event.displayTitle}</h3>
         <div className="mb-2 flex items-center text-sm text-md-onSurfaceVariant">
           <Calendar className="mr-2 h-4 w-4" />
           <span>{event.displayDate}</span>
@@ -51,11 +51,33 @@ function EventCard({ event, language }: { event: Event; language: "en" | "zh" })
   )
 }
 
-export function EventsListClient({ upcomingEvents, pastEvents }: EventsListClientProps) {
+export function EventsListClient({ upcomingEvents, pastEvents, linkedInEventPosts }: EventsListClientProps) {
   const { t, language } = useLanguage()
 
   return (
     <>
+      <section className="py-6">
+        <div className="container">
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-medium text-md-onSurface">{language === "en" ? "LinkedIn event feed (latest year)" : "LinkedIn 活动内容（近一年）"}</h2>
+              <div className="mt-4 grid gap-4 md:grid-cols-2">
+                {linkedInEventPosts.map((post) => (
+                  <a key={post.id} href={post.url} target="_blank" rel="noreferrer" className="rounded-2xl bg-md-background p-4 transition-colors hover:bg-md-primary/5">
+                    <p className="text-xs text-md-onSurfaceVariant">{post.date}</p>
+                    <h3 className="mt-1 font-medium text-md-onSurface">{language === "en" ? post.titleEn : post.titleZh}</h3>
+                    <p className="mt-1 text-sm text-md-onSurfaceVariant">{language === "en" ? post.summaryEn : post.summaryZh}</p>
+                    <span className="mt-2 inline-flex items-center text-sm text-md-primary">
+                      LinkedIn <ExternalLink className="ml-1 h-3 w-3" />
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {upcomingEvents.length > 0 && (
         <section className="py-10">
           <div className="container">

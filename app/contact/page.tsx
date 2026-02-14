@@ -5,8 +5,16 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, MapPin, MessageCircle, Linkedin, Send, Paperclip } from "lucide-react"
+import { Mail, MapPin, MessageCircle, Linkedin, Send, Paperclip, Instagram, Youtube, Twitter, Podcast } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
+
+const socialLinks = [
+  { icon: Linkedin, href: "https://www.linkedin.com/company/sherewires/posts/?feedView=all", label: "LinkedIn" },
+  { icon: Instagram, href: "https://www.instagram.com/sherewires/", label: "Instagram" },
+  { icon: Youtube, href: "https://www.youtube.com/@sherewiresdigital395", label: "YouTube" },
+  { icon: Twitter, href: "https://x.com/sherewires", label: "X" },
+  { icon: Podcast, href: "https://podcasts.apple.com/ca/podcast/she-rewires-digital/id1559104327", label: "Apple Podcast" },
+]
 
 export default function ContactPage() {
   const { t, language } = useLanguage()
@@ -21,7 +29,7 @@ export default function ContactPage() {
         form.message
       }\n\n${language === "en" ? "Attachment" : "附件"}: ${fileName || (language === "en" ? "None" : "无")}`
     )
-    window.location.href = `mailto:hello@sherewires.org?subject=${subject}&body=${body}`
+    window.location.href = `mailto:cobuilder@sherewires.com?subject=${subject}&body=${body}`
   }
 
   return (
@@ -32,8 +40,8 @@ export default function ContactPage() {
           <h1 className="text-5xl font-semibold text-md-onSurface md:text-6xl">{t("contact.title")}</h1>
           <p className="mx-auto mt-4 max-w-3xl text-lg text-md-onSurfaceVariant">
             {language === "en"
-              ? "The fastest way to reach us is email. Send your request and we reply within 2 business days."
-              : "联系我们最快的方式是邮件。请发送需求，我们将在 2 个工作日内回复。"}
+              ? "The fastest way to reach us is email. We usually reply within 2 business days."
+              : "联系我们最快的方式是邮件。通常会在 2 个工作日内回复。"}
           </p>
         </div>
       </section>
@@ -47,46 +55,22 @@ export default function ContactPage() {
                 <form className="space-y-6" onSubmit={onSubmit}>
                   <div>
                     <label className="mb-2 block text-sm font-medium text-md-onSurfaceVariant">{t("contact.form.name")}</label>
-                    <Input
-                      type="text"
-                      required
-                      value={form.name}
-                      onChange={(event) => setForm((prev) => ({ ...prev, name: event.target.value }))}
-                      placeholder={language === "en" ? "Your name" : "您的姓名"}
-                    />
+                    <Input type="text" required value={form.name} onChange={(event) => setForm((prev) => ({ ...prev, name: event.target.value }))} placeholder={language === "en" ? "Your name" : "您的姓名"} />
                   </div>
                   <div>
                     <label className="mb-2 block text-sm font-medium text-md-onSurfaceVariant">{t("contact.form.email")}</label>
-                    <Input
-                      type="email"
-                      required
-                      value={form.email}
-                      onChange={(event) => setForm((prev) => ({ ...prev, email: event.target.value }))}
-                      placeholder={language === "en" ? "your.email@example.com" : "您的邮箱@example.com"}
-                    />
+                    <Input type="email" required value={form.email} onChange={(event) => setForm((prev) => ({ ...prev, email: event.target.value }))} placeholder={language === "en" ? "your.email@example.com" : "您的邮箱@example.com"} />
                   </div>
                   <div>
                     <label className="mb-2 block text-sm font-medium text-md-onSurfaceVariant">{t("contact.form.message")}</label>
-                    <Textarea
-                      rows={5}
-                      required
-                      value={form.message}
-                      onChange={(event) => setForm((prev) => ({ ...prev, message: event.target.value }))}
-                      placeholder={language === "en" ? "Tell us what collaboration/support you need..." : "告诉我们你希望合作或支持的内容..."}
-                    />
+                    <Textarea rows={5} required value={form.message} onChange={(event) => setForm((prev) => ({ ...prev, message: event.target.value }))} placeholder={language === "en" ? "Tell us what collaboration/support you need..." : "告诉我们你希望合作或支持的内容..."} />
                   </div>
                   <div>
-                    <label className="mb-2 block text-sm font-medium text-md-onSurfaceVariant">
-                      {language === "en" ? "Attachment (optional)" : "附件（可选）"}
-                    </label>
+                    <label className="mb-2 block text-sm font-medium text-md-onSurfaceVariant">{language === "en" ? "Attachment (optional)" : "附件（可选）"}</label>
                     <label className="flex h-12 cursor-pointer items-center gap-2 rounded-full border border-md-outline/40 bg-md-primary/5 px-5 text-sm text-md-onSurfaceVariant transition-colors hover:bg-md-primary/10">
                       <Paperclip className="h-4 w-4" />
                       {fileName || (language === "en" ? "Choose file" : "选择文件")}
-                      <input
-                        type="file"
-                        className="hidden"
-                        onChange={(event) => setFileName(event.target.files?.[0]?.name ?? "")}
-                      />
+                      <input type="file" className="hidden" onChange={(event) => setFileName(event.target.files?.[0]?.name ?? "")} />
                     </label>
                     <p className="mt-2 text-xs text-md-onSurfaceVariant">
                       {language === "en"
@@ -105,13 +89,17 @@ export default function ContactPage() {
               <Card>
                 <CardContent className="space-y-4 p-6">
                   <h3 className="text-xl font-medium">{language === "en" ? "Direct channels" : "直接联系"}</h3>
-                  <a className="flex items-center gap-3 rounded-2xl bg-md-background p-3 hover:bg-md-primary/5" href="mailto:hello@sherewires.org">
+                  <a className="flex items-center gap-3 rounded-2xl bg-md-background p-3 hover:bg-md-primary/5" href="mailto:cobuilder@sherewires.com">
                     <Mail className="h-5 w-5 text-md-primary" />
-                    <span>hello@sherewires.org</span>
+                    <span>cobuilder@sherewires.com</span>
                   </a>
                   <div className="flex items-center gap-3 rounded-2xl bg-md-background p-3">
+                    <MessageCircle className="h-5 w-5 text-md-primary" />
+                    <span>WeChat: TANGTASTIC</span>
+                  </div>
+                  <div className="flex items-center gap-3 rounded-2xl bg-md-background p-3">
                     <MapPin className="h-5 w-5 text-md-primary" />
-                    <span>Beijing · Singapore</span>
+                    <span>China · Singapore · Europe</span>
                   </div>
                 </CardContent>
               </Card>
@@ -119,10 +107,16 @@ export default function ContactPage() {
               <Card>
                 <CardContent className="p-6">
                   <h3 className="mb-4 text-xl font-medium">{language === "en" ? "Social" : "社交平台"}</h3>
-                  <div className="flex gap-3">
-                    {[MessageCircle, Linkedin].map((Icon, index) => (
-                      <a key={index} href="#" className="flex h-11 w-11 items-center justify-center rounded-full bg-md-background text-md-onSurfaceVariant hover:bg-md-primary/10 hover:text-md-primary">
-                        <Icon className="h-5 w-5" />
+                  <div className="flex flex-wrap gap-3">
+                    {socialLinks.map((item) => (
+                      <a
+                        key={item.label}
+                        href={item.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex h-11 w-11 items-center justify-center rounded-full bg-md-background text-md-onSurfaceVariant hover:bg-md-primary/10 hover:text-md-primary"
+                      >
+                        <item.icon className="h-5 w-5" />
                       </a>
                     ))}
                   </div>

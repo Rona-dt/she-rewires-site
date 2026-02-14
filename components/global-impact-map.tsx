@@ -13,30 +13,30 @@ interface Region {
 
 const regions: Region[] = [
   {
-    id: "asia-pacific",
-    name: { en: "Asia Pacific", zh: "亚太" },
-    countries: ["China", "Singapore"],
+    id: "east-asia",
+    name: { en: "East Asia", zh: "东亚" },
+    countries: ["China"],
     description: {
-      en: "Core operations, mentorship circles, and flagship events live here.",
-      zh: "核心运营、导师网络和旗舰活动在此持续生长。",
+      en: "Community growth, co-builder operations, and flagship programs.",
+      zh: "社群增长、共建者运营与旗舰项目落地。",
     },
   },
   {
-    id: "north-america",
-    name: { en: "North America", zh: "北美" },
-    countries: ["United States"],
+    id: "south-east-asia",
+    name: { en: "South-East Asia", zh: "东南亚" },
+    countries: ["Singapore"],
     description: {
-      en: "Cross-border career pathways and partnerships for women entering global tech roles.",
-      zh: "链接跨境职业路径与合作资源，支持女性进入全球科技岗位。",
+      en: "Regional collaboration, leadership incubation, and cross-border initiatives.",
+      zh: "区域协作、领导力孵化与跨境共建。",
     },
   },
   {
     id: "europe",
     name: { en: "Europe", zh: "欧洲" },
-    countries: ["United Kingdom"],
+    countries: ["Germany", "UK"],
     description: {
-      en: "Community voices on responsible AI and inclusive product leadership.",
-      zh: "聚焦负责任 AI 与包容型产品领导力的在地实践。",
+      en: "Partnerships and knowledge exchange around responsible technology and impact.",
+      zh: "围绕负责任科技与影响力的合作和知识交流。",
     },
   },
 ]
@@ -55,18 +55,19 @@ export function GlobalImpactMap({ onRegionClick, highlightRegion }: GlobalImpact
   return (
     <div className="space-y-6">
       <div className="rounded-[32px] bg-md-surface p-8 shadow-inner">
-        <div className="mb-6 flex items-center justify-between">
+        <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
           <div className="inline-flex items-center gap-2 rounded-full bg-md-primary/10 px-4 py-2 text-sm text-md-primary">
             <Globe2 className="h-4 w-4" />
             {language === "en" ? "Global Footprint" : "全球足迹"}
           </div>
-          <div className="text-sm text-md-onSurfaceVariant">3 {language === "en" ? "Regions" : "个地区"} · 4 {language === "en" ? "Countries" : "个国家"}</div>
+          <div className="text-sm text-md-onSurfaceVariant">
+            {language === "en" ? "3 Regions · 4 Countries" : "3 个地区 · 4 个国家"}
+          </div>
         </div>
 
         <div className="grid gap-4 md:grid-cols-3">
           {regions.map((region) => {
             const isActive = region.id === activeRegion.id
-
             return (
               <button
                 key={region.id}

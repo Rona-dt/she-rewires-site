@@ -18,19 +18,13 @@ export function Navigation() {
       href: "/about",
       key: "nav.about",
       hasDropdown: true,
-      dropdownItems: [
-        { href: "/about", label: language === "en" ? "About Us" : "关于我们" },
-        { href: "/team-portrait", label: language === "en" ? "Team Portrait 2026" : "2026团队画像" },
-      ],
+      dropdownItems: [{ href: "/about", label: language === "en" ? "About Us" : "关于我们" }],
     },
     {
       href: "/events",
       key: "nav.events",
       hasDropdown: true,
-      dropdownItems: [
-        { href: "/events", label: language === "en" ? "All Events" : "所有活动" },
-        { href: "/events/awards", label: language === "en" ? "Awards" : "奖项" },
-      ],
+      dropdownItems: [{ href: "/events", label: language === "en" ? "Events (LinkedIn Sync)" : "活动（LinkedIn同步）" }],
     },
     { href: "/get-involved", key: "nav.getInvolved" },
     { href: "/media", key: "nav.media" },
@@ -42,7 +36,16 @@ export function Navigation() {
       <div className="container py-3">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center">
-            <Image src="/logo-on-white.jpg" alt="She Rewires 她原力" width={180} height={60} className="h-11 w-auto" />
+            <div className="h-14 w-[250px] overflow-hidden rounded-2xl bg-md-background/80">
+              <Image
+                src="/logo-on-white.jpg"
+                alt="She Rewires 她原力"
+                width={360}
+                height={96}
+                className="h-full w-full scale-125 object-cover object-center"
+                priority
+              />
+            </div>
           </Link>
 
           <div className="hidden items-center gap-6 lg:flex">
@@ -59,7 +62,7 @@ export function Navigation() {
                     <ChevronDown className="ml-1 h-4 w-4" />
                   </button>
                   {((item.key === "nav.about" && aboutOpen) || (item.key === "nav.events" && eventsOpen)) && (
-                    <div className="absolute left-0 top-full mt-2 min-w-[180px] rounded-2xl border border-md-outline/20 bg-md-surface p-2 shadow-md">
+                    <div className="absolute left-0 top-full mt-2 min-w-[220px] rounded-2xl border border-md-outline/20 bg-md-surface p-2 shadow-md">
                       {item.dropdownItems?.map((dropItem) => (
                         <Link
                           key={dropItem.href}
@@ -107,6 +110,13 @@ export function Navigation() {
                   {t(item.key)}
                 </Link>
               ))}
+              <Link
+                href="/events"
+                className="rounded-xl px-3 py-2 text-sm text-md-onSurfaceVariant hover:bg-md-primary/10"
+                onClick={() => setIsOpen(false)}
+              >
+                {language === "en" ? "Events (LinkedIn Sync)" : "活动（LinkedIn同步）"}
+              </Link>
             </div>
           </div>
         )}

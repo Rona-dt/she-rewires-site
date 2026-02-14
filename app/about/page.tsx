@@ -36,9 +36,16 @@ export default function AboutPage() {
 
       <section className="py-16">
         <div className="container">
-          <div className="mx-auto mb-10 max-w-4xl text-center">
-            <p className="text-lg text-md-onSurfaceVariant">{t("about.pillars.intro")}</p>
+          <div className="mx-auto mb-10 max-w-5xl overflow-hidden rounded-[32px] bg-gradient-to-r from-md-surface to-accent/40 p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.16em] text-md-primary">{language === "en" ? "4 Pillars" : "四大支柱"}</p>
+            <h2 className="mt-2 text-3xl font-medium text-md-onSurface md:text-4xl">
+              {language === "en"
+                ? "How She Rewires drives long-term change"
+                : "She Rewires 如何推动长期改变"}
+            </h2>
+            <p className="mt-4 max-w-4xl text-lg leading-relaxed text-md-onSurfaceVariant">{t("about.pillars.intro")}</p>
           </div>
+
           <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
             {pillars.map((pillar) => (
               <Card key={pillar.number} className="group hover:scale-[1.02]">
@@ -59,9 +66,17 @@ export default function AboutPage() {
       <section id="global-impact" className="scroll-mt-20 py-16">
         <div className="container">
           <h2 className="text-center text-4xl font-medium text-md-onSurface">{t("about.global.impact")}</h2>
-          <p className="mb-10 mt-3 text-center text-md-onSurfaceVariant">{t("about.regions.desc")}</p>
+          <p className="mb-2 mt-3 text-center text-md-onSurfaceVariant">
+            {language === "en"
+              ? "3 regions: East Asia, South-East Asia, Europe"
+              : "3 个地区：东亚、东南亚、欧洲"}
+          </p>
+          <p className="mb-10 text-center text-md-onSurfaceVariant">
+            {language === "en" ? "China, Singapore, Germany, UK" : "中国、新加坡、德国、英国"}
+          </p>
+
           <div className="mx-auto mb-10 max-w-5xl">
-            <GlobalImpactMap highlightRegion="asia-pacific" />
+            <GlobalImpactMap highlightRegion="east-asia" />
           </div>
 
           <Card className="mx-auto max-w-4xl overflow-hidden bg-gradient-to-r from-accent/70 to-md-surface">

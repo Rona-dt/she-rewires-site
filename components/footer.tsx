@@ -3,8 +3,16 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Twitter, Instagram, Linkedin, MessageCircle, Mail } from "lucide-react"
+import { Twitter, Instagram, Linkedin, MessageCircle, Mail, Youtube, Podcast } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
+
+const socials = [
+  { icon: Linkedin, href: "https://www.linkedin.com/company/sherewires/posts/?feedView=all", label: "LinkedIn" },
+  { icon: Instagram, href: "https://www.instagram.com/sherewires/", label: "Instagram" },
+  { icon: Youtube, href: "https://www.youtube.com/@sherewiresdigital395", label: "YouTube" },
+  { icon: Twitter, href: "https://x.com/sherewires", label: "X" },
+  { icon: Podcast, href: "https://podcasts.apple.com/ca/podcast/she-rewires-digital/id1559104327", label: "Apple Podcast" },
+]
 
 export function Footer() {
   const { language, setLanguage, t } = useLanguage()
@@ -23,11 +31,14 @@ export function Footer() {
       <div className="container relative">
         <div className="grid gap-8 md:grid-cols-3">
           <div>
-            <Image src="/logo-on-white.jpg" alt="She Rewires 她原力" width={180} height={60} className="mb-4 h-11 w-auto" />
+            <div className="mb-4 h-14 w-[250px] overflow-hidden rounded-2xl bg-md-background/80">
+              <Image src="/logo-on-white.jpg" alt="She Rewires 她原力" width={360} height={96} className="h-full w-full scale-125 object-cover object-center" />
+            </div>
             <p className="mb-4 text-sm text-md-onSurfaceVariant">{t("footer.description")}</p>
-            <a href="mailto:hello@sherewires.org" className="inline-flex items-center gap-2 text-sm text-md-primary hover:underline">
-              <Mail className="h-4 w-4" /> hello@sherewires.org
+            <a href="mailto:cobuilder@sherewires.com" className="inline-flex items-center gap-2 text-sm text-md-primary hover:underline">
+              <Mail className="h-4 w-4" /> cobuilder@sherewires.com
             </a>
+            <p className="mt-2 text-sm text-md-onSurfaceVariant">WeChat: TANGTASTIC</p>
           </div>
 
           <div>
@@ -43,12 +54,28 @@ export function Footer() {
 
           <div>
             <h4 className="mb-4 font-medium text-md-onSurface">{language === "en" ? "Community" : "社群"}</h4>
-            <div className="mb-4 flex gap-3">
-              {[MessageCircle, Twitter, Instagram, Linkedin].map((Icon, index) => (
-                <a key={index} href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-md-background text-md-onSurfaceVariant transition-all duration-300 ease-md hover:bg-md-primary/10 hover:text-md-primary">
-                  <Icon className="h-5 w-5" />
+            <div className="mb-4 flex flex-wrap gap-3">
+              {socials.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={item.label}
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-md-background text-md-onSurfaceVariant transition-all duration-300 ease-md hover:bg-md-primary/10 hover:text-md-primary"
+                >
+                  <item.icon className="h-5 w-5" />
                 </a>
               ))}
+              <a
+                href="https://www.wechat.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="WeChat"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-md-background text-md-onSurfaceVariant transition-all duration-300 ease-md hover:bg-md-primary/10 hover:text-md-primary"
+              >
+                <MessageCircle className="h-5 w-5" />
+              </a>
             </div>
             <Button variant="outline" size="sm" onClick={() => setLanguage(language === "en" ? "zh" : "en")}>
               {language === "en" ? "中文" : "EN"}
