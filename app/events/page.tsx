@@ -1,29 +1,24 @@
 import { getAllEvents } from "@/lib/events"
-import { EventsListClient } from "./events-list-client" // Import the client component
+import { socialPosts } from "@/lib/social-posts"
+import { EventsListClient } from "./events-list-client"
 
-// This is now a Server Component
 export default async function EventsPage() {
-  // Fetch events directly on the server (now from hardcoded data)
   const events = getAllEvents()
-
-  const upcomingEvents = events.filter((e) => e.displayType === "upcoming")
-  const pastEvents = events.filter((e) => e.displayType === "past")
+  const upcomingEvents = events.filter((event) => event.displayType === "upcoming")
+  const pastEvents = events.filter((event) => event.displayType === "past")
+  const socialEventPosts = socialPosts.filter((post) => post.type === "event")
 
   return (
-    <div className="pt-20">
-      {/* Hero - Can be a server component part */}
-      <section className="bg-gray-800 text-white py-16">
-        <div className="container mx-auto px-4 text-center">
-          {/* For static text in Server Components, we can hardcode or use a server-side translation utility */}
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Events</h1>
-          <p className="text-xl max-w-3xl mx-auto text-gray-300">
-            Join our community events and connect with women in STEAM
+    <div className="bg-md-background pt-20">
+      <section className="py-16">
+        <div className="container text-center">
+          <h1 className="text-5xl font-semibold text-md-onSurface md:text-6xl">Events</h1>
+          <p className="mx-auto mt-4 max-w-3xl text-lg text-md-onSurfaceVariant">
+            Events are synced from official channels (X / Instagram / LinkedIn) and site-native event pages.
           </p>
         </div>
       </section>
-
-      {/* Render events using a client component to handle language switching */}
-      <EventsListClient upcomingEvents={upcomingEvents} pastEvents={pastEvents} />
+      <EventsListClient upcomingEvents={upcomingEvents} pastEvents={pastEvents} socialEventPosts={socialEventPosts} />
     </div>
   )
 }

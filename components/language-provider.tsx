@@ -111,7 +111,7 @@ const translations = {
     // Footer
     "footer.description":
       "A global, women-led innovation ecosystem empowering women in STEAM and entrepreneurship.",
-    "footer.rights": "© 2024 She Rewires 她原力. All rights reserved.",
+    "footer.rights": "© 2026 She Rewires 她原力. All rights reserved.",
 
     // Events
     "events.title": "Events",
@@ -198,12 +198,12 @@ const translations = {
       "带来你的技能——远程或现场——共同创建项目、解决挑战，并为 She Rewires 的创新生态系统做出贡献。",
     "role.cobuilder.benefits":
       "实践经验、值得放入作品集的项目、专家指导，以及对你贡献的认可。",
-    "role.incubator": "项目孵化器",
+    "role.incubator": "项目共创者",
     "role.incubator.scope":
       "从构思到影响力，领导或支持倡议，将大胆的想法转化为现实世界的解决方案。",
     "role.incubator.benefits":
       "项目领导经验、跨学科协作机会、技能成长，以及创造可衡量影响的机会。",
-    "role.catalyst": "本地催化剂",
+    "role.catalyst": "城市发起人",
     "role.catalyst.scope":
       "通过发起项目、举办聚会和连接共建者，在你的城市点燃 She Rewires 运动。",
     "role.catalyst.benefits":
@@ -226,7 +226,7 @@ const translations = {
     // Footer
     "footer.description":
       "一个全球性的、由女性主导的创新生态系统，赋能 STEAM 和创业领域的女性。",
-    "footer.rights": "© 2024 She Rewires 她原力. 保留所有权利。",
+    "footer.rights": "© 2026 She Rewires 她原力. 保留所有权利。",
 
     // Events
     "events.title": "活动",

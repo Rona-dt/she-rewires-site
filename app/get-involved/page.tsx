@@ -1,90 +1,66 @@
 "use client"
 
-import { useState } from "react"
+import { useState, type FormEvent } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { UserPlus, Lightbulb, MapPin, Handshake, Upload } from "lucide-react"
+import { UserPlus, Lightbulb, MapPin, Handshake, Send } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 
 export default function GetInvolvedPage() {
   const { t, language } = useLanguage()
   const [selectedRoles, setSelectedRoles] = useState<string[]>([])
+  const [form, setForm] = useState({ name: "", city: "", email: "", social: "" })
 
   const roles = [
-    {
-      id: "cobuilder",
-      icon: <UserPlus className="w-8 h-8 text-purple-500" />,
-      title: t("role.cobuilder"),
-      scope: t("role.cobuilder.scope"),
-      benefits: t("role.cobuilder.benefits"),
-    },
-    {
-      id: "incubator",
-      icon: <Lightbulb className="w-8 h-8 text-purple-500" />,
-      title: t("role.incubator"),
-      scope: t("role.incubator.scope"),
-      benefits: t("role.incubator.benefits"),
-    },
-    {
-      id: "catalyst",
-      icon: <MapPin className="w-8 h-8 text-purple-500" />,
-      title: t("role.catalyst"),
-      scope: t("role.catalyst.scope"),
-      benefits: t("role.catalyst.benefits"),
-    },
-    {
-      id: "partner",
-      icon: <Handshake className="w-8 h-8 text-purple-500" />,
-      title: t("role.partner"),
-      scope: t("role.partner.scope"),
-      benefits: t("role.partner.benefits"),
-    },
+    { id: "cobuilder", icon: <UserPlus className="h-8 w-8 text-md-primary" />, title: t("role.cobuilder"), scope: t("role.cobuilder.scope"), benefits: t("role.cobuilder.benefits") },
+    { id: "incubator", icon: <Lightbulb className="h-8 w-8 text-md-primary" />, title: t("role.incubator"), scope: t("role.incubator.scope"), benefits: t("role.incubator.benefits") },
+    { id: "catalyst", icon: <MapPin className="h-8 w-8 text-md-primary" />, title: t("role.catalyst"), scope: t("role.catalyst.scope"), benefits: t("role.catalyst.benefits") },
+    { id: "partner", icon: <Handshake className="h-8 w-8 text-md-primary" />, title: t("role.partner"), scope: t("role.partner.scope"), benefits: t("role.partner.benefits") },
   ]
 
   const toggleRole = (roleId: string) => {
-    setSelectedRoles((prev) =>
-      prev.includes(roleId) ? prev.filter((r) => r !== roleId) : [...prev, roleId]
+    setSelectedRoles((prev) => (prev.includes(roleId) ? prev.filter((role) => role !== roleId) : [...prev, roleId]))
+  }
+
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault()
+    const subject = encodeURIComponent(`Join Us - ${form.name || "New applicant"}`)
+    const body = encodeURIComponent(
+      `${t("form.name")}: ${form.name}\n${t("form.city")}: ${form.city}\n${t("form.email")}: ${form.email}\n${t("form.roles")}: ${selectedRoles
+        .map((roleId) => roles.find((role) => role.id === roleId)?.title)
+        .filter(Boolean)
+        .join(", ")}\n${t("form.linkedin")}: ${form.social}`
     )
+    window.location.href = `mailto:cobuilder@sherewires.com?subject=${subject}&body=${body}`
   }
 
   return (
-    <div className="pt-20">
-      {/* Hero */}
-      <section className="bg-gray-50 py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black">{t("getInvolved.title")}</h1>
-          <p className="text-xl max-w-3xl mx-auto text-gray-700 leading-relaxed">
-            {t("getInvolved.description")}
-          </p>
+    <div className="bg-md-background pt-20">
+      <section className="py-16">
+        <div className="container text-center">
+          <h1 className="mb-6 text-4xl font-semibold text-md-onSurface md:text-6xl">{t("getInvolved.title")}</h1>
+          <p className="mx-auto max-w-3xl text-xl leading-relaxed text-md-onSurfaceVariant">{t("getInvolved.description")}</p>
         </div>
       </section>
 
-      {/* Roles */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-            {roles.map((role, index) => (
-              <Card
-                key={index}
-                className="border-purple-200 hover:shadow-lg transition-shadow bg-white"
-              >
+      <section className="py-16">
+        <div className="container">
+          <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2">
+            {roles.map((role) => (
+              <Card key={role.id} className="hover:scale-[1.02]">
                 <CardContent className="p-8">
-                  <div className="flex items-center mb-4">
+                  <div className="mb-4 flex items-center">
                     {role.icon}
-                    <h3 className="text-2xl font-bold text-black ml-3">{role.title}</h3>
+                    <h3 className="ml-3 text-2xl font-medium text-md-onSurface">{role.title}</h3>
                   </div>
                   <div className="mb-4">
-                    <h4 className="font-semibold text-purple-600 mb-2">
-                      {language === "en" ? "Scope" : "范围"}
-                    </h4>
-                    <p className="text-gray-700 leading-relaxed">{role.scope}</p>
+                    <h4 className="mb-2 font-medium text-md-primary">{language === "en" ? "Scope" : "范围"}</h4>
+                    <p className="leading-relaxed text-md-onSurfaceVariant">{role.scope}</p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-purple-600 mb-2">
-                      {language === "en" ? "What You Get" : "您将获得"}
-                    </h4>
-                    <p className="text-gray-700 leading-relaxed">{role.benefits}</p>
+                    <h4 className="mb-2 font-medium text-md-primary">{language === "en" ? "What You Get" : "你将获得"}</h4>
+                    <p className="leading-relaxed text-md-onSurfaceVariant">{role.benefits}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -93,67 +69,40 @@ export default function GetInvolvedPage() {
         </div>
       </section>
 
-      {/* CTA & Form */}
-      <section className="py-16 bg-purple-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-              {t("getInvolved.cta.title")}
-            </h2>
-            <p className="text-lg text-gray-700">{t("getInvolved.cta.desc")}</p>
+      <section className="py-16">
+        <div className="container">
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <h2 className="mb-4 text-3xl font-medium text-md-onSurface md:text-4xl">{t("getInvolved.cta.title")}</h2>
+            <p className="text-lg text-md-onSurfaceVariant">{t("getInvolved.cta.desc")}</p>
           </div>
 
-          {/* Form */}
-          <Card className="max-w-2xl mx-auto border-purple-200 bg-white">
+          <Card className="mx-auto max-w-2xl">
             <CardContent className="p-8">
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div>
-                  <label className="block text-sm font-medium text-black mb-2">
-                    {t("form.name")} *
-                  </label>
-                  <Input
-                    type="text"
-                    placeholder={language === "en" ? "Your name" : "您的姓名"}
-                    className="border-gray-200 focus:border-purple-500 focus:ring-purple-500"
-                  />
+                  <label className="mb-2 block text-sm font-medium text-md-onSurfaceVariant">{t("form.name")} *</label>
+                  <Input type="text" required placeholder={language === "en" ? "Your name" : "您的姓名"} value={form.name} onChange={(event) => setForm((prev) => ({ ...prev, name: event.target.value }))} />
                 </div>
-
                 <div>
-                  <label className="block text-sm font-medium text-black mb-2">
-                    {t("form.city")} *
-                  </label>
-                  <Input
-                    type="text"
-                    placeholder={language === "en" ? "Your city" : "您的城市"}
-                    className="border-gray-200 focus:border-purple-500 focus:ring-purple-500"
-                  />
+                  <label className="mb-2 block text-sm font-medium text-md-onSurfaceVariant">{t("form.city")} *</label>
+                  <Input type="text" required placeholder={language === "en" ? "Your city" : "您的城市"} value={form.city} onChange={(event) => setForm((prev) => ({ ...prev, city: event.target.value }))} />
                 </div>
-
                 <div>
-                  <label className="block text-sm font-medium text-black mb-2">
-                    {t("form.email")} *
-                  </label>
-                  <Input
-                    type="email"
-                    placeholder={language === "en" ? "your@email.com" : "您的邮箱"}
-                    className="border-gray-200 focus:border-purple-500 focus:ring-purple-500"
-                  />
+                  <label className="mb-2 block text-sm font-medium text-md-onSurfaceVariant">{t("form.email")} *</label>
+                  <Input type="email" required placeholder={language === "en" ? "your@email.com" : "您的邮箱"} value={form.email} onChange={(event) => setForm((prev) => ({ ...prev, email: event.target.value }))} />
                 </div>
-
                 <div>
-                  <label className="block text-sm font-medium text-black mb-2">
-                    {t("form.roles")} *
-                  </label>
+                  <label className="mb-2 block text-sm font-medium text-md-onSurfaceVariant">{t("form.roles")} *</label>
                   <div className="grid grid-cols-2 gap-3">
                     {roles.map((role) => (
                       <button
                         key={role.id}
                         type="button"
                         onClick={() => toggleRole(role.id)}
-                        className={`p-3 rounded-lg border text-left transition-all ${
+                        className={`rounded-2xl border p-3 text-left transition-all ${
                           selectedRoles.includes(role.id)
-                            ? "border-purple-500 bg-purple-50 text-black"
-                            : "border-gray-200 bg-white text-gray-600 hover:border-purple-300"
+                            ? "border-md-primary bg-md-primary/10 text-md-onSurface"
+                            : "border-md-outline/30 bg-md-background text-md-onSurfaceVariant hover:border-md-primary/40"
                         }`}
                       >
                         <span className="text-sm font-medium">{role.title}</span>
@@ -161,40 +110,17 @@ export default function GetInvolvedPage() {
                     ))}
                   </div>
                 </div>
-
                 <div>
-                  <label className="block text-sm font-medium text-black mb-2">
-                    {t("form.linkedin")}
-                  </label>
-                  <Input
-                    type="url"
-                    placeholder="https://linkedin.com/in/..."
-                    className="border-gray-200 focus:border-purple-500 focus:ring-purple-500"
-                  />
+                  <label className="mb-2 block text-sm font-medium text-md-onSurfaceVariant">{t("form.linkedin")}</label>
+                  <Input type="url" placeholder="https://linkedin.com/in/..." value={form.social} onChange={(event) => setForm((prev) => ({ ...prev, social: event.target.value }))} />
                 </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-black mb-2">
-                    {t("form.upload")}
-                  </label>
-                  <div className="border-2 border-dashed border-gray-200 rounded-lg p-6 text-center hover:border-purple-300 transition-colors cursor-pointer">
-                    <Upload className="w-8 h-8 text-purple-500 mx-auto mb-2" />
-                    <p className="text-sm text-gray-700">
-                      {language === "en"
-                        ? "Click to upload or drag and drop"
-                        : "点击上传或拖放文件"}
-                    </p>
-                    <p className="text-xs text-gray-500 mt-1">
-                      PDF, DOC, DOCX (max 10MB)
-                    </p>
-                  </div>
-                </div>
-
-                <Button
-                  type="submit"
-                  className="w-full bg-purple-500 hover:bg-purple-600 text-white py-4 rounded-full font-semibold text-lg"
-                >
-                  {t("form.submit")}
+                <p className="text-xs text-md-onSurfaceVariant">
+                  {language === "en"
+                    ? "After submit, your email app opens with all information prefilled and sends to cobuilder@sherewires.com."
+                    : "提交后将打开邮件客户端，并将信息预填后发送到 cobuilder@sherewires.com。"}
+                </p>
+                <Button type="submit" className="w-full">
+                  <Send className="h-4 w-4" /> {t("form.submit")}
                 </Button>
               </form>
             </CardContent>
