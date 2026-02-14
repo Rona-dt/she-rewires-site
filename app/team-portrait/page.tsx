@@ -27,10 +27,10 @@ const teamMembers = [
 
 // Capability data
 const capabilities = [
-  { percent: 35, name: "System Architecture", desc: "turning chaos into order", color: "#303030" },
+  { percent: 35, name: "System Architecture", desc: "turning chaos into order", color: "#000000" },
   { percent: 30, name: "Tech & Foresight", desc: "designing what's next", color: "#8A55ED" },
   { percent: 20, name: "Humanities & Connection", desc: "preserving warmth", color: "#DEC4FF" },
-  { percent: 15, name: "Cross-boundary Vitality", desc: "beyond profession", color: "#BFFE01" },
+  { percent: 15, name: "Cross-boundary Vitality", desc: "beyond profession", color: "#8A55ED" },
 ]
 
 // Glossary terms
@@ -181,10 +181,10 @@ export default function TeamPortraitPage() {
                 className="w-48 h-48 rounded-full flex items-center justify-center relative"
                 style={{
                   background: `conic-gradient(
-                    #303030 0deg 126deg,
+                    #000000 0deg 126deg,
                     #8A55ED 126deg 234deg,
                     #DEC4FF 234deg 306deg,
-                    #BFFE01 306deg 360deg
+                    #8A55ED 306deg 360deg
                   )`
                 }}
               >
@@ -282,7 +282,7 @@ export default function TeamPortraitPage() {
                       ${member.role === "Founder" 
                         ? "w-16 h-16 border-3 border-[#8A55ED] bg-white text-xl" 
                         : member.role === "Co-Lead"
-                          ? "w-14 h-14 border-2 border-[#BFFE01] bg-white text-lg"
+                          ? "w-14 h-14 border-2 border-[#8A55ED] bg-white text-lg"
                           : "w-12 h-12 border-2 border-[#DEC4FF] bg-white"
                       }
                       ${selectedMember === member.id ? "ring-4 ring-[#8A55ED]/30 scale-110" : ""}

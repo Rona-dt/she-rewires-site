@@ -26,12 +26,12 @@ const config: Config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#303030",
+          DEFAULT: "#000000",
           foreground: "#FFFFFF",
         },
         secondary: {
           DEFAULT: "#E6E6E6",
-          foreground: "#303030",
+          foreground: "#000000",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -39,11 +39,11 @@ const config: Config = {
         },
         muted: {
           DEFAULT: "#E6E6E6",
-          foreground: "#303030",
+          foreground: "#000000",
         },
         accent: {
-          DEFAULT: "#BFFE01",
-          foreground: "#303030",
+          DEFAULT: "#8A55ED",
+          foreground: "#FFFFFF",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -53,13 +53,7 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // VI Brand Colors
-        lime: {
-          DEFAULT: "#BFFE01",
-          50: "#F4FFD6",
-          100: "#ECFFB8",
-          500: "#BFFE01",
-        },
+        // Brand Colors - Purple accents
         purple: {
           DEFAULT: "#8A55ED",
           50: "#F5F0FF",

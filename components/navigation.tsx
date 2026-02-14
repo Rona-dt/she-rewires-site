@@ -24,7 +24,6 @@ export function Navigation() {
         { href: "/team-portrait", label: language === "en" ? "Team Portrait 2026" : "2026团队画像" },
       ],
     },
-    { href: "/actions", key: "nav.actions" },
     {
       href: "/events",
       key: "nav.events",
@@ -40,16 +39,18 @@ export function Navigation() {
   ]
 
   return (
-    <nav className="fixed top-0 w-full bg-[#E6E6E6]/95 backdrop-blur-md z-50 border-b border-[#DEC4FF]">
+    <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-200">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
-            <Image src="/she-rewires-logo.png" alt="She Rewires 她原力" width={40} height={40} className="rounded-lg" />
-            <div className="flex flex-col">
-              <span className="text-xs text-[#303030]">她原力</span>
-              <span className="font-bold text-lg text-[#303030]">She Rewires</span>
-            </div>
+          <Link href="/" className="flex items-center">
+            <Image 
+              src="/logo-on-white.jpg" 
+              alt="She Rewires 她原力" 
+              width={180} 
+              height={60} 
+              className="h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -62,17 +63,17 @@ export function Navigation() {
                   onMouseEnter={() => item.key === "nav.about" ? setAboutOpen(true) : setEventsOpen(true)}
                   onMouseLeave={() => item.key === "nav.about" ? setAboutOpen(false) : setEventsOpen(false)}
                 >
-                  <button className="flex items-center text-[#303030] hover:text-[#8A55ED] transition-colors font-medium">
+                  <button className="flex items-center text-black hover:text-purple-500 transition-colors font-medium">
                     {t(item.key)}
                     <ChevronDown className="ml-1 h-4 w-4" />
                   </button>
                   {((item.key === "nav.about" && aboutOpen) || (item.key === "nav.events" && eventsOpen)) && (
-                    <div className="absolute top-full left-0 mt-1 bg-white rounded-lg shadow-lg border border-[#E6E6E6] py-2 min-w-[180px]">
+                    <div className="absolute top-full left-0 mt-1 bg-white rounded-lg shadow-lg border border-gray-200 py-2 min-w-[180px]">
                       {item.dropdownItems?.map((dropItem) => (
                         <Link
                           key={dropItem.href}
                           href={dropItem.href}
-                          className="block px-4 py-2 text-[#303030] hover:bg-[#DEC4FF]/30 hover:text-[#8A55ED] transition-colors"
+                          className="block px-4 py-2 text-black hover:bg-purple-50 hover:text-purple-500 transition-colors"
                         >
                           {dropItem.label}
                         </Link>
@@ -84,7 +85,7 @@ export function Navigation() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-[#303030] hover:text-[#8A55ED] transition-colors font-medium"
+                  className="text-black hover:text-purple-500 transition-colors font-medium"
                 >
                   {t(item.key)}
                 </Link>
@@ -98,13 +99,13 @@ export function Navigation() {
               variant="outline"
               size="sm"
               onClick={() => setLanguage(language === "en" ? "zh" : "en")}
-              className="border-[#8A55ED] text-[#303030] hover:bg-[#DEC4FF] hover:border-[#8A55ED]"
+              className="border-purple-500 text-black hover:bg-purple-500 hover:text-white hover:border-purple-500"
             >
               {language === "en" ? "中文" : "EN"}
             </Button>
 
             {/* Mobile Menu Button */}
-            <Button variant="ghost" size="sm" className="lg:hidden text-[#303030]" onClick={() => setIsOpen(!isOpen)}>
+            <Button variant="ghost" size="sm" className="lg:hidden text-black" onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </div>
@@ -112,14 +113,14 @@ export function Navigation() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-[#DEC4FF]">
+          <div className="lg:hidden mt-4 pb-4 border-t border-gray-200">
             <div className="flex flex-col space-y-4 pt-4">
               {navItems.map((item) =>
                 item.hasDropdown ? (
                   <div key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-[#303030] hover:text-[#8A55ED] transition-colors font-medium"
+                      className="text-black hover:text-purple-500 transition-colors font-medium"
                       onClick={() => setIsOpen(false)}
                     >
                       {t(item.key)}
@@ -129,7 +130,7 @@ export function Navigation() {
                         <Link
                           key={dropItem.href}
                           href={dropItem.href}
-                          className="block text-sm text-[#303030]/70 hover:text-[#8A55ED] transition-colors"
+                          className="block text-sm text-gray-600 hover:text-purple-500 transition-colors"
                           onClick={() => setIsOpen(false)}
                         >
                           {dropItem.label}
@@ -141,7 +142,7 @@ export function Navigation() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="text-[#303030] hover:text-[#8A55ED] transition-colors font-medium"
+                    className="text-black hover:text-purple-500 transition-colors font-medium"
                     onClick={() => setIsOpen(false)}
                   >
                     {t(item.key)}
