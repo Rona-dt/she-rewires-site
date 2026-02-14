@@ -11,78 +11,44 @@ export default function AboutPage() {
   const { t, language } = useLanguage()
 
   const pillars = [
-    {
-      icon: <Users className="w-10 h-10 text-purple-500" />,
-      title: t("about.pillar1.title"),
-      description: t("about.pillar1.desc"),
-      number: "01",
-    },
-    {
-      icon: <Target className="w-10 h-10 text-purple-500" />,
-      title: t("about.pillar2.title"),
-      description: t("about.pillar2.desc"),
-      number: "02",
-    },
-    {
-      icon: <Lightbulb className="w-10 h-10 text-purple-500" />,
-      title: t("about.pillar3.title"),
-      description: t("about.pillar3.desc"),
-      number: "03",
-    },
-    {
-      icon: <Globe className="w-10 h-10 text-purple-500" />,
-      title: t("about.pillar4.title"),
-      description: t("about.pillar4.desc"),
-      number: "04",
-    },
+    { icon: Users, title: t("about.pillar1.title"), description: t("about.pillar1.desc"), number: "01" },
+    { icon: Target, title: t("about.pillar2.title"), description: t("about.pillar2.desc"), number: "02" },
+    { icon: Lightbulb, title: t("about.pillar3.title"), description: t("about.pillar3.desc"), number: "03" },
+    { icon: Globe, title: t("about.pillar4.title"), description: t("about.pillar4.desc"), number: "04" },
   ]
 
   return (
-    <div className="pt-20">
-      {/* Hero */}
-      <section className="bg-gray-50 py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black">{t("about.title")}</h1>
-          <p className="text-xl max-w-3xl mx-auto text-gray-700 leading-relaxed">{t("about.one.sentence")}</p>
+    <div className="bg-md-background pt-20">
+      <section className="py-16">
+        <div className="container text-center">
+          <h1 className="text-5xl font-semibold text-md-onSurface md:text-6xl">{t("about.title")}</h1>
+          <p className="mx-auto mt-6 max-w-3xl text-xl text-md-onSurfaceVariant">{t("about.one.sentence")}</p>
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="prose prose-lg max-w-none">
-              <p className="text-gray-700 text-lg leading-relaxed">{t("about.full.content")}</p>
-            </div>
+      <section className="py-8">
+        <div className="container">
+          <div className="mx-auto max-w-4xl rounded-[32px] bg-md-surface p-8">
+            <p className="text-lg leading-relaxed text-md-onSurfaceVariant">{t("about.full.content")}</p>
           </div>
         </div>
       </section>
 
-      {/* Four Pillars */}
-      <section className="py-16 bg-purple-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <p className="text-lg text-gray-700 leading-relaxed">{t("about.pillars.intro")}</p>
+      <section className="py-16">
+        <div className="container">
+          <div className="mx-auto mb-10 max-w-4xl text-center">
+            <p className="text-lg text-md-onSurfaceVariant">{t("about.pillars.intro")}</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {pillars.map((pillar, index) => (
-              <Card
-                key={index}
-                className="border-purple-200 bg-white hover:shadow-lg transition-shadow"
-              >
+          <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
+            {pillars.map((pillar) => (
+              <Card key={pillar.number} className="group hover:scale-[1.02]">
                 <CardContent className="p-8">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0">
-                      <span className="text-4xl font-bold text-purple-200">{pillar.number}</span>
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-3 mb-3">
-                        {pillar.icon}
-                        <h3 className="text-xl font-semibold text-black">{pillar.title}</h3>
-                      </div>
-                      <p className="text-gray-700 leading-relaxed">{pillar.description}</p>
-                    </div>
+                  <div className="mb-3 text-4xl font-semibold text-md-primary/30">{pillar.number}</div>
+                  <div className="mb-3 flex items-center gap-3">
+                    <pillar.icon className="h-8 w-8 text-md-primary" />
+                    <h3 className="text-xl font-medium text-md-onSurface">{pillar.title}</h3>
                   </div>
+                  <p className="text-md-onSurfaceVariant">{pillar.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -90,42 +56,28 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Global Impact */}
-      <section id="global-impact" className="py-16 bg-white scroll-mt-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-black mb-4">
-            {t("about.global.impact")}
-          </h2>
-          <p className="text-center text-gray-700 mb-12">{t("about.regions.desc")}</p>
-          
-          {/* Interactive Map */}
-          <div className="max-w-5xl mx-auto mb-12">
+      <section id="global-impact" className="scroll-mt-20 py-16">
+        <div className="container">
+          <h2 className="text-center text-4xl font-medium text-md-onSurface">{t("about.global.impact")}</h2>
+          <p className="mb-10 mt-3 text-center text-md-onSurfaceVariant">{t("about.regions.desc")}</p>
+          <div className="mx-auto mb-10 max-w-5xl">
             <GlobalImpactMap highlightRegion="asia-pacific" />
           </div>
 
-          {/* Singapore Team Portrait Link */}
-          <Card className="max-w-4xl mx-auto bg-gradient-to-r from-purple-50 to-purple-100 border-purple-200 overflow-hidden">
-            <CardContent className="p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
-              <div className="text-center md:text-left">
-                <span className="text-xs tracking-[0.15em] uppercase text-purple-600 font-medium">
-                  {language === "en" ? "Singapore 2026" : "新加坡 2026"}
-                </span>
-                <h3 className="text-2xl md:text-3xl font-bold text-black mt-2 mb-3">
-                  {language === "en" ? "Meet Our Force Nodes" : "认识我们的力量节点"}
-                </h3>
-                <p className="text-gray-700 max-w-md">
-                  {language === "en" 
+          <Card className="mx-auto max-w-4xl overflow-hidden bg-gradient-to-r from-accent/70 to-md-surface">
+            <CardContent className="flex flex-col items-center justify-between gap-6 p-8 md:flex-row md:p-10">
+              <div>
+                <span className="text-xs uppercase tracking-[0.15em] text-md-primary">{language === "en" ? "Singapore 2026" : "新加坡 2026"}</span>
+                <h3 className="mt-2 text-3xl font-medium text-md-onSurface">{language === "en" ? "Meet Our Force Nodes" : "认识我们的力量节点"}</h3>
+                <p className="mt-3 max-w-md text-md-onSurfaceVariant">
+                  {language === "en"
                     ? "14 co-builders united by value resonance. Explore the living map of connection."
-                    : "14位因价值共鸣而汇聚的共建者。探索这幅仍在生长的连接地图。"
-                  }
+                    : "14位因价值共鸣而汇聚的共建者。探索这幅仍在生长的连接地图。"}
                 </p>
               </div>
               <Link href="/team-portrait">
-                <Button 
-                  size="lg"
-                  className="bg-purple-500 hover:bg-purple-600 text-white px-6 py-3 rounded-full font-medium whitespace-nowrap"
-                >
-                  {language === "en" ? "Team Portrait" : "团队画像"} <ArrowRight className="ml-2 h-4 w-4" />
+                <Button size="lg">
+                  {language === "en" ? "Team Portrait" : "团队画像"} <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
             </CardContent>

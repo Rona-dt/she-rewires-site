@@ -1,205 +1,131 @@
 "use client"
 
+import { useState, type FormEvent } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, MapPin, Phone, MessageCircle, Twitter, Instagram, Linkedin } from "lucide-react"
+import { Mail, MapPin, MessageCircle, Linkedin, Send, Paperclip } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 
 export default function ContactPage() {
   const { t, language } = useLanguage()
+  const [form, setForm] = useState({ name: "", email: "", message: "" })
+  const [fileName, setFileName] = useState("")
+
+  const onSubmit = (event: FormEvent) => {
+    event.preventDefault()
+    const subject = encodeURIComponent(`SHE REWIRES contact - ${form.name || "Website visitor"}`)
+    const body = encodeURIComponent(
+      `${language === "en" ? "Name" : "姓名"}: ${form.name}\n${language === "en" ? "Email" : "邮箱"}: ${form.email}\n\n${
+        form.message
+      }\n\n${language === "en" ? "Attachment" : "附件"}: ${fileName || (language === "en" ? "None" : "无")}`
+    )
+    window.location.href = `mailto:hello@sherewires.org?subject=${subject}&body=${body}`
+  }
 
   return (
-    <div className="pt-20">
-      {/* Hero */}
-      <section className="bg-gray-800 text-white py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">{t("contact.title")}</h1>
-          <p className="text-xl max-w-3xl mx-auto text-gray-300">
+    <div className="bg-md-background pt-20">
+      <section className="relative overflow-hidden py-16">
+        <div className="md-blob -right-20 top-10 h-64 w-64 bg-md-primary/20" aria-hidden="true" />
+        <div className="container relative text-center">
+          <h1 className="text-5xl font-semibold text-md-onSurface md:text-6xl">{t("contact.title")}</h1>
+          <p className="mx-auto mt-4 max-w-3xl text-lg text-md-onSurfaceVariant">
             {language === "en"
-              ? "Get in touch with us to learn more about our community and initiatives"
-              : "联系我们，了解更多关于我们社区和倡议的信息"}
+              ? "The fastest way to reach us is email. Send your request and we reply within 2 business days."
+              : "联系我们最快的方式是邮件。请发送需求，我们将在 2 个工作日内回复。"}
           </p>
         </div>
       </section>
 
-      {/* Contact Form & Info */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            {/* Contact Form */}
-            <Card className="border-gray-200 bg-white">
+      <section className="py-10">
+        <div className="container">
+          <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr]">
+            <Card>
               <CardContent className="p-8">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                  {language === "en" ? "Send us a message" : "给我们留言"}
-                </h2>
-                <form className="space-y-6">
+                <h2 className="mb-6 text-2xl font-medium text-md-onSurface">{language === "en" ? "Send us a message" : "给我们留言"}</h2>
+                <form className="space-y-6" onSubmit={onSubmit}>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">{t("contact.form.name")}</label>
+                    <label className="mb-2 block text-sm font-medium text-md-onSurfaceVariant">{t("contact.form.name")}</label>
                     <Input
                       type="text"
-                      className="border-gray-300 focus:border-purple-500 focus:ring-purple-500"
+                      required
+                      value={form.name}
+                      onChange={(event) => setForm((prev) => ({ ...prev, name: event.target.value }))}
                       placeholder={language === "en" ? "Your name" : "您的姓名"}
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">{t("contact.form.email")}</label>
+                    <label className="mb-2 block text-sm font-medium text-md-onSurfaceVariant">{t("contact.form.email")}</label>
                     <Input
                       type="email"
-                      className="border-gray-300 focus:border-purple-500 focus:ring-purple-500"
+                      required
+                      value={form.email}
+                      onChange={(event) => setForm((prev) => ({ ...prev, email: event.target.value }))}
                       placeholder={language === "en" ? "your.email@example.com" : "您的邮箱@example.com"}
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">{t("contact.form.message")}</label>
+                    <label className="mb-2 block text-sm font-medium text-md-onSurfaceVariant">{t("contact.form.message")}</label>
                     <Textarea
                       rows={5}
-                      className="border-gray-300 focus:border-purple-500 focus:ring-purple-500"
-                      placeholder={language === "en" ? "Tell us about your inquiry..." : "告诉我们您的询问..."}
+                      required
+                      value={form.message}
+                      onChange={(event) => setForm((prev) => ({ ...prev, message: event.target.value }))}
+                      placeholder={language === "en" ? "Tell us what collaboration/support you need..." : "告诉我们你希望合作或支持的内容..."}
                     />
                   </div>
-                  <Button className="w-full bg-gray-800 hover:bg-gray-900 text-white py-3">{t("contact.form.submit")}</Button>
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-md-onSurfaceVariant">
+                      {language === "en" ? "Attachment (optional)" : "附件（可选）"}
+                    </label>
+                    <label className="flex h-12 cursor-pointer items-center gap-2 rounded-full border border-md-outline/40 bg-md-primary/5 px-5 text-sm text-md-onSurfaceVariant transition-colors hover:bg-md-primary/10">
+                      <Paperclip className="h-4 w-4" />
+                      {fileName || (language === "en" ? "Choose file" : "选择文件")}
+                      <input
+                        type="file"
+                        className="hidden"
+                        onChange={(event) => setFileName(event.target.files?.[0]?.name ?? "")}
+                      />
+                    </label>
+                    <p className="mt-2 text-xs text-md-onSurfaceVariant">
+                      {language === "en"
+                        ? "Your email app will open. If needed, attach the same file before sending."
+                        : "提交后会打开邮件客户端，如需发送附件，请在邮件中添加同名文件。"}
+                    </p>
+                  </div>
+                  <Button type="submit" className="w-full">
+                    <Send className="h-4 w-4" /> {language === "en" ? "Open email draft" : "打开邮件草稿"}
+                  </Button>
                 </form>
               </CardContent>
             </Card>
 
-            {/* Contact Information */}
-            <div className="space-y-8">
-              <div>
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                  {language === "en" ? "Get in touch" : "联系方式"}
-                </h2>
-                <div className="space-y-4">
-                  <div className="flex items-center">
-                    <Mail className="w-5 h-5 text-lime mr-3" />
-                    <span className="text-gray-600">hello@sherewires.org</span>
+            <div className="space-y-6">
+              <Card>
+                <CardContent className="space-y-4 p-6">
+                  <h3 className="text-xl font-medium">{language === "en" ? "Direct channels" : "直接联系"}</h3>
+                  <a className="flex items-center gap-3 rounded-2xl bg-md-background p-3 hover:bg-md-primary/5" href="mailto:hello@sherewires.org">
+                    <Mail className="h-5 w-5 text-md-primary" />
+                    <span>hello@sherewires.org</span>
+                  </a>
+                  <div className="flex items-center gap-3 rounded-2xl bg-md-background p-3">
+                    <MapPin className="h-5 w-5 text-md-primary" />
+                    <span>Beijing · Singapore</span>
                   </div>
-                  <div className="flex items-center">
-                    <MapPin className="w-5 h-5 text-purple-500 mr-3" />
-                    <span className="text-gray-600">Beijing, China</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Phone className="w-5 h-5 text-gray-800 mr-3" />
-                    <span className="text-gray-600">+86 xxx xxxx xxxx</span>
-                  </div>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
 
-              {/* Social Media */}
-              <div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                  {language === "en" ? "Follow us" : "关注我们"}
-                </h3>
-                <div className="flex space-x-4">
-                  <a
-                    href="#"
-                    className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-800 hover:bg-lime transition-colors"
-                  >
-                    <MessageCircle className="w-5 h-5" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-800 hover:bg-lime transition-colors"
-                  >
-                    <Twitter className="w-5 h-5" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-800 hover:bg-lime transition-colors"
-                  >
-                    <Instagram className="w-5 h-5" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-800 hover:bg-lime transition-colors"
-                  >
-                    <Linkedin className="w-5 h-5" />
-                  </a>
-                </div>
-              </div>
-
-              {/* Office Hours */}
-              <Card className="border-gray-200 bg-white">
+              <Card>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                    {language === "en" ? "Office Hours" : "办公时间"}
-                  </h3>
-                  <div className="space-y-2 text-gray-600">
-                    <div className="flex justify-between">
-                      <span>{language === "en" ? "Monday - Friday" : "周一 - 周五"}</span>
-                      <span>9:00 AM - 6:00 PM</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>{language === "en" ? "Saturday" : "周六"}</span>
-                      <span>10:00 AM - 4:00 PM</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>{language === "en" ? "Sunday" : "周日"}</span>
-                      <span>{language === "en" ? "Closed" : "休息"}</span>
-                    </div>
+                  <h3 className="mb-4 text-xl font-medium">{language === "en" ? "Social" : "社交平台"}</h3>
+                  <div className="flex gap-3">
+                    {[MessageCircle, Linkedin].map((Icon, index) => (
+                      <a key={index} href="#" className="flex h-11 w-11 items-center justify-center rounded-full bg-md-background text-md-onSurfaceVariant hover:bg-md-primary/10 hover:text-md-primary">
+                        <Icon className="h-5 w-5" />
+                      </a>
+                    ))}
                   </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-16 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-800 text-center mb-12">
-              {language === "en" ? "Frequently Asked Questions" : "常见问题"}
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="border-gray-200 bg-white">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                    {language === "en" ? "How can I join SHE REWIRES?" : "如何加入她原力？"}
-                  </h3>
-                  <p className="text-gray-600">
-                    {language === "en"
-                      ? "You can join by visiting our Get Involved page and filling out the membership application form."
-                      : "您可以访问我们的参与页面并填写会员申请表来加入。"}
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="border-gray-200 bg-white">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                    {language === "en" ? "Are there membership fees?" : "是否有会员费？"}
-                  </h3>
-                  <p className="text-gray-600">
-                    {language === "en"
-                      ? "Basic membership is free. Premium memberships with additional benefits are available."
-                      : "基础会员免费。提供具有额外福利的高级会员。"}
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="border-gray-200 bg-white">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                    {language === "en" ? "Can men participate in events?" : "男性可以参加活动吗？"}
-                  </h3>
-                  <p className="text-gray-600">
-                    {language === "en"
-                      ? "While our focus is on women in STEAM, we welcome allies and supporters at many of our events."
-                      : "虽然我们专注于 STEAM 领域的女性，但我们欢迎盟友和支持者参加我们的许多活动。"}
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="border-gray-200 bg-white">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                    {language === "en" ? "How can my company partner with you?" : "我的公司如何与您合作？"}
-                  </h3>
-                  <p className="text-gray-600">
-                    {language === "en"
-                      ? "Please contact us directly to discuss partnership opportunities and sponsorship options."
-                      : "请直接联系我们讨论合作机会和赞助选项。"}
-                  </p>
                 </CardContent>
               </Card>
             </div>
