@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Twitter, Instagram, Linkedin, MessageCircle, Mail, Youtube, Podcast } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
@@ -16,7 +15,6 @@ const socials = [
 
 export function Footer() {
   const { language, setLanguage, t } = useLanguage()
-
   const navItems = [
     { href: "/about", key: "nav.about" },
     { href: "/events", key: "nav.events" },
@@ -31,8 +29,9 @@ export function Footer() {
       <div className="container relative">
         <div className="grid gap-8 md:grid-cols-3">
           <div>
-            <div className="mb-4 h-14 w-[250px] overflow-hidden rounded-2xl bg-md-background/80">
-              <Image src="/logo-on-white.jpg" alt="She Rewires 她原力" width={360} height={96} className="h-full w-full scale-125 object-cover object-center" />
+            <div className="mb-4 leading-tight">
+              <p className="text-xs uppercase tracking-[0.16em] text-md-primary">She Rewires</p>
+              <p className="text-2xl font-semibold text-md-onSurface">她原力</p>
             </div>
             <p className="mb-4 text-sm text-md-onSurfaceVariant">{t("footer.description")}</p>
             <a href="mailto:cobuilder@sherewires.com" className="inline-flex items-center gap-2 text-sm text-md-primary hover:underline">
@@ -56,24 +55,11 @@ export function Footer() {
             <h4 className="mb-4 font-medium text-md-onSurface">{language === "en" ? "Community" : "社群"}</h4>
             <div className="mb-4 flex flex-wrap gap-3">
               {socials.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={item.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-md-background text-md-onSurfaceVariant transition-all duration-300 ease-md hover:bg-md-primary/10 hover:text-md-primary"
-                >
+                <a key={item.label} href={item.href} target="_blank" rel="noreferrer" aria-label={item.label} className="flex h-10 w-10 items-center justify-center rounded-full bg-md-background text-md-onSurfaceVariant transition-all duration-300 ease-md hover:bg-md-primary/10 hover:text-md-primary">
                   <item.icon className="h-5 w-5" />
                 </a>
               ))}
-              <a
-                href="https://www.wechat.com"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="WeChat"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-md-background text-md-onSurfaceVariant transition-all duration-300 ease-md hover:bg-md-primary/10 hover:text-md-primary"
-              >
+              <a href="https://www.wechat.com" target="_blank" rel="noreferrer" aria-label="WeChat" className="flex h-10 w-10 items-center justify-center rounded-full bg-md-background text-md-onSurfaceVariant transition-all duration-300 ease-md hover:bg-md-primary/10 hover:text-md-primary">
                 <MessageCircle className="h-5 w-5" />
               </a>
             </div>

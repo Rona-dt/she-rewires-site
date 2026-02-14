@@ -18,12 +18,12 @@ export default function HomePage() {
           {language === "en" ? (
             <>
               <h1 className="text-5xl font-semibold tracking-tight text-md-onSurface md:text-7xl">She Rewires</h1>
-              <p className="mt-3 text-lg text-md-primary md:text-2xl">Women-led Open Innovation Ecosystem</p>
+              
             </>
           ) : (
             <>
-              <p className="text-2xl font-medium tracking-wide text-md-primary md:text-4xl">她原力</p>
-              <h1 className="mt-2 text-5xl font-semibold tracking-tight text-md-onSurface md:text-7xl">She Rewires</h1>
+              <p className="text-5xl font-semibold tracking-wide text-md-primary md:text-7xl">她原力</p>
+              <h1 className="mt-3 text-2xl font-medium tracking-[0.08em] text-md-onSurface md:text-4xl">She Rewires</h1>
             </>
           )}
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-md-onSurfaceVariant md:text-xl">{t("hero.description")}</p>
