@@ -13,12 +13,15 @@ const config: Config = {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1.25rem",
       screens: {
         "2xl": "1400px",
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Roboto", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -26,70 +29,49 @@ const config: Config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#303030",
-          foreground: "#FFFFFF",
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "#E6E6E6",
-          foreground: "#303030",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
         },
         muted: {
-          DEFAULT: "#E6E6E6",
-          foreground: "#303030",
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "#BFFE01",
-          foreground: "#303030",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
         },
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // VI Brand Colors
-        lime: {
-          DEFAULT: "#BFFE01",
-          50: "#F4FFD6",
-          100: "#ECFFB8",
-          500: "#BFFE01",
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
         },
-        purple: {
-          DEFAULT: "#8A55ED",
-          50: "#F5F0FF",
-          100: "#DEC4FF",
-          200: "#DEC4FF",
-          300: "#B794F6",
-          400: "#9F6FEF",
-          500: "#8A55ED",
-          600: "#7440D9",
-          700: "#5E2FC4",
-          800: "#4A25A0",
-          900: "#371B7C",
-        },
-        gray: {
-          50: "#FAFAFA",
-          100: "#F5F5F5",
-          200: "#E6E6E6",
-          300: "#D4D4D4",
-          400: "#A3A3A3",
-          500: "#737373",
-          600: "#525252",
-          700: "#404040",
-          800: "#303030",
-          900: "#1A1A1A",
+        md: {
+          background: "#FFFBFE",
+          surface: "#F3EDF7",
+          surfaceLow: "#E7E0EC",
+          primary: "#8A55ED",
+          primaryContainer: "#DEC4FF",
+          onSurface: "#1C1B1F",
+          onSurfaceVariant: "#49454F",
+          outline: "#79747E",
+          tertiary: "#7D5260",
         },
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: "1.5rem",
+        md: "1rem",
+        sm: "0.75rem",
+        xl: "1.75rem",
+      },
+      transitionTimingFunction: {
+        md: "cubic-bezier(0.2, 0, 0, 1)",
       },
       keyframes: {
         "accordion-down": {

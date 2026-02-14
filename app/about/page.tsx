@@ -1,92 +1,61 @@
 "use client"
 
 import { Card, CardContent } from "@/components/ui/card"
-import { Lightbulb, Target, Users, Globe } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Lightbulb, Target, Users, Globe, ArrowRight } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
+import { GlobalImpactMap } from "@/components/global-impact-map"
+import Link from "next/link"
 
 export default function AboutPage() {
   const { t, language } = useLanguage()
 
   const pillars = [
-    {
-      icon: <Users className="w-10 h-10 text-[#8A55ED]" />,
-      title: t("about.pillar1.title"),
-      description: t("about.pillar1.desc"),
-      number: "01",
-    },
-    {
-      icon: <Target className="w-10 h-10 text-[#BFFE01]" />,
-      title: t("about.pillar2.title"),
-      description: t("about.pillar2.desc"),
-      number: "02",
-    },
-    {
-      icon: <Lightbulb className="w-10 h-10 text-[#8A55ED]" />,
-      title: t("about.pillar3.title"),
-      description: t("about.pillar3.desc"),
-      number: "03",
-    },
-    {
-      icon: <Globe className="w-10 h-10 text-[#BFFE01]" />,
-      title: t("about.pillar4.title"),
-      description: t("about.pillar4.desc"),
-      number: "04",
-    },
-  ]
-
-  const regions = [
-    { name: language === "en" ? "China" : "中国", region: language === "en" ? "East Asia" : "东亚" },
-    { name: language === "en" ? "Singapore" : "新加坡", region: language === "en" ? "South-East Asia" : "东南亚" },
-    { name: language === "en" ? "Germany" : "德国", region: language === "en" ? "Europe" : "欧洲" },
-    { name: language === "en" ? "UK" : "英国", region: language === "en" ? "Europe" : "欧洲" },
+    { icon: Users, title: t("about.pillar1.title"), description: t("about.pillar1.desc"), number: "01" },
+    { icon: Target, title: t("about.pillar2.title"), description: t("about.pillar2.desc"), number: "02" },
+    { icon: Lightbulb, title: t("about.pillar3.title"), description: t("about.pillar3.desc"), number: "03" },
+    { icon: Globe, title: t("about.pillar4.title"), description: t("about.pillar4.desc"), number: "04" },
   ]
 
   return (
-    <div className="pt-20">
-      {/* Hero */}
-      <section className="bg-[#E6E6E6] py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-[#303030]">{t("about.title")}</h1>
-          <p className="text-xl max-w-3xl mx-auto text-[#303030]/80 leading-relaxed">{t("about.one.sentence")}</p>
+    <div className="bg-md-background pt-20">
+      <section className="py-16">
+        <div className="container text-center">
+          <h1 className="text-5xl font-semibold text-md-onSurface md:text-6xl">{t("about.title")}</h1>
+          <p className="mx-auto mt-6 max-w-3xl text-xl text-md-onSurfaceVariant">{t("about.one.sentence")}</p>
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="prose prose-lg max-w-none">
-              <p className="text-[#303030]/80 text-lg leading-relaxed">{t("about.full.content")}</p>
-            </div>
+      <section className="py-8">
+        <div className="container">
+          <div className="mx-auto max-w-4xl rounded-[32px] bg-md-surface p-8">
+            <p className="text-lg leading-relaxed text-md-onSurfaceVariant">{t("about.full.content")}</p>
           </div>
         </div>
       </section>
 
-      {/* Four Pillars */}
-      <section className="py-16 bg-[#DEC4FF]/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <p className="text-lg text-[#303030]/80 leading-relaxed">{t("about.pillars.intro")}</p>
+      <section className="py-16">
+        <div className="container">
+          <div className="mx-auto mb-10 max-w-5xl overflow-hidden rounded-[32px] bg-gradient-to-r from-md-surface to-accent/40 p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.16em] text-md-primary">{language === "en" ? "4 Pillars" : "四大支柱"}</p>
+            <h2 className="mt-2 text-3xl font-medium text-md-onSurface md:text-4xl">
+              {language === "en"
+                ? "How She Rewires drives long-term change"
+                : "She Rewires 如何推动长期改变"}
+            </h2>
+            <p className="mt-4 max-w-4xl text-lg leading-relaxed text-md-onSurfaceVariant">{t("about.pillars.intro")}</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {pillars.map((pillar, index) => (
-              <Card
-                key={index}
-                className="border-[#8A55ED]/20 bg-white hover:shadow-lg transition-shadow"
-              >
+
+          <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
+            {pillars.map((pillar) => (
+              <Card key={pillar.number} className="group hover:scale-[1.02]">
                 <CardContent className="p-8">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0">
-                      <span className="text-4xl font-bold text-[#DEC4FF]">{pillar.number}</span>
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-3 mb-3">
-                        {pillar.icon}
-                        <h3 className="text-xl font-semibold text-[#303030]">{pillar.title}</h3>
-                      </div>
-                      <p className="text-[#303030]/70 leading-relaxed">{pillar.description}</p>
-                    </div>
+                  <div className="mb-3 text-4xl font-semibold text-md-primary/30">{pillar.number}</div>
+                  <div className="mb-3 flex items-center gap-3">
+                    <pillar.icon className="h-8 w-8 text-md-primary" />
+                    <h3 className="text-xl font-medium text-md-onSurface">{pillar.title}</h3>
                   </div>
+                  <p className="text-md-onSurfaceVariant">{pillar.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -94,23 +63,47 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Global Impact */}
-      <section className="py-16 bg-[#E6E6E6]">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-[#303030] mb-4">
-            {t("about.global.impact")}
-          </h2>
-          <p className="text-center text-[#303030]/70 mb-12">{t("about.regions.desc")}</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            {regions.map((item, index) => (
-              <Card key={index} className="text-center border-[#8A55ED]/20 bg-white">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-[#303030] mb-1">{item.name}</h3>
-                  <p className="text-sm text-[#8A55ED]">{item.region}</p>
-                </CardContent>
-              </Card>
-            ))}
+      <section id="global-impact" className="scroll-mt-20 py-16">
+        <div className="container">
+          <h2 className="text-center text-4xl font-medium text-md-onSurface">{t("about.global.impact")}</h2>
+          <p className="mb-2 mt-3 text-center text-md-onSurfaceVariant">
+            {language === "en"
+              ? "3 regions: East Asia, South-East Asia, Europe"
+              : "3 个地区：东亚、东南亚、欧洲"}
+          </p>
+          <p className="mb-10 text-center text-md-onSurfaceVariant">
+            {language === "en" ? "China, Singapore, Germany, UK" : "中国、新加坡、德国、英国"}
+          </p>
+
+          <div className="mx-auto mb-10 max-w-5xl">
+            <GlobalImpactMap highlightRegion="east-asia" />
           </div>
+
+          <Card className="mx-auto max-w-5xl overflow-hidden bg-gradient-to-r from-accent/70 to-md-surface">
+            <CardContent className="p-8 md:p-10">
+              <div>
+                <span className="text-xs uppercase tracking-[0.15em] text-md-primary">{language === "en" ? "Singapore 2026" : "新加坡 2026"}</span>
+                <h3 className="mt-2 text-3xl font-medium text-md-onSurface">{language === "en" ? "Meet Our Force Nodes" : "认识我们的力量节点"}</h3>
+                <p className="mt-3 max-w-md text-md-onSurfaceVariant">
+                  {language === "en"
+                    ? "14 co-builders united by value resonance. Explore the living map of connection."
+                    : "14位因价值共鸣而汇聚的共建者。探索这幅仍在生长的连接地图。"}
+                </p>
+                <p className="mt-3 max-w-md text-sm text-md-onSurfaceVariant">
+                  {language === "en"
+                    ? "A constellation-style people network with dynamic node stories and cross-border links."
+                    : "以星座式节点连接呈现人物关系与跨区域协作脉络。"}
+                </p>
+                <div className="mt-6">
+                  <Link href="/team-portrait">
+                    <Button size="lg">
+                      {language === "en" ? "Team Portrait" : "团队画像"} <ArrowRight className="h-4 w-4" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
     </div>

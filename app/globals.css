@@ -6,93 +6,61 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  .md-ease {
+    transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+  }
+
+  .md-blob {
+    @apply absolute rounded-full blur-3xl pointer-events-none;
+  }
 }
 
 @layer base {
   :root {
-    /* VI Brand Colors */
-    --lime: #BFFE01;
-    --purple: #8A55ED;
-    --purple-light: #DEC4FF;
-    --white: #FFFFFF;
-    --gray-light: #E6E6E6;
-    --dark: #303030;
-    
-    --background: 0 0% 100%;
-    --foreground: 0 0% 19%; /* #303030 */
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 19%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 19%;
-    --primary: 0 0% 19%; /* #303030 */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 90%; /* #E6E6E6 */
-    --secondary-foreground: 0 0% 19%;
-    --muted: 0 0% 90%;
-    --muted-foreground: 0 0% 40%;
-    --accent: 72 100% 50%; /* #BFFE01 lime */
-    --accent-foreground: 0 0% 19%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 263 82% 63%; /* #8A55ED purple */
-    --chart-1: 72 100% 50%;
-    --chart-2: 263 82% 63%;
-    --chart-3: 270 100% 88%;
-    --chart-4: 0 0% 90%;
-    --chart-5: 0 0% 19%;
-    --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 0 0% 19%;
-    --sidebar-primary: 0 0% 19%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 90%;
-    --sidebar-accent-foreground: 0 0% 19%;
-    --sidebar-border: 0 0% 90%;
-    --sidebar-ring: 263 82% 63%;
-  }
-  .dark {
-    --background: 0 0% 19%;
-    --foreground: 0 0% 100%;
-    --card: 0 0% 19%;
-    --card-foreground: 0 0% 100%;
-    --popover: 0 0% 19%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 19%;
-    --secondary: 0 0% 25%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 25%;
-    --muted-foreground: 0 0% 60%;
-    --accent: 72 100% 50%;
-    --accent-foreground: 0 0% 19%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 25%;
-    --input: 0 0% 25%;
-    --ring: 263 82% 63%;
-    --chart-1: 72 100% 50%;
-    --chart-2: 263 82% 63%;
-    --chart-3: 270 100% 88%;
-    --chart-4: 0 0% 30%;
-    --chart-5: 0 0% 100%;
-    --sidebar-background: 0 0% 19%;
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 263 82% 63%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 25%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 0 0% 25%;
-    --sidebar-ring: 263 82% 63%;
-  }
-}
+    --background: 320 28% 99%; /* #FFFBFE */
+    --foreground: 270 8% 12%; /* #1C1B1F */
+    --card: 276 31% 95%; /* #F3EDF7 */
+    --card-foreground: 270 8% 12%;
+    --popover: 320 28% 99%;
+    --popover-foreground: 270 8% 12%;
 
-@layer base {
+    --primary: 257 35% 48%; /* restrained deep purple */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 33% 93%; /* #E8DEF8 */
+    --secondary-foreground: 258 23% 14%;
+
+    --muted: 274 20% 90%; /* #E7E0EC */
+    --muted-foreground: 270 6% 31%; /* #49454F */
+
+    --accent: 274 100% 88%; /* #DEC4FF */
+    --accent-foreground: 270 8% 12%;
+
+    --destructive: 0 80% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 270 4% 48%; /* #79747E */
+    --input: 274 20% 90%;
+    --ring: 263 80% 63%; /* #8A55ED */
+
+    --radius: 1rem;
+  }
+
   * {
     @apply border-border;
   }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
