@@ -16,7 +16,7 @@ const platformLinks = [
 
 export default function MediaPage() {
   const { t, language } = useLanguage()
-  const mediaPosts = socialPosts.filter((post) => post.type === "media")
+  const mediaPosts = [...socialPosts.filter((post) => post.type === "media")].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
   return (
     <div className="bg-md-background pt-20">

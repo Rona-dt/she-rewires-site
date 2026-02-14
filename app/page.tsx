@@ -88,7 +88,7 @@ export default function HomePage() {
 
       <section className="py-14">
         <div className="container">
-          <div className="mx-auto max-w-4xl rounded-[32px] bg-md-surface p-8 text-center shadow-lg">
+          <div className="mx-auto max-w-4xl p-2 text-center">
             <h2 className="text-4xl font-medium text-md-onSurface">{t("getInvolved.title")}</h2>
             <p className="mx-auto mt-4 max-w-3xl text-lg leading-relaxed text-md-onSurfaceVariant">{t("getInvolved.description")}</p>
             <div className="mt-8">

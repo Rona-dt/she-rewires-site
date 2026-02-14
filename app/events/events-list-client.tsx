@@ -54,23 +54,35 @@ function EventCard({ event, language }: { event: Event; language: "en" | "zh" })
 export function EventsListClient({ upcomingEvents, pastEvents, socialEventPosts }: EventsListClientProps) {
   const { t, language } = useLanguage()
 
+  const sortedSocial = [...socialEventPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  const showSiteEvents = false
+
   return (
     <>
       <section className="py-6">
         <div className="container">
           <Card>
             <CardContent className="p-6">
-              <h2 className="text-xl font-medium text-md-onSurface">{language === "en" ? "Channel feed (X / Instagram / LinkedIn)" : "渠道同步（X / Instagram / LinkedIn）"}</h2>
-              <div className="mt-4 grid gap-4 md:grid-cols-2">
-                {socialEventPosts.map((post) => (
-                  <a key={post.id} href={post.url} target="_blank" rel="noreferrer" className="rounded-2xl bg-md-background p-4 transition-colors hover:bg-md-primary/5">
-                    <p className="text-xs uppercase tracking-wide text-md-primary">{post.channel}</p>
-                    <p className="text-xs text-md-onSurfaceVariant">{post.date}</p>
-                    <h3 className="mt-1 font-medium text-md-onSurface">{language === "en" ? post.titleEn : post.titleZh}</h3>
-                    <p className="mt-1 text-sm text-md-onSurfaceVariant">{language === "en" ? post.summaryEn : post.summaryZh}</p>
-                    <span className="mt-2 inline-flex items-center text-sm text-md-primary">
-                      {language === "en" ? "Open source post" : "打开原帖"} <ExternalLink className="ml-1 h-3 w-3" />
-                    </span>
+              <h2 className="text-xl font-medium text-md-onSurface">{language === "en" ? "Latest channel highlights" : "最新渠道动态"}</h2>
+              <div className="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                {sortedSocial.map((post) => (
+                  <a key={post.id} href={post.url} target="_blank" rel="noreferrer" className="group overflow-hidden rounded-3xl bg-md-background transition-colors hover:bg-md-primary/5">
+                    {post.image && (
+                      <div className="aspect-video overflow-hidden bg-md-surfaceLow">
+                        <img src={post.image} alt={language === "en" ? post.titleEn : post.titleZh} className="h-full w-full object-cover transition-transform duration-300 ease-md group-hover:scale-105" />
+                      </div>
+                    )}
+                    <div className="p-4">
+                      <div className="mb-1 flex items-center justify-between">
+                        <span className="rounded-full bg-md-primary/10 px-3 py-1 text-xs uppercase tracking-wide text-md-primary">{post.channel}</span>
+                        <span className="text-xs text-md-onSurfaceVariant">{post.date}</span>
+                      </div>
+                      <h3 className="mt-2 line-clamp-2 font-medium text-md-onSurface">{language === "en" ? post.titleEn : post.titleZh}</h3>
+                      <p className="mt-1 line-clamp-3 text-sm text-md-onSurfaceVariant">{language === "en" ? post.summaryEn : post.summaryZh}</p>
+                      <span className="mt-2 inline-flex items-center text-sm text-md-primary">
+                        {language === "en" ? "Open source post" : "打开原帖"} <ExternalLink className="ml-1 h-3 w-3" />
+                      </span>
+                    </div>
                   </a>
                 ))}
               </div>
@@ -79,7 +91,7 @@ export function EventsListClient({ upcomingEvents, pastEvents, socialEventPosts 
         </div>
       </section>
 
-      {upcomingEvents.length > 0 && (
+      {showSiteEvents && upcomingEvents.length > 0 && (
         <section className="py-10">
           <div className="container">
             <h2 className="mb-8 text-3xl font-medium text-md-onSurface">{t("events.upcoming")}</h2>
@@ -92,7 +104,7 @@ export function EventsListClient({ upcomingEvents, pastEvents, socialEventPosts 
         </section>
       )}
 
-      {pastEvents.length > 0 && (
+      {showSiteEvents && pastEvents.length > 0 && (
         <section className="py-10">
           <div className="container">
             <h2 className="mb-8 text-3xl font-medium text-md-onSurface">{t("events.past")}</h2>
