@@ -39,6 +39,12 @@ export function Navigation() {
                 {t(item.key)}
               </Link>
             ))}
+            <Link
+              href="/events/rewires-horizon-2026"
+              className="rounded-full bg-md-primary px-4 py-2 text-sm font-medium text-md-onPrimary shadow-sm transition-all duration-300 ease-md hover:scale-[1.02] hover:shadow-md"
+            >
+              {language === "en" ? "2026 Summit" : "2026 峰会"}
+            </Link>
           </div>
 
           <div className="flex items-center gap-3">
@@ -54,6 +60,13 @@ export function Navigation() {
         {isOpen && (
           <div className="mt-4 rounded-3xl bg-md-surface p-4 lg:hidden">
             <div className="flex flex-col gap-2">
+              <Link
+                href="/events/rewires-horizon-2026"
+                className="rounded-xl bg-md-primary px-3 py-3 font-medium text-md-onPrimary"
+                onClick={() => setIsOpen(false)}
+              >
+                {language === "en" ? "Rewires Horizon 2026 Summit" : "Rewires Horizon 2026 峰会"}
+              </Link>
               {navItems.map((item) => (
                 <Link
                   key={item.href}

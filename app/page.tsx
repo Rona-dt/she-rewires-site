@@ -36,6 +36,39 @@ export default function HomePage() {
 
       <section className="py-14">
         <div className="container">
+          <Card className="overflow-hidden border-md-primary/20 bg-gradient-to-br from-md-primary/10 via-md-background to-accent/30">
+            <CardContent className="grid gap-8 p-8 md:grid-cols-[1.5fr_1fr] md:p-10">
+              <div>
+                <p className="text-sm uppercase tracking-[0.18em] text-md-primary">{language === "en" ? "Featured Summit" : "重点活动"}</p>
+                <h2 className="mt-3 text-3xl font-semibold text-md-onSurface md:text-5xl">Rewires Horizon 2026</h2>
+                <p className="mt-4 max-w-2xl text-md-onSurfaceVariant">
+                  {language === "en"
+                    ? "Join She Rewires in Shanghai Xintiandi on June 13, 2026 for a future-facing summit on AI, leadership, founders, capital, and community collaboration."
+                    : "2026年6月13日，She Rewires 她原力将在上海新天地举办面向 AI、领导力、创始人、资本与社群协作的未来峰会。"}
+                </p>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <Link href="/events/rewires-horizon-2026">
+                    <Button>
+                      {language === "en" ? "View Summit Page" : "查看峰会页面"} <ArrowRight className="h-4 w-4" />
+                    </Button>
+                  </Link>
+                  <Link href="/events">
+                    <Button variant="outline">{language === "en" ? "All Events" : "所有活动"}</Button>
+                  </Link>
+                </div>
+              </div>
+              <div className="grid gap-3 text-sm">
+                <div className="rounded-2xl bg-md-background/80 p-4 shadow-sm">Date · 2026年6月13日</div>
+                <div className="rounded-2xl bg-md-background/80 p-4 shadow-sm">Venue · 上海·新天地</div>
+                <div className="rounded-2xl bg-md-background/80 p-4 shadow-sm">Format · {language === "en" ? "Bilingual sessions" : "中英双语内容"}</div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      <section className="py-14">
+        <div className="container">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-4xl font-medium text-md-onSurface">{language === "en" ? "About Us" : "关于我们"}</h2>
             <p className="mt-6 text-lg leading-relaxed text-md-onSurfaceVariant">{t("about.preview")}</p>
