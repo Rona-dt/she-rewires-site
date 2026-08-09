@@ -1,33 +1,92 @@
-# Content Sync Playbook (LinkedIn + WeChat)
+# Content Operations Playbook
 
-## A. LinkedIn (quarterly / monthly)
+This playbook defines how content should be managed before and after CMS adoption.
 
-### Current practical approach
-1. Open posts page: `https://www.linkedin.com/company/sherewires/posts/?feedView=all`
-2. Pick the latest posts (Events vs Media).
-3. Update `lib/social-posts.ts` with title/date/summary/link.
+## 1. Current State
 
-### Why not direct crawler by default
-- Public LinkedIn pages often require login and anti-bot checks.
-- DOM structure changes frequently, making scraper brittle.
+The site currently uses local structured content in `content/*` with TypeScript interfaces in `types/content.ts`.
 
-### Recommended automation path
-- Use an approved connector/API provider and run a scheduled sync job.
-- Persist normalized posts to JSON/DB, then render on Events/Media pages.
+This is intentional for the first production architecture pass. It allows the team to stabilize information architecture and content models before introducing CMS.
 
-## B. WeChat Official Account
+## 2. Content Ownership
 
-### Main challenge
-- Article images are often hotlink-protected (`mmbiz.qpic.cn`) and may fail in external sites.
+Code-managed:
 
-### Stable workflow
-1. Paste WeChat URL into import script.
-2. Convert article to Markdown.
-3. Download/mirror images to your own storage (Vercel Blob / S3 / Cloudflare R2).
-4. Replace image URLs in markdown with mirrored links.
-5. Publish into Events content source.
+- Routes
+- Components
+- Layout logic
+- Redirects
+- Design tokens
+- Core schemas/types
+- Build and deployment configuration
 
-## C. Minimal manual workload design
-- Keep one schema for all channels (`title/date/summary/url/type`).
-- Keep a monthly “sync batch” process (10-20 posts at once).
-- Use pre-defined templates to reduce editing effort.
+Content-managed now, CMS-managed later:
+
+- People profiles
+- Chapters
+- Projects
+- Stories
+- Partners
+- Join paths
+- Homepage stats and featured content
+- Selected page copy
+
+## 3. Editing Local Content
+
+Edit these files for now:
+
+- `content/site-config.ts`
+- `content/pages/platform.ts`
+- `content/pages/join-paths.ts`
+- `content/people/index.ts`
+- `content/chapters/index.ts`
+- `content/projects/index.ts`
+- `content/stories/index.ts`
+- `content/partners/index.ts`
+
+After editing content, run:
+
+```bash
+pnpm lint
+pnpm exec tsc --noEmit
+pnpm build
+```
+
+## 4. Future CMS Migration
+
+Recommended CMS: Sanity.
+
+Migration order:
+
+1. Stories
+2. People
+3. Projects
+4. Partners
+5. Chapters
+6. Selected page sections and homepage feature slots
+
+Do not put routes, component layout, or design tokens into CMS.
+
+## 5. Asset Workflow
+
+Before CMS:
+
+- Keep approved public assets under `public/`.
+- Avoid hotlinking unstable WeChat or social media image URLs.
+- Use descriptive filenames and alt text.
+
+After CMS:
+
+- Store editorial images in the CMS asset library.
+- Use Vercel Blob or another object storage service only if file volume, downloads, or video assets require it.
+
+## 6. Editorial QA
+
+Before publishing content:
+
+- Confirm names, titles, partner names, and locations.
+- Check image rights and logo approval.
+- Check English copy for clarity.
+- Check Chinese copy for encoding and punctuation.
+- Confirm story/project/chapter relationships.
+- Run the full build checks before deployment.

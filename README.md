@@ -1,94 +1,101 @@
 # She Rewires Website
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments (historical setup).*
+She Rewires is being rebuilt from a v0-generated event website into a production-ready global human agency platform.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/ronas-projects-c21e25ee/v0-she-rewrites-website)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/HfYoOqw7SsQ)
+The current architecture is CMS-ready but intentionally local-content first: non-technical content operations will be supported later through a headless CMS, with Sanity as the preferred future path.
 
----
+## Current Product Direction
 
-## 1) Tech Stack
+Primary navigation:
 
-- **Framework**: Next.js 14 (App Router)
-- **Language**: TypeScript + React 18
-- **Styling**: Tailwind CSS + design tokens in `app/globals.css`
-- **UI Primitives**: shadcn-style components in `components/ui/*`
-- **Content source**:
-  - Structured event data in `lib/events.ts`
-  - Social/media sync data in `lib/social-posts.ts`
-- **Rendering**:
-  - Server components for route-level pages
-  - Client components for language switching and interactive UI
+- `About` - why She Rewires exists: story, evolution, philosophy
+- `Community` - who is inside the system: co-builders, chapters, contributors, partners
+- `Build` - what happens inside the system: co-building model and projects
+- `Stories` - what emerges from the system: people, projects, conversations, proof
+- `Join Us` - how people enter the system: participation and contact pathways
 
----
+Legacy routes such as `/events`, `/media`, `/contact`, `/get-involved`, `/team`, and `/team-portrait` redirect into the new platform structure.
 
-## 2) Project Architecture
+## Tech Stack
+
+- Framework: Next.js 14 App Router
+- Language: TypeScript + React 18
+- Styling: Tailwind CSS with existing theme tokens in `app/globals.css`
+- UI primitives: local shadcn-style components in `components/ui/*`
+- Content layer: local structured TypeScript content under `content/*`
+- Deployment target: Vercel
+
+## Project Structure
 
 ```text
 app/
-  page.tsx                    # Homepage
-  about/page.tsx              # About + Global Impact
-  events/                     # Event list + detail pages
-  media/page.tsx              # Media coverage
-  contact/page.tsx            # Contact flow (email draft)
-  get-involved/page.tsx       # Join-us flow (email draft)
-  team-portrait/page.tsx      # Team portrait interactive page
+  page.tsx              # Home
+  about/page.tsx        # About
+  community/page.tsx    # Community ecosystem
+  build/page.tsx        # Co-building model and projects
+  stories/page.tsx      # Story library
+  join-us/page.tsx      # Participation and contact pathways
 
 components/
-  navigation.tsx footer.tsx
-  language-provider.tsx       # EN/ZH translations + switch
-  ui/*                        # Button/Card/Input/Textarea etc.
+  navigation.tsx
+  footer.tsx
+  ui/*
+  sections/*            # Reusable page sections and content cards
 
-lib/
-  events.ts                   # Site event model + event content
-  social-posts.ts             # Unified social/media feed model
+content/
+  site-config.ts
+  pages/
+  people/
+  chapters/
+  projects/
+  stories/
+  partners/
+
+types/
+  content.ts            # CMS-ready content interfaces
 
 docs/
-  UIUX_RULES.md               # Visual and interaction baseline
-  CONTENT_SYNC_PLAYBOOK.md    # Social/WeChat sync playbook
-  PRD.md                      # Product requirements doc
-  TECHNICAL_DESIGN.md         # Engineering design doc
+  PRD.md
+  TECHNICAL_DESIGN.md
+  UIUX_RULES.md
+  CONTENT_SYNC_PLAYBOOK.md
 ```
 
----
-
-## 3) Development Workflow
-
-### Local development (recommended)
+## Development
 
 ```bash
 pnpm install
 pnpm dev
 ```
 
-Open: `http://localhost:3000`
+Open `http://localhost:3000`.
 
-### Production build check
+## Quality Checks
+
+Run these before committing or deploying:
 
 ```bash
+pnpm lint
+pnpm exec tsc --noEmit
 pnpm build
 ```
 
-### Type-check
+The production build now performs linting and type validation. Do not reintroduce `ignoreDuringBuilds` or `ignoreBuildErrors` without a documented reason.
 
-```bash
-pnpm exec tsc --noEmit
-```
+## Content Operations
 
-> Note: there is currently a known historical typing issue in `components/theme-provider.tsx`.
+For now, edit structured content in `content/*`. Keep content separate from page components:
 
----
+- Pages and core platform copy: `content/pages/*`
+- Site settings and navigation: `content/site-config.ts`
+- People and contributors: `content/people/*`
+- Chapters: `content/chapters/*`
+- Projects: `content/projects/*`
+- Stories: `content/stories/*`
+- Partners: `content/partners/*`
 
-## 4) Content Operations
+Future CMS migration should map these TypeScript interfaces to Sanity schemas.
 
-- Add/update social feed entries in `lib/social-posts.ts`
-- Add/update long-form events in `lib/events.ts`
-- Follow `docs/CONTENT_SYNC_PLAYBOOK.md` for channel sync and WeChat image mirroring
+## Deployment
 
----
-
-## 5) Product & Technical Docs
-
-- PRD: `docs/PRD.md`
-- Technical Design: `docs/TECHNICAL_DESIGN.md`
-- UI/UX baseline: `docs/UIUX_RULES.md`
+The project is linked to Vercel through `.vercel/project.json`. GitHub remains the source repository, and production work should happen on feature branches with PR review before merging to `main`.

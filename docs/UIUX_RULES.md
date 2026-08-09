@@ -1,39 +1,59 @@
-# SHE REWIRES UI/UX Basic Rules (Material You + Brand)
+# Design System Baseline - She Rewires
 
-This file is the baseline design standard for all future UI changes.
+This document replaces the old v0-era UI rules. It defines the baseline for the production redesign, not a finished brand system.
 
-## 1) Brand and color
-- Primary tone: black/white + purple accents.
-- Accent colors: `#DEC4FF` (light), `#8A55ED` (main).
-- Do not overuse dark purple in large blocks.
-- Avoid pure white cards when possible; prefer tonal surfaces.
+## 1. Brand Direction
 
-## 2) Typography
-- EN brand name is always: **She Rewires**.
-- Bilingual hero rule:
-  - EN page: main headline uses "She Rewires".
-  - ZH page: top line is "她原力", second line is "She Rewires".
+She Rewires is moving toward a global ecosystem platform with a more mature, editorial, and institutional feel.
 
-## 3) Components
-- Buttons must be pill-shaped (`rounded-full`).
-- Cards use generous radii and subtle elevation.
-- Inputs follow MD3 filled style (rounded top, emphasized bottom border).
+Design should support:
 
-## 4) Motion and interaction
-- Use smooth transitions with `cubic-bezier(0.2, 0, 0, 1)`.
-- All clickable elements include tactile press feedback (`active:scale-95`).
-- Respect `prefers-reduced-motion`.
+- Human agency
+- Co-creation
+- Global chapters
+- Credibility and warmth
+- People, projects, and ecosystem proof
 
-## 5) Content architecture
-- Keep Events and Media content as structured data (not embedded social HTML/iframe).
-- Social platforms are linked directly with clear CTA and official icons.
-- Global impact content must match official regions/countries exactly.
+## 2. Visual Direction
 
-## 6) Global impact canonical wording
-- 3 regions: East Asia, South-East Asia, Europe
-- 4 countries: China, Singapore, Germany, UK
+Current preferred direction:
 
-## 7) Contact and lead intake
-- Default lead intake email: `cobuilder@sherewires.com`
-- Contact channels should include WeChat: `TANGTASTIC`
+- Black and white logo usage where possible
+- Restrained accent color usage
+- More editorial structure, less prototype/card-heavy composition
+- Real people, events, partners, video, and story assets as primary visuals
+- Avoid visual clutter and generic gradients
 
+The BEYOND EXPO reference can inform confidence, scale, and production polish, but the site should remain recognizably She Rewires.
+
+## 3. Component Principles
+
+- Use reusable sections instead of one-off page blocks.
+- Keep content cards scannable and comparable.
+- Use icons only when they clarify an action or category.
+- Keep CTA sections focused on a single decision.
+- Do not nest cards inside cards.
+- Avoid putting large, changing content directly into TSX page components.
+
+## 4. Layout Principles
+
+- First viewport should make the platform positioning clear.
+- Main pages should feel like part of one coherent system.
+- Page sections should be full-width bands or clean constrained layouts.
+- Dense operational content should use cards, grids, or lists with predictable hierarchy.
+- Text must not overlap, overflow, or depend on viewport-scaled font sizes.
+
+## 5. Content and Media
+
+- Stories should use real images or video when assets are available.
+- Partner logo walls should use approved partner logos only.
+- People profiles need consistent name, role, location, bio, and image rules.
+- Chapter pages should represent living human networks, not only geographic dots.
+
+## 6. Accessibility
+
+- Navigation and forms must be keyboard accessible.
+- Buttons and links need clear labels.
+- Images require useful alt text.
+- Color contrast should remain readable on all primary backgrounds.
+- Motion should be restrained and respect reduced-motion preferences.

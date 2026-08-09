@@ -1,14 +1,12 @@
-import type React from "react"
+﻿import type React from "react"
 import type { Metadata } from "next"
 import "./globals.css"
-import { LanguageProvider } from "@/components/language-provider"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
-  title: "SHE REWIRES 她原力 - Women in STEAM Community",
-  description: "Global women-in-STEAM community based in China",
-  generator: "v0.dev",
+  title: "She Rewires - Global Human Agency Platform",
+  description: "A global ecosystem connecting people, ideas, and partners to co-build meaningful impact in the AI era.",
 }
 
 export default function RootLayout({
@@ -19,11 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans">
-        <LanguageProvider>
-          <Navigation />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
-        </LanguageProvider>
+        <Navigation />
+        <main className="min-h-screen">{children}</main>
+        <Footer />
       </body>
     </html>
   )
