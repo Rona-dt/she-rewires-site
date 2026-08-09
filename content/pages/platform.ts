@@ -5,25 +5,50 @@ export const homePage: PageContent = {
   title: "She Rewires",
   description: "A global movement evolving from women in STEM into a human agency platform for the AI era.",
   hero: {
-    eyebrow: "Global Human Agency Platform",
-    title: "80,000+ people. 150+ co-builders. 16 cities. One global movement.",
-    subtitle: "She Rewires connects people, ideas, and ecosystems to co-build a future where individuals can create meaningful impact.",
+    title: "She Rewires / 她原力",
+    subtitle:
+      "She Rewires is a global women-led co-building platform connecting people, ideas, and ecosystems to cultivate human agency for the AI era. Building the future is not about waiting for change. It is about co-building it together.",
     primaryAction: { label: "Join Us", href: "/join-us" },
     secondaryAction: { label: "Explore the Ecosystem", href: "/community" },
   },
   sections: [
     {
-      id: "direction",
+      id: "why",
+      title: "Technology amplifies human potential, but people define its direction and purpose.",
+      description:
+        "Human connection, creativity, judgment, empathy, and agency matter more as technology changes quickly.",
+    },
+    {
+      id: "evolution",
       eyebrow: "From Access to Agency",
       title: "We started with women in STEM. We are building for human agency.",
       description:
         "Since 2017, She Rewires has grown from a women in STEM community into a global ecosystem that helps people connect, co-build, incubate, and scale ideas for the AI era.",
     },
     {
-      id: "ecosystem",
+      id: "co-building",
       title: "A system for people who build what is next",
       description:
         "The platform brings together co-builders, chapters, contributors, partners, and projects so resonance can become creation.",
+      items: [
+        { title: "Discover", description: "Individuals bring interests, expertise, experiences, and aspirations into the ecosystem." },
+        { title: "Connect", description: "People with complementary capabilities and shared purpose find each other." },
+        { title: "Co-build", description: "Teams create projects, initiatives, communities, and collaborations." },
+        { title: "Incubate", description: "She Rewires provides visibility, connections, and resources to help ideas grow." },
+        { title: "Scale", description: "Successful initiatives expand across communities, regions, and ecosystems." },
+      ],
+    },
+    {
+      id: "people",
+      title: "People make it real",
+      description:
+        "Founders, co-builders, partner leaders, community builders, and women innovators shape the ecosystem.",
+    },
+    {
+      id: "partners",
+      title: "Partners build alongside us",
+      description:
+        "Organizations building alongside us through co-creation, not just sponsorship.",
     },
   ],
 }

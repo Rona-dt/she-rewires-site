@@ -13,15 +13,19 @@ export default function HomePage() {
   return (
     <div className="bg-md-background">
       <HeroSection hero={homePage.hero} align="center" />
-      <StatsBand stats={platformStats} />
-      {homePage.sections.map((section) => <ContentSection key={section.id} section={section} />)}
+      {homePage.sections.map((section) => (
+        <div key={section.id}>
+          {section.id === "people" && <StatsBand stats={platformStats} />}
+          <ContentSection section={section} />
+        </div>
+      ))}
 
       <section className="py-14">
         <div className="container">
           <div className="mb-8 max-w-4xl">
             <p className="text-xs font-medium uppercase tracking-[0.16em] text-md-primary">What We Build</p>
             <h2 className="mt-2 text-3xl font-semibold text-md-onSurface md:text-4xl">Active ecosystem initiatives</h2>
-            <p className="mt-4 text-md-onSurfaceVariant">A first CMS-ready snapshot of projects that can later be managed by non-technical editors.</p>
+            <p className="mt-4 text-md-onSurfaceVariant">Selected projects that turn shared purpose into meaningful action.</p>
           </div>
           <div className="grid gap-5 md:grid-cols-2">
             {projects.slice(0, 4).map((project) => <ProjectCard key={project.id} project={project} />)}
