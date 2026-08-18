@@ -7,6 +7,47 @@
     text-wrap: balance;
   }
 
+  .type-display {
+    font-family: theme("fontFamily.display");
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: 0;
+  }
+
+  .type-heading {
+    font-family: theme("fontFamily.display");
+    font-size: 2.25rem;
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: 0;
+  }
+
+  .type-body {
+    font-family: theme("fontFamily.body");
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.65;
+    letter-spacing: 0;
+  }
+
+  .type-meta {
+    font-family: theme("fontFamily.meta");
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .reading-width {
+    max-width: 46rem;
+  }
+
+  .section-space {
+    padding-block: 4.5rem;
+  }
+
   .md-ease {
     transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
   }
@@ -18,29 +59,29 @@
 
 @layer base {
   :root {
-    --background: 320 28% 99%; /* #FFFBFE */
-    --foreground: 270 8% 12%; /* #1C1B1F */
-    --card: 276 31% 95%; /* #F3EDF7 */
-    --card-foreground: 270 8% 12%;
-    --popover: 320 28% 99%;
-    --popover-foreground: 270 8% 12%;
+    --background: 0 0% 100%; /* #FFFFFF */
+    --foreground: 0 0% 19%; /* #303030 */
+    --card: 0 0% 97%; /* #F7F7F7 */
+    --card-foreground: 0 0% 19%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 19%;
 
-    --primary: 257 35% 48%; /* restrained deep purple */
+    --primary: 263 80% 63%; /* #8A55ED */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 270 33% 93%; /* #E8DEF8 */
-    --secondary-foreground: 258 23% 14%;
+    --secondary: 0 0% 97%; /* neutral secondary surface */
+    --secondary-foreground: 0 0% 19%;
 
-    --muted: 274 20% 90%; /* #E7E0EC */
-    --muted-foreground: 270 6% 31%; /* #49454F */
+    --muted: 0 0% 90%; /* #E6E6E6 */
+    --muted-foreground: 270 7% 29%; /* #49454F */
 
-    --accent: 274 100% 88%; /* #DEC4FF */
-    --accent-foreground: 270 8% 12%;
+    --accent: 266 100% 88%; /* #DEC4FF */
+    --accent-foreground: 0 0% 19%;
 
     --destructive: 0 80% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 270 4% 48%; /* #79747E */
+    --border: 0 0% 46%; /* #767676 */
     --input: 274 20% 90%;
     --ring: 263 80% 63%; /* #8A55ED */
 
@@ -53,6 +94,17 @@
 
   body {
     @apply bg-background text-foreground antialiased;
+    font-family: theme("fontFamily.body");
+  }
+
+  :focus-visible {
+    outline: 3px solid #8A55ED;
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: #DEC4FF;
+    color: #303030;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -62,5 +114,19 @@
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .type-display {
+    font-size: 4.5rem;
+  }
+
+  .type-heading {
+    font-size: 3rem;
+  }
+
+  .section-space {
+    padding-block: 6rem;
   }
 }

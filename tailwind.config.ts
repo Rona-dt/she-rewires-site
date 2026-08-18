@@ -13,7 +13,11 @@ const config: Config = {
   theme: {
     container: {
       center: true,
-      padding: "1.25rem",
+      padding: {
+        DEFAULT: "1.25rem",
+        sm: "1.5rem",
+        lg: "2.5rem",
+      },
       screens: {
         "2xl": "1400px",
       },
@@ -21,6 +25,9 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["Roboto", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "sans-serif"],
+        display: ["Roboto", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "sans-serif"],
+        body: ["Roboto", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "sans-serif"],
+        meta: ["Roboto", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -53,14 +60,16 @@ const config: Config = {
           foreground: "hsl(var(--popover-foreground))",
         },
         md: {
-          background: "#FFFBFE",
-          surface: "#F3EDF7",
-          surfaceLow: "#E7E0EC",
+          background: "#FFFFFF",
+          surface: "#F7F7F7",
+          surfaceLow: "#E6E6E6",
           primary: "#8A55ED",
           primaryContainer: "#DEC4FF",
-          onSurface: "#1C1B1F",
+          signal: "#BFFE01",
+          signalForeground: "#303030",
+          onSurface: "#303030",
           onSurfaceVariant: "#49454F",
-          outline: "#79747E",
+          outline: "#767676",
           tertiary: "#7D5260",
         },
       },
