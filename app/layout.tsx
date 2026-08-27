@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import "./globals.css"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { LanguageProvider } from "@/components/language-provider"
 
 export const metadata: Metadata = {
   title: "She Rewires - Global Human Agency Platform",
@@ -17,9 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans">
-        <Navigation />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
+        <LanguageProvider>
+          <Navigation />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   )

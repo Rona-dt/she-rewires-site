@@ -1,11 +1,13 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import type { Chapter } from "@/types/content"
+import type { Locale } from "@/types/content"
+import { localizeTerm } from "@/content/localization"
 
-export function ChapterCard({ chapter }: { chapter: Chapter }) {
+export function ChapterCard({ chapter, locale = "en" }: { chapter: Chapter; locale?: Locale }) {
   return (
     <Card className="h-full">
       <CardHeader>
-        <p className="text-sm font-medium text-md-primary">{chapter.region} · {chapter.status}</p>
+        <p className="text-sm font-medium text-md-primary">{chapter.region} · {localizeTerm(chapter.status, locale)}</p>
         <CardTitle>{chapter.name}</CardTitle>
       </CardHeader>
       <CardContent>

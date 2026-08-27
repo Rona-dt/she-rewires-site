@@ -1,11 +1,13 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import type { Project } from "@/types/content"
+import type { Locale } from "@/types/content"
+import { localizeTerm } from "@/content/localization"
 
-export function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({ project, locale = "en" }: { project: Project; locale?: Locale }) {
   return (
     <Card className="h-full">
       <CardHeader>
-        <p className="text-sm font-medium uppercase tracking-[0.12em] text-md-primary">{project.category} · {project.status}</p>
+        <p className="text-sm font-medium uppercase tracking-[0.12em] text-md-primary">{localizeTerm(project.category, locale)} · {localizeTerm(project.status, locale)}</p>
         <CardTitle>{project.title}</CardTitle>
       </CardHeader>
       <CardContent>

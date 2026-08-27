@@ -1,11 +1,13 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import type { Story } from "@/types/content"
+import type { Locale } from "@/types/content"
+import { localizeTerm } from "@/content/localization"
 
-export function StoryCard({ story }: { story: Story }) {
+export function StoryCard({ story, locale = "en" }: { story: Story; locale?: Locale }) {
   return (
     <Card className="h-full">
       <CardHeader>
-        <p className="text-sm font-medium text-md-primary">{story.type} · {story.date}</p>
+        <p className="text-sm font-medium text-md-primary">{localizeTerm(story.type, locale)} · {story.date}</p>
         <CardTitle>{story.title}</CardTitle>
       </CardHeader>
       <CardContent>

@@ -2,26 +2,35 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
-import { mainNavigation, siteConfig } from "@/content/site-config"
+import { siteConfig } from "@/content/site-config"
+import { localizeNavigation } from "@/content/localization"
+import { useLocale } from "@/components/language-provider"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const { locale, toggleLocale } = useLocale()
+  const navigation = localizeNavigation(locale)
 
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-md-outline/30 bg-md-background/90 backdrop-blur-md">
       <div className="container py-3">
         <div className="flex items-center justify-between">
           <Link href="/" className="rounded-full px-3 py-2" onClick={() => setIsOpen(false)}>
-            <div className="leading-tight">
-              <p className="text-xs uppercase tracking-[0.16em] text-md-primary">{siteConfig.name}</p>
-              <p className="text-lg font-semibold text-md-onSurface">{siteConfig.zhName}</p>
-            </div>
+            <Image
+              src="/brand/she-rewires-logo-black-cropped-provisional.png"
+              alt={`${siteConfig.name} / ${siteConfig.zhName}`}
+              width={128}
+              height={58}
+              priority
+              className="h-auto w-28 sm:w-32"
+            />
           </Link>
 
           <div className="hidden items-center gap-4 lg:flex">
-            {mainNavigation.map((item) => (
+            {navigation.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -30,6 +39,9 @@ export function Navigation() {
                 {item.label}
               </Link>
             ))}
+            <Button variant="outline" size="sm" onClick={toggleLocale} aria-label={locale === "en" ? "切换到中文" : "Switch to English"}>
+              {locale === "en" ? "中文" : "EN"}
+            </Button>
           </div>
 
           <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle navigation">
@@ -40,7 +52,7 @@ export function Navigation() {
         {isOpen && (
           <div className="mt-4 rounded-3xl bg-md-surface p-4 lg:hidden">
             <div className="flex flex-col gap-2">
-              {mainNavigation.map((item) => (
+              {navigation.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
@@ -50,6 +62,9 @@ export function Navigation() {
                   {item.label}
                 </Link>
               ))}
+              <Button variant="outline" size="sm" onClick={toggleLocale} aria-label={locale === "en" ? "切换到中文" : "Switch to English"}>
+                {locale === "en" ? "中文" : "EN"}
+              </Button>
             </div>
           </div>
         )}

@@ -5,9 +5,9 @@ export const homePage: PageContent = {
   title: "She Rewires",
   description: "A global movement evolving from women in STEM into a human agency platform for the AI era.",
   hero: {
-    title: "She Rewires / 她原力",
+    title: "Building the future is not about waiting for change.",
     subtitle:
-      "She Rewires is a global women-led co-building platform connecting people, ideas, and ecosystems to cultivate human agency for the AI era. Building the future is not about waiting for change. It is about co-building it together.",
+      "She Rewires is a global women-led co-building platform connecting people, ideas, and ecosystems to cultivate human agency for the AI era. It is about co-building it together.",
     primaryAction: { label: "Join Us", href: "/join-us" },
     secondaryAction: { label: "Explore the Ecosystem", href: "/community" },
   },
@@ -174,6 +174,6 @@ export const joinUsPage: PageContent = {
   },
   sections: [
     { id: "paths", title: "Entry Paths", description: "Choose the pathway that matches how you want to contribute." },
-    { id: "contact", title: "Contact", description: "Reach us by email or WeChat. The current form opens a pre-filled email draft and does not store data on a server." },
+    { id: "contact", title: "Contact", description: "Reach us by email or WeChat." },
   ],
 }

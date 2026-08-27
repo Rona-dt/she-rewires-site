@@ -1,11 +1,13 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import type { Person } from "@/types/content"
+import type { Locale } from "@/types/content"
+import { localizeTerm } from "@/content/localization"
 
-export function PersonProfile({ person }: { person: Person }) {
+export function PersonProfile({ person, locale = "en" }: { person: Person; locale?: Locale }) {
   return (
     <Card className="h-full">
       <CardHeader>
-        <p className="text-sm font-medium text-md-primary">{person.type}</p>
+        <p className="text-sm font-medium text-md-primary">{localizeTerm(person.type, locale)}</p>
         <CardTitle>{person.name}</CardTitle>
       </CardHeader>
       <CardContent>
