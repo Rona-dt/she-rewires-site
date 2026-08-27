@@ -21,6 +21,9 @@ Last updated: 2026-08-03
 | KI-006 | P2 | Media/stories | Open | Media, podcast, video, and story links are not fully migrated into a reviewed media/story system. | Do content inventory and migrate approved public items. |
 | KI-007 | P2 | Preview deployment | Open | Current redesign branch has not been committed, pushed, or deployed to Vercel Preview. | Commit and push only after stabilization and review. |
 | KI-008 | P3 | Browser QA | Open | Browser-level click testing and console checks were not completed in this status pass. | Run browser QA after local dev server is stable. |
+| KI-009 | P1 | Public copy | Open | Stories and other public pages must be reviewed for internal CMS/editor language. Current Stories uses catalogue-style wording, and Join Us exposes implementation details about `mailto:` storage behavior. | Replace internal or staging-oriented copy with audience-facing language; keep technical notes in project documentation. |
+| KI-010 | P1 | Deployment workflow | Open | The repository did not previously state the required Git-triggered Vercel workflow, so manual CLI deployments could create deployments without Git commit metadata. | Use the workflow in `AGENTS.md`; verify branch and commit metadata on every Preview. |
+| KI-011 | P2 | Language persistence QA | Open | Locale switching works in the current browser pass, but route-to-route persistence needs a dedicated verification after hydration because pages initially render with the English default. | Verify that a selected locale persists across every primary route and full reload without mixed-language content. |
 
 ## Recently Verified As Passing
 
