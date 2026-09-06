@@ -48,13 +48,21 @@ The Metrics proof band is a supporting proof moment placed after Co-building Mod
 - No exact pixel value in this document is final unless an existing approved token or source explicitly establishes it.
 - Do not use fake placeholders, dummy logos, avatar initials, lorem ipsum, or public-facing coming-soon blocks anywhere on the homepage.
 
+## Language and logo-lockup rule
+
+- The logo may remain a bilingual brand lockup (`她原力` plus `sherewires`) because it is identity artwork.
+- Page copy, navigation labels, headings, body text, buttons, and form labels must use one content language per view. Do not use `She Rewires / 她原力` as a mixed-language Hero headline.
+- English is the default page locale. The top-right language control must switch the complete page locale to Chinese; it must not create a partially translated or mixed-language view.
+- The Hero should use the approved single-language positioning copy while the bilingual logo remains in the header or another intentional identity placement.
+- `she-rewires-logo-white-cropped-provisional.png` and `she-rewires-logo-black-cropped-provisional.png` are provisional cropped preview assets supplied for Phase 2 exploration. They may support static composition review after asset inspection, but they are not the authoritative source and must not be treated as final production exports.
+
 ## Global section differentiation rule
 
 Do not render every section through the same template. No more than two consecutive sections should share the same composition, card pattern, alignment, or background treatment. Variation should come from hierarchy, content width, spacing, alignment, and approved media—not arbitrary decoration or unapproved assets.
 
 ## Decision ownership
 
-- **Founder approval required:** brand identity, final logo variants, hero treatment, bilingual behaviour, final colour prominence, real media/partner selection, and founder-facing visual approval.
+- **Founder approval required:** brand identity, final logo variants, hero treatment, bilingual logo and locale-switch behaviour, final colour prominence, real media/partner selection, and founder-facing visual approval.
 - **Design-review provisional decisions:** composition variants, card-versus-open-editorial choices, spacing rhythm, typography roles, colour roles, and optional future motion direction until reviewed against the foundations and screenshots.
 - **Engineering implementation decisions:** component reuse, content mapping, responsive structure, accessibility implementation, performance, route-safe CTA wiring, and technical constraints within the approved direction.
 
@@ -79,7 +87,7 @@ Engineering decisions must not silently turn a provisional design choice into a 
 - **Preserve from previous version:** Centred brand presence, recognisable bilingual identity, approachable CTA, and welcoming first impression.
 - **Anti-patterns:** Stats-first hero, abstract Human Agency label without context, generic AI gradient, event banner, or oversized card shell.
 - **Optional future motion:** Subtle entrance or media movement after reduced-motion review; no decorative motion required for Phase 2.
-- **Unresolved decisions:** Final hero copy; Chinese first-viewport treatment; language toggle; authoritative logo exports; neutral versus restrained lavender/media background.
+- **Unresolved decisions:** Final hero copy; Chinese first-viewport treatment within the locale switch; authoritative logo exports; neutral versus restrained lavender/media background.
 
 ### 2. Why
 

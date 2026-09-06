@@ -8,6 +8,11 @@ The project is migrating from a v0-generated event website into a maintainable g
 
 ## Working Rules
 
+- **Canonical workspace:** `D:\Projects\Active\she-rewires-site` is the only active repository for this project. All future reads, edits, tests, commits, branches, and pushes must use this D-drive workspace.
+- **Retired workspace:** `C:\Users\Rona\Documents\New project 2` is an old workspace and must be treated as read-only/archive. Do not use it as a source of truth, and do not copy changes from it without an explicit comparison and approval.
+- **Workspace verification:** Before implementation or Git operations, verify the working directory with `git rev-parse --show-toplevel`, then verify branch, HEAD, upstream, and `git status` from the D-drive workspace.
+- **Migration safety:** Never reconcile C- and D-drive histories by force-reset, blind copy, or unreviewed merge. If the two workspaces diverge, compare commits and working-tree changes first and preserve unrelated work.
+
 - Do not work directly on `main` for feature work.
 - Use a feature branch for architecture, redesign, content, or deployment changes.
 - Do not push to `main` directly.

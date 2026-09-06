@@ -38,7 +38,7 @@ This does not yet match the approved sequence because identity and proof are not
 
 | Current component | Decision | Reason |
 | --- | --- | --- |
-| `HeroSection` | Modify | Retain the reusable API where possible; support a brand-led hero with intentional bilingual mark treatment, controlled width, and optional approved media. |
+| `HeroSection` | Modify | Retain the reusable API where possible; keep the bilingual logo as identity artwork, use one content language per view, and provide controlled single-language Hero copy for each locale. |
 | `StatsBand` | Keep, reposition | Use as supporting proof after identity and meaning; avoid dashboard emphasis. |
 | `ContentSection` | Modify | Retain structured-content rendering but add editorial variants so every section is not an identical card/grid pattern. |
 | `SectionHeader` | Keep, refine if needed | Useful for hierarchy; review type scale and reading width during visual refinement. |
@@ -77,14 +77,15 @@ Metrics appear as contextual proof after the first identity/meaning block, not a
 
 - Resolve visible mojibake in public-facing content.
 - Resolve the Join Us required-field mismatch documented in `docs/KNOWN_ISSUES.md`.
-- Confirm the final English and Chinese hero treatment.
-- Decide whether the language toggle returns.
+- Confirm the final English and Chinese locale treatment; do not mix both languages in one Hero headline.
+- Restore/implement the top-right language control with English as the default and a complete Chinese locale switch.
+- Register `she-rewires-logo-white-cropped-provisional.png` and `she-rewires-logo-black-cropped-provisional.png` as provisional preview assets only; they must not replace the authoritative `.ai` source.
 - Confirm first-release people, project, partner, and media assets.
 - Confirm how the founder-supplied `.ai` logo will be converted to an approved web asset.
 
 **Risks:** changing copy before approval can create another brand-direction loop; converting the logo without Illustrator/source review can alter the mark.
 
-**Acceptance criteria:** no known encoding defects in reviewed surfaces; five homepage approval gates are recorded; no unapproved assets are introduced.
+**Acceptance criteria:** no known encoding defects in reviewed surfaces; five homepage approval gates are recorded; no unapproved assets are introduced; page copy is single-language per view; English is the default; and the top-right control switches the complete page to Chinese.
 
 ### Phase 1 — Narrative correction
 

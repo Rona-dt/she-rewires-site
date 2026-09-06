@@ -14,7 +14,7 @@ Within 30 seconds, a first-time visitor should understand that She Rewires is a 
 
 | Section | User question | Content requirement | Visual direction | Must avoid |
 | --- | --- | --- | --- | --- |
-| 1. Identity / Hero | What is She Rewires? | Brand name, approved co-building statement, one primary action, intentional bilingual treatment. | Large typography, confident whitespace, restrained navigation, optional approved human/community media. | Stats-first hero, abstract Human Agency label without context, dense copy. |
+| 1. Identity / Hero | What is She Rewires? | Bilingual logo lockup plus one-language page copy: approved co-building statement and one primary action. | Large typography, confident whitespace, restrained navigation, optional approved human/community media. | Stats-first hero, mixed-language headline, abstract Human Agency label without context, dense copy. |
 | 2. Why | Why does it exist? | Technology changes quickly; human connection, creativity, judgment, empathy, and agency matter more. | Editorial text-led section with a clear reading rhythm. | Corporate mission boilerplate and unexplained ecosystem language. |
 | 3. Evolution | Where did it come from? | Women in STEM → women-led movement → co-building platform → Human Agency for the AI era. | A simple, legible progression; use timeline detail only where it improves understanding. | Hiding the women-led origin or jumping directly to the future label. |
 | 4. Co-building Model | How does it work? | Discover → Connect → Co-build → Incubate → Scale. Explain people, ideas, projects, ecosystems, and impact. | Clear editorial sequence or light diagram; generous whitespace. | Complex systems diagrams, technical architecture, or card grids with no explanation. |
@@ -65,10 +65,14 @@ Preserve the existing route architecture and CMS-ready content separation. Imple
 Before code changes, the founder/project owner must approve:
 
 1. Hero English and Chinese treatment.
-2. Whether the language toggle returns.
+2. Exact language-control label and locale persistence behaviour.
 3. Evolution and co-building model wording.
 4. The first-release people, projects, and partner assets.
 5. Any motion direction and reduced-motion behaviour.
+
+### Language decision for Phase 2
+
+The bilingual logo is an identity lockup, not a requirement to mix English and Chinese in page copy. English is the default locale. The top-right language control must switch the complete page locale to Chinese, including navigation, headings, body copy, buttons, forms, metadata, and footer. Do not use `She Rewires / 她原力` as a mixed-language Hero headline. A partial translation or mixed-language state is not acceptable.
 
 After implementation, verify desktop/mobile layout, navigation, CTAs, accessibility basics, content accuracy, and a Vercel Preview before production release.
 

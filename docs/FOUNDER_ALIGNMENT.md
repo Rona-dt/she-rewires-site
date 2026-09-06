@@ -97,6 +97,10 @@ Chinese hero direction:
 
 > 未来，不是等待发生，而是共同创造。
 
+### Language behaviour
+
+The bilingual logo lockup is part of the brand identity and may remain visible in both scripts. Page copy is different: each view must use one content language consistently. English is the default locale, and the top-right language control must switch the complete page to Chinese, including navigation, headings, body copy, buttons, forms, metadata, and footer. Do not use `She Rewires / 她原力` as a mixed-language Hero headline. A partial translation or mixed-language state is not acceptable.
+
 ## 6. Reference principles
 
 ### BEYOND Expo: learn selectively
@@ -180,3 +184,5 @@ For the 2026 site, fluorescent green is a restrained signal accent rather than t
 ## 13. Brand asset note
 
 The earlier generic asset note is superseded by the authoritative logo policy above. The latest founder-provided `.ai` file remains unconverted in this documentation-only phase; any web-safe export must preserve the approved mark and be reviewed before replacing provisional treatments.
+
+The supplied cropped PNGs `she-rewires-logo-white-cropped-provisional.png` and `she-rewires-logo-black-cropped-provisional.png` are provisional preview assets only. They may be used to test light/dark composition after inspection, but they do not replace the authoritative `.ai` source or the required reviewed SVG exports.

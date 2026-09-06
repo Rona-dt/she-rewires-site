@@ -24,6 +24,8 @@ This is not approval of a final colour system. Values marked **confirmed** are t
 | Current `public/icon.svg` | Black and white symbol with colour-scheme switching | Yes, explicit `black`/`white` SVG fills | Legacy/provisional asset | May remain only as a Phase 1 placeholder; it must not replace the authoritative `.ai` source. |
 | `public/logo-on-white.jpg`, `public/logo-on-black.jpg` | Raster logo variants | No vector colour specification | Legacy/provisional assets | Reference only; they must not become the final responsive logo. |
 | Latest founder-provided `.ai` asset at `the latest founder-provided `.ai` logo file` | Source vector for black/white brand logo | Source file supplied by founder | Single authoritative logo source | All web variants must be exported from this file and reviewed before founder-facing visual approval. |
+| `she-rewires-logo-white-cropped-provisional.png` | Cropped white raster preview | Supplied founder-related preview asset | Provisional | Static composition review only; do not treat as final production logo or replacement for the `.ai` source. |
+| `she-rewires-logo-black-cropped-provisional.png` | Cropped black raster preview | Supplied founder-related preview asset | Provisional | Static composition review only; do not treat as final production logo or replacement for the `.ai` source. |
 | BEYOND Expo / other supplied references | Reference relationships: black/white foundation, controlled accent, editorial contrast | No approved colour values supplied | Reference principle only | Do not copy another site's palette or identity. |
 
 | 2024 Brand Guidelines `.ai` at `the 2024 Brand Guidelines `.ai` file` and supplied guideline pages | Official historical brand palette: `#BFFE01`, `#DEC4FF`, `#8A55ED`, `#FFFFFF`, `#E6E6E6`, `#303030` | Yes, shown in supplied brand-guideline artwork | Confirmed historical brand source; 2026 usage proportions provisional | Preserve as brand DNA, then apply the restrained editorial roles below. |
@@ -32,6 +34,8 @@ This is not approval of a final colour system. Values marked **confirmed** are t
 ## Logo source authority
 
 The latest founder-provided file `the latest founder-provided `.ai` logo file` is the single authoritative logo source. Existing SVG, JPG, and text-only logo treatments are legacy or provisional and must not replace it.
+
+The bilingual logo lockup may appear in both scripts as identity artwork, but page copy must remain one language per view. English is the default locale, and the top-right language control must switch the complete page to Chinese. Do not use `She Rewires / 她原力` as a mixed-language Hero headline or leave the page partially translated.
 
 Export and review web-safe SVG variants from this `.ai` source for light, dark, desktop, and compact/mobile use before founder-facing visual approval. A clearly provisional existing treatment may remain during Phase 1 narrative implementation, but final logo conversion is required before founder-facing visual approval.
 
@@ -149,7 +153,7 @@ If the licensed fonts cannot be used, preserve the intended direction: a clean, 
 | Hero background treatment | Current implementation is near-white; previous screenshot includes pale lavender atmosphere. | Decide neutral-only, restrained lavender wash, approved image/video, or another treatment. |
 | Final logo variants | Existing SVG/JPG assets are legacy/provisional; the latest `.ai` source is authoritative. | Approve web-safe SVG/wordmark variants for light, dark, desktop, and compact/mobile contexts. |
 | Gradients | Not approved; screenshot suggests soft atmospheric colour but no source values. | Decide whether any gradient is allowed, where, and with what exact approved values. |
-| Bilingual typography interaction | Previous site visibly presented English and Chinese identity; current implementation decision is unresolved. | Approve font pairing, hierarchy, line breaking, language toggle, and first-viewport treatment. |
+| Bilingual typography interaction | Previous site visibly presented English and Chinese identity; the approved model is one language per view with an English-default toggle to complete Chinese. | Approve font pairing, hierarchy, line breaking, control label, locale persistence, and first-viewport treatment. |
 | Dark-section usage | No approved dark-section token currently exists. | Decide whether dark sections are needed and define tested foreground/accent roles if so. |
 | Semantic state colours | Not defined by supplied sources. | Define accessible success, warning, error, and info roles before form/interactive expansion. |
 
