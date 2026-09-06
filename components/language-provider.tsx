@@ -13,16 +13,19 @@ const LanguageContext = createContext<LanguageContextValue | null>(null)
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [locale, setLocale] = useState<Locale>("en")
+  const [hydrated, setHydrated] = useState(false)
 
   useEffect(() => {
     const storedLocale = window.localStorage.getItem("she-rewires-locale")
     if (storedLocale === "en" || storedLocale === "zh") setLocale(storedLocale)
+    setHydrated(true)
   }, [])
 
   useEffect(() => {
+    if (!hydrated) return
     document.documentElement.lang = locale === "zh" ? "zh-CN" : "en"
     window.localStorage.setItem("she-rewires-locale", locale)
-  }, [locale])
+  }, [hydrated, locale])
 
   const value = useMemo(
     () => ({
