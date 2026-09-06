@@ -39,18 +39,20 @@ export function Navigation() {
                 {item.label}
               </Link>
             ))}
-            <Button variant="outline" size="sm" onClick={toggleLocale} aria-label={locale === "en" ? "切换到中文" : "Switch to English"}>
-              {locale === "en" ? "中文" : "EN"}
-            </Button>
           </div>
 
-          <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle navigation">
-            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button variant="outline" size="sm" onClick={toggleLocale} aria-label={locale === "en" ? "切换到中文" : "切换到英文"}>
+              {locale === "en" ? "中文" : "EN"}
+            </Button>
+            <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle navigation" aria-expanded={isOpen} aria-controls="mobile-navigation">
+              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </Button>
+          </div>
         </div>
 
         {isOpen && (
-          <div className="mt-4 rounded-3xl bg-md-surface p-4 lg:hidden">
+          <div id="mobile-navigation" className="mt-4 rounded-3xl bg-md-surface p-4 lg:hidden">
             <div className="flex flex-col gap-2">
               {navigation.map((item) => (
                 <Link
@@ -62,9 +64,6 @@ export function Navigation() {
                   {item.label}
                 </Link>
               ))}
-              <Button variant="outline" size="sm" onClick={toggleLocale} aria-label={locale === "en" ? "切换到中文" : "Switch to English"}>
-                {locale === "en" ? "中文" : "EN"}
-              </Button>
             </div>
           </div>
         )}

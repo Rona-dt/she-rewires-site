@@ -19,7 +19,7 @@ export default function CommunityPage() {
       <HeroSection hero={page.hero} />
       <section className="py-14">
         <div className="container">
-          <EcosystemDiagram />
+            <EcosystemDiagram locale={locale} />
         </div>
       </section>
       {page.sections.slice(0, 1).map((section) => <ContentSection key={section.id} section={section} />)}

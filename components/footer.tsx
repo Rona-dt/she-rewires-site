@@ -69,7 +69,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t border-md-outline/20 pt-6 text-center text-sm text-md-onSurfaceVariant">
-          <p>© 2026 She Rewires. All rights reserved.</p>
+          <p>{localizeText("© 2026 She Rewires. All rights reserved.", locale)}</p>
         </div>
       </div>
     </footer>
