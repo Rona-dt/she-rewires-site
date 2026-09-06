@@ -58,6 +58,7 @@ const zh: Record<string, string> = {
   "The ecosystem connects people, chapters, partners, and contributors into co-building projects.": "生态连接人、社区、伙伴与贡献者，共同推进共建项目。",
   "© 2026 She Rewires. All rights reserved.": "© 2026 她原力。保留所有权利。",
   "Co-builders": "共建者",
+  "Individuals who move beyond participation to create projects, communities, and collaborations.": "从参与走向创造项目、社区与合作的个人。",
   "Chapters": "社区",
   Individuals: "个人",
   Partners: "伙伴",
